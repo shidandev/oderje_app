@@ -1,59 +1,61 @@
-<div class="col-md-3 my-2">
-    <div class="card border-light">
-        <img src="http://www.oderje.com/img/products/generic-product.jpg" class="card-img-top mx-auto"
-            style="width:200px" alt="Product Name">
-        <div class="card-body">
-            <div class="card-title overflow-hidden" style="height:40px">
-                <h6>
-                    Sample Product Name Sample Product Name Sample Product Name Sample Product Name
-                </h6>
-            </div>
-            <small class="text-secondary">
-                Store Name - location
-            </small>
-            <div style="font-size:12px">
-                <i class="fas fa-star text-warning"></i>
-                <i class="fas fa-star text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <div class="float-right">
-                <span id="badge-liked" class="badge badge-pill badge-white text-warning"><i
-                            class="fas fa-heart"></i>&nbsp;Favourite
-                    </span>
-                    <span id="badge-promo" class="badge badge-pill badge-white text-danger"><i
-                            class="fas fa-fire"></i>&nbsp;Hot
-                    </span>
-                    <span id="badge-delivery" class="badge badge-pill badge-white text-success"><i
-                            class="fas fa-truck"></i>&nbsp;Delivery
-                    </span>
+<div class="col-md-3 ">
+    <div class="row mx-auto box box-warning bubble-high p-1">
+        <div class="d-md-none d-block col-2 d-block"></div>
+        <div class="col-md-12 col-8  text-center p-0">
+            
+            <img src="https://www.oderje.com/img/products/generic-product.jpg?" class="card-img-top float-center">
+        </div>
+        <div class="d-md-none d-block col-2 d-block"></div>
+        <div class="col-md-12 px-2">
+            <label class="col-10 h6">Product Name</label>
+        </div>
+        <div class="col-md-12 px-2">
+            <div class="row mx-auto">
+                <div class="col-12 ">
+                    <small>Store Name - location</small>
+                </div>
+                <div class="col-md-12 col-4 mt-1">
+                    <small>
+                        <small>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </small>
+                    </small>
+                </div>
+                <div class="col-md-12 col-8  mt-1 my-auto">
+                    <small>
+                        <small>
+                            <i class="fas fa-heart text-warning"></i>
+                            <span class="text-warning">Favourite</span>
+                            
+                        </small>&nbsp;
+                        <small >
+                            <i class="fas fa-fire text-danger"></i>
+                            <span class="text-danger">Hot</span>
+                            
+                        </small>&nbsp;
+                        <small>
+                            <i class="fas fa-truck text-success"></i>
+                            <span class="text-success">Delivery</span>
+                        </small>
+                    </small>
+                </div>
+                <div class="col-md-12 col-12 ">
+                    <small><s>RM 300</s></small> - <small class="text-primary">50%</small> <b class="float-right">RM 125.00</b>
+                </div>
+                <div class="col-md-12 col-12 ">
+                    <small style="font-size:10px">[Promo End: 31/12/2019]</small>
+                </div>
+                <div class="col-md-12 col-12 text-right mt-2">
+                    <button class="btn btn-outline-info btn-sm">More Info <i class="fas fa-info-circle"></i></button>.
+                    <button class="btn btn-grab-item btn-sm text-white">Grab item <i class="fas fa-shopping-basket"></i></button>
                 </div>
             </div>
-            <div class="card-header border-light">
-                <span id="price-slash" class="text-secondary hidden" style="font-size:10px">
-                    <s>
-                        RM&nbsp;300.00
-                    </s>&nbsp;
-                </span>
-                <span id="price-selling">
-                    <b>
-                        RM&nbsp;150.00
-                    </b>
-                    &nbsp;<small class="text-primary">-50%</small>
-                </span>
-                <span id="price-slash" class="text-secondary hidden mt-n5" style="font-size:10px">
-                    <br>[Promo End: 31/12/2019]
-                </span>
-            </div>
-            <div class="float-right mt-2 mb-n2">
-                <button class="btn btn-sm btn-outline-info" style="font-size:14px">
-                    More info&nbsp;<i class="fas fa-info-circle"></i>
-                </button>
-                <button type="button" data-toggle="modal" data-target=".modal-grab-item" class="btn btn-sm text-light"
-                    style="background:#FC9732; font-size:14px">
-                    Grab item&nbsp;<i class="fas fa-shopping-basket"></i>
-                </button>
-            </div>
+
         </div>
+        
     </div>
 </div>
