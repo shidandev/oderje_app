@@ -35,9 +35,9 @@
 		<div class="col-md-2 d-md-block d-none"></div>
 		<div class="col-md-8  text-left border border-warning rounded p-3">
 			<label class="h5 text-warning text-outline">Make Payment</label>
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-md-12 text-warning text-outline" ><b>List of available voucher</b></div>
-			</div>
+			</div> -->
 			<div class="row">
 				<div class="col-md-12 text-warning text-outline" ><b>List of available voucher</b></div>
 			</div>
@@ -76,13 +76,24 @@
 				  <div class="input-group-prepend">
 				    <span class="input-group-text" >RM</span>
 				  </div>
-				  <input id="total_transfer" type="text" class="form-control" placeholder="Total Price" value="">
+				  <input id="total_transfer" type="text" class="form-control" placeholder="Total Price" value="" disabled="">
 				</div>
 			</div>
 			<div class="row text-center">
+				<div class="col-md-12 mt-1"><button class="btn btn-outline-success" id="request_pin"><b>Request Pin</b></button></div>
+			</div>
+			<div class="row mt-2 d-none pin_div">
+				 
+				<div class="col-md-12 input-group mb-3">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text" >PIN</span>
+				  </div>
+				  <input id="key" type="text" class="form-control" placeholder="X X X X X X" value="">
+				</div>
+			</div>
+			<div class="row text-center d-none pin_div">
 				<div class="col-md-12 mt-1"><button class="btn btn-outline-success" id="proceed_payment"><b>Make Payment</b></button></div>
 			</div>
-			
 		</div>
 		<div class="col-md-2 d-md-block d-none"></div>
 	</div>
@@ -141,13 +152,19 @@
 				$("#input_price").attr("disabled",true);
 				$(this).removeClass("bg-info").addClass("bg-success").text("Change");
 				$("#div_payment").removeClass("d-none");
+				$("#total_transfer").val($("#input_price").val());
 			}
 			else{
 				$("#input_price").attr("disabled",false);
 				$(this).removeClass("bg-success").addClass("bg-info").text("Confirm");
 			}
 		});
-		$("#proceed_payment").on("click",function(e){
+		$("#request_pin").on("click",function(e){
+			let vt_id = "";
+			let vt_idArr = new Array();
+			let t_id = "";
+			let t_idArr = new Array();
+
 			let total_transfer = $("#total_transfer").val();
 
 			if(isNaN(total_transfer))
@@ -158,25 +175,87 @@
 			{
 				let mid = $_GET['MID'];
 				let u_mid = $_GET['UID'];
-				let cid = $_USER['cid'];
+				let c_uid = $_USER['uid'];
 				//let key = $_USER['key'];
+
+				$("#input_price").attr("disabled",true);
+				$("#vbalance").attr("disabled",true);
+				$("#total_transfer").attr("disabled",true);
 
 				if(mid != "" && u_mid != "" && cid != "" && key != "")
 				{
 					
 					$.post("https://app.oderje.com/api/transfer", {
-						function:"single_line",
-						sender:cid,
+						function:"payment",
+						sender:c_uid,
 						receiver:u_mid,
 						mid:mid,
 						vh_id:(cur_voucher_use != "0")? cur_voucher_use:0,
 						voucher_deduction:(deduction_for_voucher!="0")?deduction_for_voucher:0,
 						voucher_balance:cur_voucher_balance,
-						total_payment:cur_price_need_topay,
-						total_transfer:total_transfer
+						total_payment:(cur_price_need_topay*100),
+						user_payment:(total_transfer*100)
 					},
 					function(data){
-						console.table(data);
+						if(data.status=="Amount not enough")
+						{
+							alert("Please Top Up Balance Account");
+						}
+						else if(data.status == "ok")
+						{
+							$(".pin_div").removeClass("d-none");
+							$("#request_pin").attr("disabled",true);
+
+							if(Array.isArray(data.vh_id))
+							{
+								vt_idArr = data.vh_id;
+								console.log(vt_idArr);
+							}
+							else
+							{
+								vt_id = data.vt_id;
+								console.log(vt_id);
+							}
+
+							if(Array.isArray(data.t_id))
+							{
+								t_idArr = data.t_id;
+								console.log(t_idArr);
+							}
+							else
+							{
+								t_id = data.t_id;
+								console.log(t_id);
+							}
+
+							$("#proceed_payment").on('click',function(){
+								let pin = $("#key").val().trim();
+								$.post("https://app.oderje.com/api/transfer",
+								{
+									function:"confirm_payment",
+									pin:pin,
+									vt_id:vt_id,
+									tid:t_id
+
+								},function(data){
+
+									if(data.status == "ok")
+									{
+										alert("Successfully transfer");
+										window.location.href = "receipt/";
+									}
+									else
+									{
+										alert("Failed transfer");
+									}
+								},"json");
+							});
+							
+						}
+						else
+						{
+							alert("Error");
+						}
 					},"json");
 				}
 			}
@@ -225,7 +304,11 @@
 			},
 			function(data){
 				set_merchant_detail(data.merchant);
-				create_voucher_card(data.voucher);
+				if(data.voucher)
+				{
+					create_voucher_card(data.voucher);
+
+				}
 			},"json");
 
 			$("#input_price").val(($_GET['PRICE'])?$_GET['PRICE']:0);

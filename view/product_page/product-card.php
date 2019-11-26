@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-md-12 col-12 text-right mt-2">
                     <button class="btn btn-outline-info btn-sm">More Info <i class="fas fa-info-circle"></i></button>.
-                    <button class="btn btn-grab-item btn-sm text-white">Grab item <i class="fas fa-shopping-basket"></i></button>
+                    <button class="btn btn-grab-item btn-sm text-white" type="button" data-toggle="modal" data-target=".modal-grab-item">Grab item <i class="fas fa-shopping-basket"></i></button>
                 </div>
             </div>
 
@@ -59,3 +59,4 @@
         
     </div>
 </div>
+

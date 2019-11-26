@@ -11,10 +11,12 @@
 			$cid = $_REQUEST['cid'];
 			$key = $_REQUEST['key'];
 			$name = $_REQUEST['name'];
+			$uid = $_REQUEST['uid'];
 
 			$_SESSION['cid'] = $cid;
 			$_SESSION['key'] = $key;
 			$_SESSION['name'] = $name;
+			$_SESSION['uid'] = $uid;
 
 			$_SESSION['login_status'] = TRUE;
 			$data['status'] = "ok";

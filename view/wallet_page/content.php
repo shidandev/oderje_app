@@ -1,180 +1,328 @@
-<div class="container-fluid my-3 " >
-	<div class="row"  >
-		<div class="col-md-2 d-none  d-md-block "></div>
-		<div class="col-md-8 col-12">
-			<div class="col-md-12 text-center box bubble-high bg-darkpeach">
-				<label class="h5 font-weight-bold text-white text-outline col-md-12">Welcome </label>
-				<label id="name_display" class="h5 font-weight-bold text-white text-outline col-md-12">Welcome </label>
-			</div>
-			<div class="col-md-12 text-center box bubble-high mt-2 bg-darkpeach py-3">
-				<span class="h5 font-weight-bold text-white text-outline">Cashless Balance : RM <span id="balance_display">1000.00</span></span>
-			</div>
-			<div class="row mx-auto">
-				<div class="col-md-4 col-4  box bubble-high mt-2 bg-custom1 text-center py-2" id="transfer_btn">
-					<div class="h6 font-weight-bold text-white text-outline">Transfer</div>
-					<i class="fas fa-exchange-alt text-white"></i>
-				</div>
-				<div class="col-md-4 col-4  box bubble-high mt-2 bg-info text-center py-2 blur" id="topup_btn">
-					<div class="h6 font-weight-bold text-white text-outline">Topup</div>
-					<i class="fas fa-arrow-up text-custom1 text-white"></i>
-				</div>
-				<div class="col-md-4 col-4  box bubble-high mt-2 bg-primary text-center py-2 blur" id="withdraw_btn">
-					<div class="h6 font-weight-bold text-white text-outline">Withdraw</div>
-					<i class="fas fa-money-bill-alt text-custom1 text-white"></i>
+<div class="container-fluid mt-2" style="margin-bottom:50px">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <select class="form-control" id="account_option_btn">
+                <option>Main Account</option>
+                <option>Rewards</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-8">
+            <div class="card border-white">
+                <div class="card-body text-center text-secondary">
+                    <p>
+                        Credit Balance
+                    </p>
+                    <span id="currency">
+                        RM&nbsp;
+                    </span>
+                    <span class="mr-n2" id="amount-big" style="font-size:36px">
+                        500
+                    </span>
+                    <span class="align-bottom">&sdot;</span>
+                    <span id="amount-small">
+                        99
+                    </span>
+                </div>
+                <div class="card-footer bg-white text-center" style="border-color:#FF6600">
+                    <span id="accountName">Muhammad Amin bin Mohd Faudzi</span>
+                    <br>
+                    <span id="accountNumber">10011888</span>
+                </div>
+            </div>
+            <div id="accordion">
+                <div class="card border-white">
+                    <div class="card-header border-white bg-white text-center" id="headingvouchers"
+                        data-toggle="collapse" data-target="#vouchers" aria-expanded="false" aria-controls="vouchers">
+                        <p class="text-center text-secondary">
+                            Vouchers&nbsp;&nbsp;<i class="fas fa-chevron-down fa-xs"></i>
+                        </p>
+                    </div>
+                    <div id="vouchers" class="collapse" aria-labelledby="headingvpuchers" data-parent="#accordion">
+                        <div class="row" style="overflow-y: scroll;max-height: 350px" id="voucher_list_div">
+                            <div class="col-md-4 col-sm-6 my-1">
+                                <div class="card border-light">
+                                    <div class="card-body" style="background-color:lightgoldenrodyellow">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <img src="https://app.oderje.com/images/oderje-logo.png" class="card-img d-block w-100"
+                                                alt="shop-logo">
+                                            </div>
+                                            <div class="col-8 text-right">
+                                                <small style="color:#FF6600">
+                                                    </i>Cash Voucher
+                                                </small>
+                                                <p>
+                                                    RM <span id="cashVoucherValue">6.00</span>
+                                                </p>
+                                                <p class="text-secondary mt-n3" style="font-size:10px">
+                                                    Valid till : <span id="cashVoucherEnd">01/10/2021</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1 border-top border-white">
+                                            <div class="col-8" style="height:20px">
+                                                <p class="text-secondary mt-1" style="font-size:10px">
+                                                    By: <span id="cashVoucherFrom">Business 1</span>
+                                                    <br>
+                                                    Redeem at: <span id="cashVoucherFrom">Business 2</span>
+                                                </p>
+                                            </div>
 
-				</div>
-			</div>
-			
-			<!-- for withdraw pager -->
-			<div class="d-none for_withdraw row bg-primary mx-auto  py-1 box bubble-high text-white" id="withdraw_div">
-				<div class="col-md-12 col-12 my-2 text-left bg-info box bubble-high"><small><b>Topup Information</b> </small></div>
-				<div class="col-md-2 col-4 my-auto "><small><b>Name</b> </small></div>
-				<div class="col-md-10 col-8"><input class="form-control mx-0" type="text" value="name" disabled=""></div>
-				<div class="col-md-2 col-4 my-auto "><small><b>Account No</b> </small></div>
-				<div class="col-md-10 col-8"><input class="form-control mx-0" type="text" value="name" disabled=""></div>
-				<div class="col-md-2 col-4 my-auto "><small><b>Bank Name</b> </small></div>
-				<div class="col-md-10 col-8"><input class="form-control mx-0" type="text" value="name" disabled=""></div>
-				<div class="col-md-2 col-4 my-auto "><small><b>Quantity</b> </small></div>
-				<div class="col-md-10 col-8"><input class="form-control mx-0" type="number" value="0.00" disabled=""></div>
-			</div>
-			<div class="d-none for_withdraw row mx-auto">
-				<div class="col-md-6 col-6  box bubble-high mt-2 bg-custom1 text-center" id="withdraw_cancel_btn">
-					<div class="h5 font-weight-bold text-white text-outline">Cancel</div>
-					
-				</div>
-				<div class="col-md-6 col-6  box bubble-high mt-2 bg-info text-center" id="withdraw_submit_btn">
-					<div class="h5 font-weight-bold text-white text-outline">Withdraw</div>
-					
-				</div>
-			</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 my-1">
+                                <div class="card border-light">
+                                    <div class="card-body" style="background-color:bisque">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <small style="color:#FF6600">
+                                                    </i>Delivery Voucher
+                                                </small>
+                                                <p>
+                                                    <i class="text-secondary fas fa-truck">&nbsp;</i>Free Delivery&nbsp;
+                                                </p>
+                                                <p class="text-secondary mt-n3" style="font-size:10px">
+                                                    Valid till : <span id="cashVoucherEnd">01/10/2021</span>
+                                                </p>
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="https://app.oderje.com/images/oderje-logo.png" class="card-img d-block w-100"
+                                                alt="shop-logo">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2 border-top border-light">
+                                            <div class="col-8" style="height:20px">
+                                                <p class="text-secondary mt-2" style="font-size:10px">
+                                                    By: <span id="cashVoucherFrom">Business 1</span>
+                                                    <br>
+                                                    Redeem at: <span id="cashVoucherFrom">Business 2</span>
+                                                </p>
+                                            </div>
 
-			<!-- for topup pager -->
-			<div class="d-none for_topup row bg-info mx-auto  py-1 box bubble-high text-white" id="topup_div">
-				<div class="col-md-12 col-12 my-2 text-left bg-info box bubble-high"><small><b>Topup Information</b> </small></div>
-				<div class="col-md-2 col-4 my-auto "><small><b>Name</b> </small></div>
-				<div class="col-md-10 col-8"><input class="form-control mx-0" type="text" value="name" disabled=""></div>
-				<div class="col-md-2 col-4 my-auto "><small><b>Account No</b> </small></div>
-				<div class="col-md-10 col-8"><input class="form-control mx-0" type="text" value="name" disabled=""></div>
-				<div class="col-md-2 col-4 my-auto "><small><b>Channel</b> </small></div>
-				<div class="col-md-10 col-8">
-					<select class="form-control">
-						<option value="FPX">FPX</option>
-						<option value="Credit Card">Credit Card</option>
-					</select>
-				</div>
-				<div class="col-md-2 col-4 my-auto "><small><b>Topup</b> </small></div>
-				<div class="col-md-10 col-8">
-					<!-- <input class="form-control mx-0" type="number" min="1" value="name" disabled=""> -->
-					<select class="form-control">
-						<option value="5">RM 5.00</option>
-						<option value="10">RM 10.00</option>
-						<option value="15">RM 15.00</option>
-						<option value="20">RM 20.00</option>
-						<option value="30">RM 30.00</option>
-						<option value="50">RM 50.00</option>
-					</select>
-				</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 my-1">
+                                <div class="card border-light">
+                                    <div class="card-body" style="background-color:powderblue">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <img src="https://app.oderje.com/images/oderje-logo.png" class="card-img d-block w-100"
+                                            alt="shop-logo">
+                                            </div>
+                                            <div class="col-8 text-right">
+                                                <small style="color:#FF6600">
+                                                    </i>Discount Voucher
+                                                </small>
+                                                <p>
+                                                    &#8722;<span id="discountVoucherValue">10</span>&#37;
+                                                </p>
+                                                <p class="mt-n3" style="font-size:10px">
+                                                    Valid till : <span id="discountVoucherEnd">01/10/2021</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1 border-top border-light">
+                                            <div class="col-8" style="height:20px">
+                                                <p class="mt-2" style="font-size:10px">
+                                                    By: <span id="discountVoucherFrom">Business 1</span>
+                                                    <br>
+                                                    Redeem at: <span id="discountVoucherFrom">Business 2</span>
+                                                </p>
+                                            </div>
 
-			</div>
-			<div class="d-none for_topup row mx-auto">
-				<div class="col-md-6 col-6  box bubble-high mt-2 bg-custom1 text-center" id="topup_cancel_btn">
-					<div class="h5 font-weight-bold text-white text-outline">Cancel</div>
-					
-				</div>
-				<div class="col-md-6 col-6  box bubble-high mt-2 bg-info text-center" id="topup_submit_btn">
-					<div class="h5 font-weight-bold text-white text-outline">Topup</div>
-					
-				</div>
-			</div>
-			<!-- for transfer pager -->
-			<div class=" for_transfer row bg-custom1 mx-auto  py-1 box bubble-high text-white" id="transfer_div">
-				<div class="col-md-12 col-12 my-2 text-left bg-info box bubble-high"><small><b>Sender Information</b> </small></div>
-				<div class="col-md-2 col-4 my-auto "><small><b>Name</b> </small></div>
-				<div class="col-md-10 col-8"><input class="form-control mx-0" type="text" value="name" disabled=""></div>
-				<div class="col-md-2 col-4 my-auto "><small><b>Account No</b> </small></div>
-				<div class="col-md-10 col-8"><input class="form-control mx-0" type="text" value="name" disabled=""></div>
-				
-				<div class="col-md-12 col-12 my-2 text-left bg-info box bubble-high"><small><b>Receiver Information</b> </small></div>
-				<div class="col-md-2 col-4 my-auto "><small><b>Name</b> </small></div>
-				<div class="col-md-10 col-8"><input class="form-control mx-0" type="text" value="name" ></div>
-				<div class="col-md-2 col-4 my-auto "><small><b>Account No</b> </small></div>
-				<div class="col-md-10 col-8"><input class="form-control mx-0" type="text" value="name"></div>
-				
-				<div class="col-md-12 col-12 my-2 text-left bg-info box bubble-high"><small><b>Transfer Information</b> </small></div>
-				<div class="col-md-2 col-4 my-auto "><small><b>Detail</b> </small></div>
-				<div class="col-md-10 col-8"><input class="form-control mx-0" type="text" value="name"></div>
-			</div>
-			<div class=" for_transfer row mx-auto">
-				<div class="col-md-6 col-6  box bubble-high mt-2 bg-custom1 text-center" id="transfer_cancel_btn">
-					<div class="h5 font-weight-bold text-white text-outline">Cancel</div>
-					
-				</div>
-				<div class="col-md-6 col-6  box bubble-high mt-2 bg-info text-center" id="transfer_submit_btn">
-					<div class="h5 font-weight-bold text-white text-outline">Transfer</div>
-					
-				</div>
-			</div>
-
-
-		</div>
-		<div class="col-md-2 d-none d-md-block "></div>
-	</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 my-1">
+                                
+                            </div>
+                            <div class="col-md-4 col-sm-6 my-1">
+                                
+                            </div>
+                            <div class="col-md-4 col-sm-6 my-1">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-header border-white bg-white text-center" id="headingtransactionHistory"
+                        data-toggle="collapse" data-target="#transactionHistory" aria-expanded="false"
+                        aria-controls="transactionHistory">
+                        <p class="text-center text-secondary">
+                            Transaction History&nbsp;&nbsp;<i class="fas fa-chevron-down fa-xs"></i>
+                        </p>
+                    </div>
+                    <div id="transactionHistory" class="collapse" aria-labelledby="headingtransactionHistory"
+                        data-parent="#accordion">
+                        <div class="card-body">
+                            <table class="table table-sm table-hover" id="transaction_list_div">
+                                <thead>
+                                    <tr class="bg-light">
+                                        <th><small>2020/02/02&nbsp;&nbsp;02:02:02</small></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Kafe Jutawan</td>
+                                        <td class="text-right text-danger">- RM 8.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>oderje account top up</td>
+                                        <td class="text-right text-success">RM 50.00</td>
+                                    </tr>
+                                </tbody>
+                                <thead>
+                                    <tr class="bg-light">
+                                        <th><small>2020/01/01&nbsp;&nbsp;01:01:01</small></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Kafe Jutawan</td>
+                                        <td class="text-right text-danger">- RM 8.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>oderje account top up</td>
+                                        <td class="text-right text-success">RM 50.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4">
+            <div class="card border-white">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card-body text-center">
+                            <div class="d-flex justify-content-center">
+                                <div class="p-1">
+                                    <button class="btn btn-sm" id="reload_btn" style="background-color:seashell;width:105px">
+                                        <i class="fas fa-plus"></i>
+                                        <br>
+                                        Reload Credit
+                                    </button>
+                                </div>
+                                <div class="p-1">
+                                    <button class="btn btn-sm" id="transfer_btn" style="background-color:seashell;width:105px">
+                                        <i class="fas fa-exchange-alt"></i>
+                                        <br>
+                                        Pay / Transfer
+                                    </button>
+                                </div>
+                                <div class="p-1">
+                                    <button class="btn btn-sm" id="withdraw_btn" style="background-color:seashell;width:105px">
+                                        <i class="fas fa-hand-holding"></i>
+                                        <br>
+                                        Widthraw
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-n4">
+                        <div class="card-body text-center">
+                            <div class="d-flex justify-content-center">
+                                <div class="p-1">
+                                    <button class="btn btn-sm" id="help_btn" style="background-color:seashell;width:105px">
+                                        <i class="fas fa-question-circle"></i>
+                                        <br>
+                                        Help
+                                    </button>
+                                </div>
+                                <div class="p-1">
+                                    <button class="btn btn-sm" id="profile_btn" style="background-color:seashell;width:105px">
+                                        <i class="fas fa-user-circle"></i>
+                                        <br>
+                                        My Profile
+                                    </button>
+                                </div>
+                                <div class="p-1">
+                                    <button class="btn btn-sm" id="sign_out_btn" style="background-color:seashell;width:105px">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        <br>
+                                        Log out
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
-	$(document).ready(function(){
-		initializer();
+    
+    $(document).ready(function(){
+        
+        if(!$_USER['login_status'])
+        {
+           window.location.href = "../login.php?d="+url_encode("backpath="+$_GET['path']);
+        }
 
-		$("#transfer_submit_btn").on("click",function(){
-		
-		});
-		$("#transfer_btn").on("click",function(){
-			$(this).removeClass("blur");
-			$("#topup_btn").addClass("blur");
-			$("#withdraw_btn").addClass("blur");
-			$(".for_transfer").removeClass("d-none");
-			$(".for_topup").addClass("d-none");
-			$(".for_withdraw").addClass("d-none");
+        $("#profile_btn").click(function(){
+            window.location.href = "../profile";
+        });
 
-		});
-		$("#topup_btn").on("click",function(){
-			$(this).removeClass("blur");
-			$("#transfer_btn").addClass("blur");
-			$("#withdraw_btn").addClass("blur");
-			$(".for_topup").removeClass("d-none");
-			$(".for_transfer").addClass("d-none");
-			$(".for_withdraw").addClass("d-none");
-		});
-		$("#withdraw_btn").on("click",function(){
-			$(this).removeClass("blur");
-			$("#topup_btn").addClass("blur");
-			$("#transfer_btn").addClass("blur");
-			$(".for_withdraw").removeClass("d-none");
-			$(".for_transfer").addClass("d-none");
-			$(".for_topup").addClass("d-none");
-		});
 
-       	$("#transfer_cancel_btn").on("click",function(){
-       		window.location.href = $_GET['backpath'];
-       	});
-	});
+        $("#sign_out_btn").click(function(){
 
-	function initializer(){
-		if(!$_USER['login_status'])
-		{
-			let path = $_USER['path'];
-			if(path == home() || path == (home()+"index.php"))
-	        {
-	            window.location.href = "login.php?d="+url_encode("backpath="+$_USER['path']);
-	        }
-	        else
-	        {
-	            window.location.href = "../login.php?d="+url_encode("backpath="+$_USER['path']);
-	        }
+            if(confirm("Are you sure log out?"))
+            {
+                let path = $_USER['path'];
+                let url = "";
+                if(path == home() || path == (home()+"index.php"))
+                {
+                    url = "session.php";
+                }
+                else
+                {
+                    url = "../session.php";
+                }
+                $.post(url,
+                {
+                    function:"release_session"
+                },
+                function(data){
+                    if(data)
+                    {
+                        if(data.status == "ok")
+                        {
+                            //window.location.href = "index.php";
+                            if($_GET && $_GET['backpath'])
+                            {
+                                window.location.href = $_GET['backpath'];
+                            }
+                            else
+                            {
+                                window.location.href = "../index.php";
+                            }
 
-		}
-		else{
-			$("#name_display").text($_USER['name']);
-		}
-	}
+                        }
+                        else
+                        {
+                            alert("Sistem error, please wait and try again");
+                        }
+                    }
+                },"json").
+                fail(function(){
+                    //alert("uina");
+                });
+            }
+            
+        });
+    });
 </script>
+<!-- <?php include '../view/wallet_page/footer.php' ?> -->

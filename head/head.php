@@ -1,6 +1,6 @@
 <head>
 	<meta charset="utf-8">
-	<link rel="icon" href="https://app.oderje.com/images/logo.ico"/>
+    <link rel="icon" href="img/oderje-favicon.png?">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/text.css" rel="stylesheet">
@@ -13,8 +13,13 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.min.js"></script>
+    <script src="js/number-input-spinner.js"></script>
    
     <script src="controller/Session.js"></script>
     <script src="controller/encodedecode.js"></script>
     <script src="controller/PARAM.js"></script>
+
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <!-- <script src="external/jquery/jquery.js"></script> -->
+    <script src="js/jquery-ui.min.js"></script>
 </head>

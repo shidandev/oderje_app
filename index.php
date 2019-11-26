@@ -12,6 +12,11 @@
 <script>
 	$(document).ready(function(){
 		
+		if(!$_USER['login_status'])
+        {
+           $("#wallet_balance").text("login");
+           $("#label1").text("");
+        }
 
 		if($_GET['function'])
 		{

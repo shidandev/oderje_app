@@ -17,7 +17,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row justify-content-center mt-3">
+		<!-- <div class="row justify-content-center mt-3">
 			<div class="col-12 text-secondary">
 				<p> - or - </p>
 			</div>
@@ -25,6 +25,6 @@
 				<ion-icon name="qr-scanner" style="font-size:65px"></ion-icon>
 				<p class="text-secondary mt-n3">scan</p>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
