@@ -293,7 +293,7 @@
 													},
 													function(data){
 														console.log(data);
-														// window.location.href = "receipt/?";
+														window.location.href = "../receipt/?d="+url_encode("bill_id="+$_GET['bill_id']);
 													},"json");
 													
 												}
@@ -325,7 +325,7 @@
 													},
 													function(data){
 														console.log(data);
-														// window.location.href = "receipt/?";
+														window.location.href = "../receipt/?d="+url_encode("bill_id="+$_GET['bill_id']);
 													},"json");
 													
 												}
@@ -340,7 +340,7 @@
 								}
 								else
 								{
-									alert("Succesfully paid2");
+									alert("Succesfully paid");
 									$.post("https://app.oderje.com/api/customer_order",
 									{
 										function:"customer_make_instant_order",
@@ -349,7 +349,7 @@
 									},
 									function(data){
 										console.log(data);
-										// window.location.href = "receipt/?";
+										window.location.href = "../receipt/?d="+url_encode("bill_id="+$_GET['bill_id']);
 									},"json");
 									
 								}
