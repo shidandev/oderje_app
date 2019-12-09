@@ -9,8 +9,8 @@
     </button>
 
     <span  class="d-none header-logo">
-        <img src="../img/oderje-logo.png" class="img-fluid d-block d-sm-none ml-auto"
-            style="width:30%;margin-top:-35px" onclick="homePage">
+        <img src="../img/oderje-logo.png" class="img-fluid d-block d-sm-none ml-auto btn_homepage"
+            style="width:30%;margin-top:-35px" >
     </span>
     <div class="col-2">
         <a href="http://www.oderje.com/" class="d-none header-logo">
@@ -81,7 +81,7 @@
 
     ($_USER['path'] == "/www.oderje.com/index.php" || $_USER['path'] == "/www.oderje.com/")?$(".header-logo").addClass("d-none"):$(".header-logo").removeClass("d-none");
 
-    ($_USER['path'] == "/www.oderje.com/basket/index.php" || $_USER['path'] == "/www.oderje.com/basket/"  )?$("#basket_custom").removeClass("d-none"):$("#basket_custom").addClass("d-none");
+    //($_USER['path'] == "/www.oderje.com/basket/index.php" || $_USER['path'] == "/www.oderje.com/basket/"  )?$("#basket_custom").removeClass("d-none"):$("#basket_custom").addClass("d-none");
 
     if($_USER['login_status'] == true)
     {
@@ -94,6 +94,10 @@
         // $(".wallet_div").addClass("d-none");
         // $(".login_nav_div").removeClass("d-none");
     }
+
+    $(".btn_homepage").click(function(){
+        window.location.href = oderje_home;
+    });
 
     $("#basket_btn").click(function(){
         let path = $_USER['path'];

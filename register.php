@@ -144,7 +144,7 @@
                     }
                     else
                     {
-                        alert("ui");
+                        //console.log("ui");
                     }
                 },"json");
             }

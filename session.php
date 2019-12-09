@@ -12,11 +12,31 @@
 			$key = $_REQUEST['key'];
 			$name = $_REQUEST['name'];
 			$uid = $_REQUEST['uid'];
+			$username = $_REQUEST['username'];
+			$email = $_REQUEST['email'];
+			$phone = $_REQUEST['phone'];
+			$address = $_REQUEST['address'];
+			$postcode = $_REQUEST['postcode'];
+			$state = $_REQUEST['state'];
+			$country = $_REQUEST['country'];
+			$gender = $_REQUEST['gender'];
+			$dob = $_REQUEST['dob'];
+
 
 			$_SESSION['cid'] = $cid;
 			$_SESSION['key'] = $key;
 			$_SESSION['name'] = $name;
 			$_SESSION['uid'] = $uid;
+
+			$_SESSION['username'] = $username;
+			$_SESSION['email'] = $email;
+			$_SESSION['phone'] = $phone;
+			$_SESSION['address'] = $address;
+			$_SESSION['postcode'] = $postcode;
+			$_SESSION['state'] = $state;
+			$_SESSION['country'] = $country;
+			$_SESSION['gender'] = $gender;
+			$_SESSION['dob'] = $dob;
 
 			$_SESSION['login_status'] = TRUE;
 			$data['status'] = "ok";
