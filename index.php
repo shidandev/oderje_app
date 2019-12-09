@@ -1,5 +1,6 @@
 <html>
 	
+	
 	<?php include_once("head/head.php");?>
 <body>
 	<?php include_once("controller/user.php");?>
