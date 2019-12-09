@@ -1,3 +1,7 @@
+var oderje_home = "https://www.oderje.com/";
+var typ_url = "https://dev2.toyyibpay.com/";
+var oderje_url = "https://app.oderje.com/";
+
 function url_encode(str)
 {
 	// Create Base64 Object

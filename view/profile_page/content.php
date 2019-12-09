@@ -12,35 +12,35 @@
                     <tbody>
                         <tr>
                             <th>Name</th>
-                            <td>Muhammad Amin bin Mohd Faudzi</td>
+                            <td id="userFullname">Muhammad Amin bin Mohd Faudzi</td>
                         </tr>
                         <tr>
                             <th>Username</th>
-                            <td>aminfaudzi</td>
+                            <td id="username">aminfaudzi</td>
                         </tr>
                         <tr>
                             <th>E-mail</th>
-                            <td>aminfaudzi@gmail.com</td>
+                            <td id="email">aminfaudzi@gmail.com</td>
                         </tr>
                         <tr>
                             <th>Telephone</th>
-                            <td>+6 018 4633273</td>
+                            <td>+6 <span id="phone"> 018 4633273</span></td>
                         </tr>
                         <tr>
                             <th>Adress</th>
                             <td>
-                                24, Taman Anggerik<br>
-                                Jalan Junjong, 09000 Kulim,<br>
-                                Kedah, Malaysia
+                                <span id="address">24, Taman Anggerik</span><br>
+                                <span id="postcode"></span> , <span id="state"></span><br>
+                                <span id="country"></span>
                             </td>
                         </tr>
                         <tr>
                             <th>Gender</th>
-                            <td>Male</td>
+                            <td id="gender">Male</td>
                         </tr>
                         <tr>
                             <th>D.O.B</th>
-                            <td>14 January 1992</td>
+                            <td id="dob">14 January 1992</td>
                         </tr>
                     </tbody>
                 </table>
@@ -61,6 +61,18 @@
         {
            window.location.href = "../login.php?d="+url_encode("backpath="+$_GET['path']);
         }
+
+        $("#userFullname").text($_USER['name']);
+        $("#username").text($_USER['username']);
+        $("#email").text($_USER['email']);
+        $("#phone").text($_USER['phone']);
+        $("#address").text($_USER['address']);
+        $("#postcode").text($_USER['postcode']);
+        $("#state").text($_USER['state']);
+        $("#country").text($_USER['country']);
+        $("#gender").text($_USER['gender']);
+        $("#dob").text($_USER['dob']);
+
     });
 </script>
 <!-- <?php include '../inc/back-to-top-button.php' ?> -->

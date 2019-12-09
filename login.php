@@ -132,7 +132,16 @@
                             cid:data.customer_ID,
                             key:data.key,
                             name:data.fullname,
-                            uid:data.uid
+                            uid:data.uid,
+                            username:data.username,
+                            email:data.email,
+                            phone:data.phone,
+                            address:data.address,
+                            postcode:data.postcode,
+                            state:data.state,
+                            country:data.country,
+                            gender:data.gender,
+                            dob:data.dob
                         },
                         function(data){
                             //console.log(data);
@@ -140,7 +149,7 @@
                             {
                                 if($_GET['merchant_uid'] && $_GET['merchant_id'] && $_GET['price'])
                                 {
-                                    var url = "payment/index.php?d="+url_encode("UID="+$_GET['merchant_uid']+"&MID="+$_GET['merchant_id']+"&PRICE="+$_GET['price']);
+                                    var url = "payment/index.php?d="+url_encode("UID="+$_GET['merchant_uid']+"&MID="+$_GET['merchant_id']+"&PRICE="+$_GET['price']+"&bill_id="+$_GET['bill_id']);
                                     console.log(url);
                                     window.location.href = url;
                                 }

@@ -5,5 +5,7 @@
 	<?php include_once("../controller/user.php");?>
 	<?php include_once("../view/common/navbar.php");?>
 	<?php include_once("../view/basket_page/content.php");?>
+
+	
 </body>
 </html>

@@ -13,14 +13,9 @@
 
 			<div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordian_div" style="max-height: 100px;overflow-y: scroll;">
 				<div class="card-body parent_product p-1">
-					<div class="row  p-1">
-						<!-- <?php include_once("../view/product_page/product-card.php");?> -->
-						
-					</div>
-
-
-
-
+					<!-- <div class="row parent_product"> -->
+						<?php //include("product-card.php")?>
+					<!-- </div> -->
 				</div>
 			</div>
 		</div>
@@ -101,13 +96,15 @@
 		}
 
 		function initialize(){
-			$.post("https://app.oderje.com/api/package_product",
+			$.post(oderje_url+"api/package_product",
 			{ 
-				function: "get_list"
+				function: "get_list",
+				search:$_GET['search']
+
 			}, 
 			function (data) {
 				// console.log(data);
-				if(data){
+				if(data.list_product){
 					prod_count = data.list_product.length;
 					var setView = 0;
 	      			// prod_count = 5;
@@ -149,6 +146,7 @@
 				$("#content").removeClass("d-none");
 			});
 
+
 		}
 
 		function grabItem(btn)
@@ -158,6 +156,7 @@
 
 			
 			let cur_product = find(product_list,pbm_id);
+			
 			modal_setup(cur_product);
 			//console.table(cur_product.getpbm_id());
 		}	

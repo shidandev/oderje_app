@@ -3,7 +3,7 @@
         <div class="col-md-6">
             <select class="form-control" id="account_option_btn">
                 <option>Main Account</option>
-                <option>Rewards</option>
+                <option>Float Account</option>
             </select>
         </div>
     </div>
@@ -18,17 +18,17 @@
                         RM&nbsp;
                     </span>
                     <span class="mr-n2" id="amount-big" style="font-size:36px">
-                        500
+                        0
                     </span>
                     <span class="align-bottom">&sdot;</span>
                     <span id="amount-small">
-                        99
+                        00
                     </span>
                 </div>
                 <div class="card-footer bg-white text-center" style="border-color:#FF6600">
                     <span id="accountName">Muhammad Amin bin Mohd Faudzi</span>
                     <br>
-                    <span id="accountNumber">10011888</span>
+                    <span id="accountNumber">00000000</span>
                 </div>
             </div>
             <div id="accordion">
@@ -276,7 +276,33 @@
             window.location.href = "../profile";
         });
 
+        $.post(oderje_url+"api/customer",
+        {
+            function:"user_typ_key",
+            u_id:$_USER['uid']
+        },
+        function(data){
+            if(data.status == "ok")
+            {
+                $.post(typ_url+"api/typ_accountBalance",
+                {
+                    function:"vab_amount",
+                    key:data.typ_key
+                },function(data2){
 
+                    var amount = ((data2.vab_amount).toString()).split(".");
+                    //console.log(amount[0]);
+                    $("#amount-big").text(amount[0]);
+                    $("#amount-small").text(amount[1]);
+
+                    $("#accountNumber").text(data2.vab_no);
+                    
+                },"json");
+
+                $("#accountName").text($_USER['name']);
+            }
+
+        },"json");
         $("#sign_out_btn").click(function(){
 
             if(confirm("Are you sure log out?"))
