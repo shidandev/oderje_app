@@ -22,7 +22,7 @@
 		{
 			let price  = ($_GET['price'])? $_GET['price']:0;
 			switch($_GET['function']){
-				case "payment" : {window.location = "payment?d="+url_encode("UID="+$_GET['u_id']+"&MID="+$_GET['mid']+"&PRICE="+price)};break;
+				case "payment" : {window.location = "payment?d="+url_encode("UID="+$_GET['u_id']+"&MID="+$_GET['mid']+"&PRICE="+price+"&bill_id="+$_GET['bill_id'])};break;
 				case "product" : {window.location = "product?d="+url_encode("UID="+$_GET['u_id']+"&MID="+$_GET['mid']);};break;
 				case "package" : {window.location = "package?d="+url_encode("UID="+$_GET['u_id']+"&MID="+$_GET['mid']);};break;
 			}
