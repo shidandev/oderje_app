@@ -1,0 +1,29 @@
+.text-outline{
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;	
+}
+.text-outline-danger{
+	text-shadow: -1px 0 #dc3545, 0 1px #dc3545, 1px 0 #dc3545, 0 -1px #dc3545;
+}
+
+.text-outline-warning{
+	text-shadow: -1px 0 #ffc107, 0 1px #ffc107, 1px 0 #ffc107, 0 -1px #ffc107;
+}
+
+.text-outline-success{
+	text-shadow: -1px 0 #28a745, 0 1px #28a745, 1px 0 #28a745, 0 -1px #28a745;
+}
+
+.text-outline-info{
+	text-shadow: -1px 0 #17a2b8, 0 1px #17a2b8, 1px 0 #17a2b8, 0 -1px #17a2b8;
+}
+.text-outline-primary{
+	text-shadow: -1px 0 #007bff, 0 1px #007bff, 1px 0 #007bff, 0 -1px #007bff;
+}
+
+.text-outline-custom1{
+	text-shadow: -1px 0 #7F1C1C, 0 1px #7F1C1C, 1px 0 #7F1C1C, 0 -1px #7F1C1C;
+}
+
+.text-custom1{
+	color: #7F1C1C;
+}

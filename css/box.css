@@ -1,0 +1,75 @@
+.box{
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	border-radius: 1px;
+}
+
+.box-danger{
+	border-color: #dc3545;
+}
+
+.box-warning{
+	border-color: #ffc107;
+}
+.box-success{
+	border-color: #28a745;
+}
+
+.box-info{
+	border-color: #17a2b8;
+}
+
+.box-primary{
+	border-color: #007bff;
+}
+
+
+
+.bubble{
+	border-radius: 1px;
+}
+.bubble-1{
+	border-radius: 1px;
+}
+
+.bubble-2{
+	border-radius: 2px;
+}
+
+.bubble-3{
+	border-radius: 3px;
+}
+
+.bubble-4{
+	border-radius: 4px;
+}
+.bubble-5{
+	border-radius: 5px;
+}
+.bubble-6{
+	border-radius: 6px;
+}
+.bubble-7{
+	border-radius: 7px;
+}
+.bubble-8{
+	border-radius: 8px;
+}
+.bubble-9{
+	border-radius: 9px;
+}
+.bubble-10{
+	border-radius: 10px;
+}
+
+.bubble-low{
+	border-radius: 2px;
+}
+
+.bubble-mid{
+	border-radius: 5px;
+}
+.bubble-high{
+	border-radius: 10px;
+}

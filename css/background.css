@@ -1,0 +1,23 @@
+.bg-darkpeach{
+	background-color: #fff39a;
+}
+
+
+.bg-margenta{
+	background-color: #8b008b;
+}
+
+.bg-custom1{
+	background-color: #7F1C1C;
+}
+
+.blur{
+	-webkit-filter: blur(1px);
+	-moz-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);
+	filter: blur(1px);
+	width: auto;
+	height: auto;
+	background-color: #ccc;
+}
