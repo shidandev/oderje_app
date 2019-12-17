@@ -26,9 +26,9 @@
                     </span>
                 </div>
                 <div class="card-footer bg-white text-center" style="border-color:#FF6600">
-                    <span id="accountName">Muhammad Amin bin Mohd Faudzi</span>
+                    <span id="accountName"></span>
                     <br>
-                    <span id="accountNumber">00000000</span>
+                    <span id="accountNumber"></span>
                 </div>
             </div>
             <div id="accordion">
@@ -207,21 +207,21 @@
                         <div class="card-body text-center">
                             <div class="d-flex justify-content-center">
                                 <div class="p-1">
-                                    <button class="btn btn-sm" id="reload_btn" style="background-color:seashell;width:105px">
+                                    <button class="btn btn-sm" id="reload_btn" style="background-color:#FFF2F4;width:105px">
                                         <i class="fas fa-plus"></i>
                                         <br>
                                         Reload Credit
                                     </button>
                                 </div>
                                 <div class="p-1">
-                                    <button class="btn btn-sm" id="transfer_btn" style="background-color:seashell;width:105px">
+                                    <button class="btn btn-sm" id="transfer_btn" style="background-color:#FFF2F4;width:105px">
                                         <i class="fas fa-exchange-alt"></i>
                                         <br>
                                         Pay / Transfer
                                     </button>
                                 </div>
                                 <div class="p-1">
-                                    <button class="btn btn-sm" id="withdraw_btn" style="background-color:seashell;width:105px">
+                                    <button class="btn btn-sm" id="withdraw_btn" style="background-color:#FFF2F4;width:105px">
                                         <i class="fas fa-hand-holding"></i>
                                         <br>
                                         Widthraw
@@ -232,23 +232,23 @@
                     </div>
                     <div class="col-12 mt-n4">
                         <div class="card-body text-center">
-                            <div class="d-flex justify-content-center">
-                                <div class="p-1">
-                                    <button class="btn btn-sm" id="help_btn" style="background-color:seashell;width:105px">
+                            <div class="d-flex justify-content-center ">
+                                <div class="p-1" >
+                                    <button class="btn btn-sm" id="help_btn" style="background:#FFF2F4;width:105px">
                                         <i class="fas fa-question-circle"></i>
                                         <br>
                                         Help
                                     </button>
                                 </div>
                                 <div class="p-1">
-                                    <button class="btn btn-sm" id="profile_btn" style="background-color:seashell;width:105px">
+                                    <button class="btn btn-sm" id="profile_btn" style="background-color:#FFF2F4;width:105px">
                                         <i class="fas fa-user-circle"></i>
                                         <br>
                                         My Profile
                                     </button>
                                 </div>
                                 <div class="p-1">
-                                    <button class="btn btn-sm" id="sign_out_btn" style="background-color:seashell;width:105px">
+                                    <button class="btn btn-sm" id="sign_out_btn" style="background-color:#FFF2F4;width:105px">
                                         <i class="fas fa-sign-out-alt"></i>
                                         <br>
                                         Log out
@@ -348,6 +348,11 @@
                 });
             }
             
+        });
+
+        $("#reload_btn").click(function(){
+
+            window.location.href = "../reload";
         });
     });
 </script>

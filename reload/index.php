@@ -4,6 +4,6 @@
 <body>
 	<?php include_once("../controller/user.php");?>
 	<?php include_once("../view/common/navbar.php");?>
-	<?php include_once("../view/payment_page/content2.php");?>
+	<?php include_once("../view/reload_page/content.php");?>
 </body>
 </html>

@@ -109,6 +109,11 @@
         
         $(document).ready(function(){
             
+            if($_USER['login_status'])
+            {
+                window.location.href = "wallet";
+            }
+
             $(".cancel_back_btn").on("click",function(){
                 window.location.href = "index.php";
             });

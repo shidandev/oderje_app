@@ -293,7 +293,7 @@
 													},
 													function(data){
 														console.log(data);
-														// window.location.href = "receipt/?";
+														window.location.href = "../receipt/?d="+url_encode("bill_id="+$_GET['bill_id']);
 													},"json");
 													
 												}
@@ -325,7 +325,7 @@
 													},
 													function(data){
 														console.log(data);
-														// window.location.href = "receipt/?";
+														window.location.href = "../receipt/?d="+url_encode("bill_id="+$_GET['bill_id']);
 													},"json");
 													
 												}
@@ -340,7 +340,7 @@
 								}
 								else
 								{
-									alert("Succesfully paid2");
+									alert("Succesfully paid");
 									$.post("https://app.oderje.com/api/customer_order",
 									{
 										function:"customer_make_instant_order",
@@ -349,7 +349,7 @@
 									},
 									function(data){
 										console.log(data);
-										// window.location.href = "receipt/?";
+										window.location.href = "../receipt/?d="+url_encode("bill_id="+$_GET['bill_id']);
 									},"json");
 									
 								}
@@ -703,14 +703,16 @@
 				}
 				$(".list_voucher").append(html);
 				voucher_listener();
-			}}
+			}
+		}
 		function reset_voucher_selection(){
 			$(".voucher_card").each(function(){
 				($(this).hasClass("bg-info"))?$(this).removeClass("bg-info").addClass("bg-warning "):$(this).addClass("bg-info");
 				($(this).find(".v_name").hasClass("text-outline-info"))?$(this).find(".v_name").addClass("text-outline-info"):$(this).find(".v_name").addClass("text-outline-info");
 				($(this).find(".v_amount").hasClass("bg-warning"))?$(this).find(".v_amount").removeClass("bg-warning ").addClass("bg-info"):$(this).find(".v_amount").removeClass("bg-warning");
 
-			});}
+			});
+		}
 		function voucher_listener(){
 
 			$(".voucher_card").on("click",function(){
@@ -730,7 +732,8 @@
 				$("#vbalance").val((balance > cur_price_need_topay)? cur_price_need_topay:balance);
 
 
-			});}
+			});
+		}
 	});
 
 

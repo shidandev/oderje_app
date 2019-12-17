@@ -1,6 +1,8 @@
 var oderje_home = "https://www.oderje.com/";
-var typ_url = "https://dev2.toyyibpay.com/";
 var oderje_url = "https://app.oderje.com/";
+//var typ_url = "https://dev2.toyyibpay.com/";
+var typ_url = "https://app.toyyibpay.com/";
+
 
 function url_encode(str)
 {

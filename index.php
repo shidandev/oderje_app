@@ -1,5 +1,6 @@
 <html>
 	
+
 	<?php include_once("head/head.php");?>
 <body>
 	<?php include_once("controller/user.php");?>
@@ -30,7 +31,10 @@
 
 		document.title = "Welcome to Oderje";
 
+ 
 
+
+ 
 
 		$("#search-oderje").on("click",function(){
 			var search_str = $("#search_str").val().trim();

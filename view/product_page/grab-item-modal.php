@@ -133,15 +133,16 @@
                             </div>
                             <script>
                                 $("#add_to_backet_btn").on('click',function(){
+                                    
                                     let pbm_id = $(this).find('input').val();
                                     let cust_id = $_USER['cid'];
                                     let quantity = $("#quantity").val();
 
                                     if(parseInt(quantity) > 0)
                                     {
-                                        $.post("https://app.oderje.com/api/customer_order",
+                                        $.post(oderje_url+"api/customer_basket",
                                         {
-                                            function:"customer_insert_basket",
+                                            function:"insert_basket",
                                             pbm_id:pbm_id,
                                             cid:cust_id,
                                             quantity:quantity
@@ -149,7 +150,8 @@
                                         function(data){
                                             if(data.status == "ok")
                                             {
-                                                alert("Succesfully add to basket");
+                                                //alert("Succesfully add to basket");
+                                                window.location.href = "../basket/";
                                             }
                                             else{
                                                 alert("Try again, check internet connection");
@@ -168,5 +170,7 @@
 </div>
 
 <script>
-    $("input[type='number']").inputSpinner()
+    $("input[type='number']").inputSpinner();
+
+
 </script>

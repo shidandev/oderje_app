@@ -18,17 +18,16 @@
             <div class="col-md-3">
             </div>
             <div class="col-md-6">
-              <form class="form-group mt-n1 mb-n2">
+              <!-- <form class="form-group mt-n1 mb-n2"> -->
                 <div class="input-group">
-                  <input type="text" class="form-control form-control-sm" placeholder="search"
-                  style="border-color:#FC9732">
+                  <input type="text" id="search_input" class="form-control form-control-sm" placeholder="search" style="border-color:#FC9732">
                   <div class="input-group-append">
                     <button id="search-oderje" class="btn btn-sm text-white" style="background:#FC9732" type="button">
                       <i class="fas fa-search"></i>
                     </button>
                   </div>
                 </div>
-              </form>
+              <!-- </form> -->
             </div>
             <div class="col-md-3">
             </div>
@@ -183,4 +182,11 @@
     }
   });
   
+  $("#search-oderje").on("click",function(){
+    let search = $("#search_input").val().trim();
+    let path = window.location.pathname+"?d="+url_encode("search="+search);
+
+    window.location.href = path;
+      
+  });
 </script>

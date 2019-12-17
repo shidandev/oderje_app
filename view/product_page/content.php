@@ -4,6 +4,7 @@
 
 <div id="content" class="container-fluid pb-5 d-none" style="margin-bottom:100px">
 	<div class="accordion" id="accordian_div" style="position: sticky;" >
+		
 		<div class="card ">
 			<div class="card-header p-0 m-0 bg-warning" id="product_div">
 				<button class="btn btn-link col-12" type="button" data-toggle="collapse" data-target="#collapse1" >
@@ -21,7 +22,7 @@
 		</div>
 		<div class="card">
 			<div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordian_div" style="max-height: 100px;overflow-y: scroll;">
-				<div class="card-body ">
+				<div class="card-body parent_package">
 					
 				</div>
 			</div>
@@ -33,9 +34,9 @@
 
 			
 		</div>
+		
 	</div>
 </div>
-
 
 
 <script>
@@ -124,6 +125,12 @@
 
 	    			}
 				}
+				else
+				{
+					$(".parent_product").append("Search product not available");
+					$(".parent_package").append("Search package not available");
+					
+				}
 			}, "json").
 			done(function(){
 
@@ -139,7 +146,7 @@
 		        	}
 		        	
 		        });
-		        console.log(max);
+		        //console.log(max);
 		        $(".product_card").css("min-height",310);
 		        // alert("ui");
 				$("#loading").addClass("d-none");
