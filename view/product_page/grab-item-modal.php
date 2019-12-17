@@ -133,16 +133,25 @@
                             </div>
                             <script>
                                 $("#add_to_backet_btn").on('click',function(){
+<<<<<<< HEAD
                                     
+=======
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
                                     let pbm_id = $(this).find('input').val();
                                     let cust_id = $_USER['cid'];
                                     let quantity = $("#quantity").val();
 
                                     if(parseInt(quantity) > 0)
                                     {
+<<<<<<< HEAD
                                         $.post(oderje_url+"api/customer_basket",
                                         {
                                             function:"insert_basket",
+=======
+                                        $.post("https://app.oderje.com/api/customer_order",
+                                        {
+                                            function:"customer_insert_basket",
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
                                             pbm_id:pbm_id,
                                             cid:cust_id,
                                             quantity:quantity
@@ -150,8 +159,12 @@
                                         function(data){
                                             if(data.status == "ok")
                                             {
+<<<<<<< HEAD
                                                 //alert("Succesfully add to basket");
                                                 window.location.href = "../basket/";
+=======
+                                                alert("Succesfully add to basket");
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
                                             }
                                             else{
                                                 alert("Try again, check internet connection");
@@ -170,7 +183,11 @@
 </div>
 
 <script>
+<<<<<<< HEAD
     $("input[type='number']").inputSpinner();
 
 
+=======
+    $("input[type='number']").inputSpinner()
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
 </script>

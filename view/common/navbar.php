@@ -9,11 +9,21 @@
     </button>
 
     <span  class="d-none header-logo">
+<<<<<<< HEAD
         <img src="../img/oderje-logo.png?" class="img-fluid d-block d-sm-none ml-auto btn_homepage" style="width:30%;margin-top:-35px" >
     </span>
     <div class="col-2">
         <a href="http://www.oderje.com/" class="d-none header-logo">
             <img src="../img/oderje-logo.png?" class="img-fluid d-none d-sm-block mt-2" style="width:80%">
+=======
+        <img src="../img/oderje-logo.png" class="img-fluid d-block d-sm-none ml-auto btn_homepage"
+            style="width:30%;margin-top:-35px" >
+    </span>
+    <div class="col-2">
+        <a href="http://www.oderje.com/" class="d-none header-logo">
+            <img src="../img/oderje-logo.png" class="img-fluid d-none d-sm-block mt-2"
+                style="width:80%">
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
         </a>
     </div>
 
@@ -77,7 +87,11 @@
     //all navigation bar logic here
     $("#fullname").text(($_USER['name'])? $_USER['name']:"");
 
+<<<<<<< HEAD
     ($_USER['path'] == "/www.oderje.com/index.php" || $_USER['path'] == "/www.oderje.com/" || $_USER['path'] == "/" || $_USER['path'] == "/index.php")?$(".header-logo").addClass("d-none"):$(".header-logo").removeClass("d-none");
+=======
+    ($_USER['path'] == "/www.oderje.com/index.php" || $_USER['path'] == "/www.oderje.com/")?$(".header-logo").addClass("d-none"):$(".header-logo").removeClass("d-none");
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
 
     //($_USER['path'] == "/www.oderje.com/basket/index.php" || $_USER['path'] == "/www.oderje.com/basket/"  )?$("#basket_custom").removeClass("d-none"):$("#basket_custom").addClass("d-none");
 
@@ -160,6 +174,7 @@
             $("#collapseGeneralContent").slideUp("fast");
         }
     });
+<<<<<<< HEAD
 
     $.post(oderje_url+"api/customer",
         {
@@ -183,6 +198,8 @@
             }
 
         },"json");
+=======
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
     // $(".sign_out_btn").click(function(){
 
     //     if(confirm("Are you sure log out?"))

@@ -109,11 +109,14 @@
         
         $(document).ready(function(){
             
+<<<<<<< HEAD
             if($_USER['login_status'])
             {
                 window.location.href = "wallet";
             }
 
+=======
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
             $(".cancel_back_btn").on("click",function(){
                 window.location.href = "index.php";
             });

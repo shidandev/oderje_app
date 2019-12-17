@@ -22,6 +22,9 @@
     <script src="../controller/encodedecode.js"></script>
     <script src="../controller/PARAM.js"></script>
     <script src="../modal/Product.js"></script>
+<<<<<<< HEAD
     <script src="../modal/ProductBasket.js"></script>
     <script src="../modal/BasketByMerchant.js"></script>
+=======
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
 </head>

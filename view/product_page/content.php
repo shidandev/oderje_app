@@ -4,7 +4,10 @@
 
 <div id="content" class="container-fluid pb-5 d-none" style="margin-bottom:100px">
 	<div class="accordion" id="accordian_div" style="position: sticky;" >
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
 		<div class="card ">
 			<div class="card-header p-0 m-0 bg-warning" id="product_div">
 				<button class="btn btn-link col-12" type="button" data-toggle="collapse" data-target="#collapse1" >
@@ -22,7 +25,11 @@
 		</div>
 		<div class="card">
 			<div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordian_div" style="max-height: 100px;overflow-y: scroll;">
+<<<<<<< HEAD
 				<div class="card-body parent_package">
+=======
+				<div class="card-body ">
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
 					
 				</div>
 			</div>
@@ -34,11 +41,18 @@
 
 			
 		</div>
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
 	</div>
 </div>
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
 <script>
 	$(document).ready(function(){
 		var product_list = new Array();
@@ -125,12 +139,15 @@
 
 	    			}
 				}
+<<<<<<< HEAD
 				else
 				{
 					$(".parent_product").append("Search product not available");
 					$(".parent_package").append("Search package not available");
 					
 				}
+=======
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
 			}, "json").
 			done(function(){
 
@@ -146,7 +163,11 @@
 		        	}
 		        	
 		        });
+<<<<<<< HEAD
 		        //console.log(max);
+=======
+		        console.log(max);
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
 		        $(".product_card").css("min-height",310);
 		        // alert("ui");
 				$("#loading").addClass("d-none");
