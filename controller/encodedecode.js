@@ -1,8 +1,19 @@
 var oderje_home = "https://www.oderje.com/";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 var oderje_url = "https://app.oderje.com/";
 //var typ_url = "https://dev2.toyyibpay.com/";
 var typ_url = "https://app.toyyibpay.com/";
 
+<<<<<<< HEAD
+=======
+=======
+var typ_url = "https://dev2.toyyibpay.com/";
+var oderje_url = "https://app.oderje.com/";
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 
 function url_encode(str)
 {

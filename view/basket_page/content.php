@@ -1,7 +1,19 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 <?php include_once("basket-quantity-modal.php")?>
 <div class="container-fluid" style="margin-bottom:120px">
   <div class="accordion" id="accordianGeneralStore">
     <!-- <div class="card border-white">
+<<<<<<< HEAD
+=======
+=======
+<div class="container-fluid" style="margin-bottom:120px">
+  <div class="accordion" id="accordianGeneralStore">
+    <div class="card border-white">
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
       <div class="card-header border-light" id="headingStore1" data-toggle="collapse" data-target="#collapseStore1"
         aria-expanded="false" aria-controls="collapseStore1" style="background-color:#EDF1FF">
         <div class="form-check">
@@ -22,6 +34,10 @@
         <div class="card-body">
           <div class="row">
             <div class="col-xl-3 col-md-6">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
               <div class="card border-light">
                 <div class="card-body">
                   <div class="form-check text-center">
@@ -82,20 +98,101 @@
                   </div>
                 </div>
              </div>
+<<<<<<< HEAD
+=======
+=======
+            
             </div>
           </div>
         </div>
       </div>
+      <div class="card border-white">
+        <div class="card-header border-light" id="headingStore2" data-toggle="collapse" data-target="#collapseStore2"
+          aria-expanded="false" aria-controls="collapseStore2" style="background-color:#EDF1FF">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="storeCheck2">
+            <label class="form-check-label" for="storeCheck2">
+              <span id="store-name">
+                Store Name
+              </span>
+            </label>
+            <br>
+            <span id="store-location">
+              <small>Location</small>
+            </span>
+            <i class="fas fa-chevron-down fa-xs float-right text-secondary"></i>
+          </div>
+        </div>
+        <div id="collapseStore2" class="collapse" aria-labelledby="headingStore2" data-parent="#accordianGeneralStore">
+          <div class="card-body">
+            <div class="row">
+              <?php include '../inc/basketProductCard.php'; ?>
+              <?php include '../inc/basketProductCard.php'; ?>
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
+            </div>
+          </div>
+        </div>
+      </div>
+<<<<<<< HEAD
       
     </div> -->
+=======
+<<<<<<< HEAD
+      
+    </div> -->
+=======
+      <div class="card border-white">
+        <div class="card-header border-light" id="headingStore3" data-toggle="collapse" data-target="#collapseStore3"
+          aria-expanded="false" aria-controls="collapseStore3" style="background-color:#EDF1FF">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="storeCheck3">
+            <label class="form-check-label" for="storeCheck3">
+              <span id="store-name">
+                Store Name
+              </span>
+            </label>
+            <br>
+            <span id="store-location">
+              <small>Location</small>
+            </span>
+            <i class="fas fa-chevron-down fa-xs float-right text-secondary"></i>
+          </div>
+        </div>
+        <div id="collapseStore3" class="collapse" aria-labelledby="headingStore3" data-parent="#accordianGeneralStore">
+          <div class="card-body">
+            <div class="row">
+             <!--  <?php include '../inc/basketProductCard.php'; ?>
+              <?php include '../inc/basketProductCard.php'; ?>
+              <?php include '../inc/basketProductCard.php'; ?>
+              <?php include '../inc/basketProductCard.php'; ?>
+              <?php include '../inc/basketProductCard.php'; ?>
+              <?php include '../inc/basketProductCard.php'; ?> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
     <div class="card border-white">
       <div class="card-body" style="background-color:#EDF1FF">
         <div class="row">
           <div class="col-8">
             Total selected items&#58;
           </div>
+<<<<<<< HEAD
           <div class="col-4 text-right" id="total_product">
             0
+=======
+<<<<<<< HEAD
+          <div class="col-4 text-right" id="total_product">
+            0
+=======
+          <div class="col-4 text-right">
+            4
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
           </div>
         </div>
         <div class="row">
@@ -103,7 +200,15 @@
             Total Price&#58;
           </div>
           <div class="col-7 text-right" style="font-size:larger">
+<<<<<<< HEAD
             RM&nbsp;<span id="totalPrice">0</span>
+=======
+<<<<<<< HEAD
+            RM&nbsp;<span id="totalPrice">0</span>
+=======
+            RM&nbsp;<span id="totalPrice">500,000.00</span>
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
           </div>
         </div>
         <div class="row border-top border-dark justify-content-center mt-2 mb-md-n3">
@@ -115,9 +220,21 @@
                   <div class="input-group">
                     <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                       <option selected>-choose-</option>
+<<<<<<< HEAD
                       <option value="1">Self Collect</option>
                       <option value="2" disabled="">Delivery (Coming Soon)</option>
                       <!-- <option value="3">In-store (coming soon)</option> -->
+=======
+<<<<<<< HEAD
+                      <option value="1">Self Collect</option>
+                      <option value="2" disabled="">Delivery (Coming Soon)</option>
+                      <!-- <option value="3">In-store (coming soon)</option> -->
+=======
+                      <option value="1">In-store</option>
+                      <option value="2">Self Collect</option>
+                      <option value="3">Delivery</option>
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
                     </select>
                     <div class="input-group-append">
                       <button class="btn btn-dark" type="button">
@@ -133,6 +250,10 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 </div>
 
 <script>
@@ -193,7 +314,10 @@
           console.log(temp);
           price += (temp['p_price']*temp['p_quantity']);
           console.log(price);
+<<<<<<< HEAD
           $("#totalPrice").text(price);
+=======
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
         });
 
 
@@ -277,4 +401,11 @@
     }
 
   });
+<<<<<<< HEAD
 </script>
+=======
+</script>
+=======
+</div>
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf

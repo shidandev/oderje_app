@@ -5,7 +5,11 @@
                 <tbody>
                     <tr>
                         <th>Name</th>
+<<<<<<< HEAD
                         <td>&nbsp;&#58;&nbsp;<span id="customerName"></span></td>
+=======
+                        <td>&nbsp;&#58;&nbsp;<span id="customerName">Muhammad Amin bin Mohd Faudzi</span></td>
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
                     </tr>
                     <tr id="total_item" >
                         <th>Total Item</th>

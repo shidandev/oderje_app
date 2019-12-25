@@ -198,6 +198,10 @@ class Product{
         html    += '                            [ Limited to 10 unit(s) only ]';
         html    += '                        </span>';
         html    += '                    </p>';
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
         // html    += '                    <p class="col-12 text-center mt-n2" style="font-size:10px">';
         // html    += '                        tag1, tag2, tag3, tag4, tag5';
         // html    += '                    </p>';
@@ -205,6 +209,18 @@ class Product{
         html    += '                <div class="float-right mt-2 mb-n2">';
         html    += '                    <a href="http://localhost/oderje.com/product-page/" style="text-decoration:none">';
         html    += '                        <button class="btn btn-sm btn-outline-info" style="font-size:14px" disabled>';
+<<<<<<< HEAD
+=======
+=======
+        html    += '                    <p class="col-12 text-center mt-n2" style="font-size:10px">';
+        html    += '                        tag1, tag2, tag3, tag4, tag5';
+        html    += '                    </p>';
+        html    += '                </div>';
+        html    += '                <div class="float-right mt-2 mb-n2">';
+        html    += '                    <a href="http://localhost/oderje.com/product-page/" style="text-decoration:none">';
+        html    += '                        <button class="btn btn-sm btn-outline-info" style="font-size:14px">';
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
         html    += '                            More info&nbsp;<i class="fas fa-info-circle"></i>';
         html    += '                        </button>';
         html    += '                    </a>';

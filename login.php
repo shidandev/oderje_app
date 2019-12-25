@@ -109,11 +109,20 @@
         
         $(document).ready(function(){
             
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
             if($_USER['login_status'])
             {
                 window.location.href = "wallet";
             }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
+>>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
             $(".cancel_back_btn").on("click",function(){
                 window.location.href = "index.php";
             });
