@@ -703,34 +703,16 @@
 				}
 				$(".list_voucher").append(html);
 				voucher_listener();
-<<<<<<< HEAD
 			}
 		}
-=======
-<<<<<<< HEAD
-			}
-		}
-=======
-			}}
->>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 		function reset_voucher_selection(){
 			$(".voucher_card").each(function(){
 				($(this).hasClass("bg-info"))?$(this).removeClass("bg-info").addClass("bg-warning "):$(this).addClass("bg-info");
 				($(this).find(".v_name").hasClass("text-outline-info"))?$(this).find(".v_name").addClass("text-outline-info"):$(this).find(".v_name").addClass("text-outline-info");
 				($(this).find(".v_amount").hasClass("bg-warning"))?$(this).find(".v_amount").removeClass("bg-warning ").addClass("bg-info"):$(this).find(".v_amount").removeClass("bg-warning");
 
-<<<<<<< HEAD
 			});
 		}
-=======
-<<<<<<< HEAD
-			});
-		}
-=======
-			});}
->>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 		function voucher_listener(){
 
 			$(".voucher_card").on("click",function(){
@@ -750,17 +732,8 @@
 				$("#vbalance").val((balance > cur_price_need_topay)? cur_price_need_topay:balance);
 
 
-<<<<<<< HEAD
 			});
 		}
-=======
-<<<<<<< HEAD
-			});
-		}
-=======
-			});}
->>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 	});
 
 

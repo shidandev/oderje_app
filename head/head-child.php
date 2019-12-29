@@ -19,20 +19,9 @@
     <script src="../js/number-input-spinner.js"></script>
   
     <script src="../controller/Session.js"></script>
-<<<<<<< HEAD
-    <script src="../controller/encodedecode.js?"></script>
-    <script src="../controller/PARAM.js"></script>
-    <script src="../modal/Product.js"></script>
-    <script src="../modal/ProductBasket.js"></script>
-    <script src="../modal/BasketByMerchant.js"></script>
-=======
     <script src="../controller/encodedecode.js"></script>
     <script src="../controller/PARAM.js"></script>
     <script src="../modal/Product.js"></script>
-<<<<<<< HEAD
     <script src="../modal/ProductBasket.js"></script>
     <script src="../modal/BasketByMerchant.js"></script>
-=======
->>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 </head>

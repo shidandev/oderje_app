@@ -18,37 +18,16 @@
             <div class="col-md-3">
             </div>
             <div class="col-md-6">
-<<<<<<< HEAD
               <!-- <form class="form-group mt-n1 mb-n2"> -->
                 <div class="input-group">
                   <input type="text" id="search_input" class="form-control form-control-sm" placeholder="search" style="border-color:#FC9732">
-=======
-<<<<<<< HEAD
-              <!-- <form class="form-group mt-n1 mb-n2"> -->
-                <div class="input-group">
-                  <input type="text" id="search_input" class="form-control form-control-sm" placeholder="search" style="border-color:#FC9732">
-=======
-              <form class="form-group mt-n1 mb-n2">
-                <div class="input-group">
-                  <input type="text" class="form-control form-control-sm" placeholder="search"
-                  style="border-color:#FC9732">
->>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
                   <div class="input-group-append">
                     <button id="search-oderje" class="btn btn-sm text-white" style="background:#FC9732" type="button">
                       <i class="fas fa-search"></i>
                     </button>
                   </div>
                 </div>
-<<<<<<< HEAD
               <!-- </form> -->
-=======
-<<<<<<< HEAD
-              <!-- </form> -->
-=======
-              </form>
->>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
             </div>
             <div class="col-md-3">
             </div>
@@ -203,10 +182,6 @@
     }
   });
   
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
   $("#search-oderje").on("click",function(){
     let search = $("#search_input").val().trim();
     let path = window.location.pathname+"?d="+url_encode("search="+search);
@@ -214,9 +189,4 @@
     window.location.href = path;
       
   });
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 </script>

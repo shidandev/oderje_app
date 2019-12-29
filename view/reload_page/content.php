@@ -81,18 +81,26 @@
 			let c_id = $_USER['cid'];
 			let amount = $("#Money").val();
 			let bank_code = $("input[name='paymentMethod']:checked").val();
-			let bank_name = $("input[name='paymentMethod']:checked").attr("bank-name");
-			
-			$.post(oderje_url+"/api/customer_topup",{
-				function:"topup_wallet_typ",
-				c_id:c_id,
-				amount:amount,
-				bank_code:bank_code,
-				bank_name:bank_name
-			},function(data){
-				console.log(data);
-				$("#temp").append(data.page);
-			},"json");
+            let bank_name = $("input[name='paymentMethod']:checked").attr("bank-name");
+            
+
+            console.log(bank_code);
+            if(parseFloat(amount) > 1.0 && bank_code != "" && bank_name !="")
+            {
+                $.post(oderje_url+"/api/customer_topup",{
+                    function:"topup_wallet_typ",
+                    c_id:c_id,
+                    amount:amount,
+                    bank_code:bank_code,
+                    bank_name:bank_name
+                },function(data){
+                    console.log(data);
+                    $("#temp").append(data.page);
+                },"json");
+            }
+			else{
+                alert("Please set amount more than RM 1.00");
+            }
 		});	
 
 

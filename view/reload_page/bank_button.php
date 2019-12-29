@@ -1,6 +1,6 @@
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="MB2U0227" value="MB2U0227">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="Maybank2U" id="MB2U0227" value="MB2U0227">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="MB2U0227">
                 <img src="../img/payment-logo/MB2U0227.png" class="img-fluid" alt="online banking" width="30px">
@@ -22,7 +22,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="BIMB0340" value="BIMB0340">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="Bank Islam" id="BIMB0340" value="BIMB0340">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="BIMB0340">
                 <img src="../img/payment-logo/BIMB0340.png" class="img-fluid" alt="online banking" width="30px">
@@ -33,7 +33,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="RHB0218" value="RHB0218">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="RHB Bank" id="RHB0218" value="RHB0218">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="RHB0218">
                 <img src="../img/payment-logo/RHB0218.png" class="img-fluid" alt="online banking" width="30px">
@@ -44,7 +44,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="PBB0233" value="PBB0233">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="Public Bank" id="PBB0233" value="PBB0233">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="PBB0233">
                 <img src="../img/payment-logo/PBB0233.png" class="img-fluid" alt="online banking" width="30px">
@@ -55,7 +55,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="AMBB0209" value="AMBB0209">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="AmBank" id="AMBB0209" value="AMBB0209">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="AMBB0209">
                 <img src="../img/payment-logo/AMBB0209.png" class="img-fluid" alt="online banking" width="30px">
@@ -66,7 +66,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="MBB0228" value="MBB0228">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="Maybank2E" id="MBB0228" value="MBB0228">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="MBB0228">
                 <img src="../img/payment-logo/MBB0228.png" class="img-fluid" alt="online banking" width="30px">
@@ -77,7 +77,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="BKRM0602" value="BKRM0602">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="Bank Rakyat" id="BKRM0602" value="BKRM0602">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="BKRM0602">
                 <img src="../img/payment-logo/BKRM0602.png" class="img-fluid" alt="online banking" width="30px">
@@ -88,7 +88,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="BMMB0341" value="BMMB0341">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="Bank Muamalat" id="BMMB0341" value="BMMB0341">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="BMMB0341">
                 <img src="../img/payment-logo/BMMB0341.png" class="img-fluid" alt="online banking" width="30px">
@@ -99,7 +99,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="BSN0601" value="BSN0601">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="BSN" id="BSN0601" value="BSN0601">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="BSN0601">
                 <img src="../img/payment-logo/BSN0601.png" class="img-fluid" alt="online banking" width="30px">
@@ -110,7 +110,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="ABB0233" value="ABB0233">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="Affin Bank" id="ABB0233" value="ABB0233">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="ABB0233">
                 &nbsp;<img src="../img/payment-logo/ABB0233.png" class="img-fluid" alt="online banking" width="30px">
@@ -121,7 +121,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="HLB0224" value="HLB0224">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="Hong Leong Bank" id="HLB0224" value="HLB0224">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="HLB0224">
                 <img src="../img/payment-logo/HLB0224.png" class="img-fluid" alt="online banking" width="30px">
@@ -132,7 +132,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="ABMB0212" value="ABMB0212">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="Alliance Bank" id="ABMB0212" value="ABMB0212">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="ABMB0212">
                 <img src="../img/payment-logo/ABMB0212.png" class="img-fluid" alt="online banking" width="30px">
@@ -143,7 +143,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="UOB0226" value="UOB0226">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="UOB Bank" id="UOB0226" value="UOB0226">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="UOB0226">
                 <img src="../img/payment-logo/UOB0226.png" class="img-fluid" alt="online banking" width="30px">
@@ -154,7 +154,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="OCBC0229" value="OCBC0229">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="OCBC Bank" id="OCBC0229" value="OCBC0229">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="OCBC0229">
                 <img src="../img/payment-logo/OCBC0229.png" class="img-fluid" alt="online banking" width="30px">
@@ -165,7 +165,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="SCB0216" value="SCB0216">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="Standard Chartered" id="SCB0216" value="SCB0216">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="SCB0216">
                 <img src="../img/payment-logo/SCB0216.png" class="img-fluid" alt="online banking" width="30px">
@@ -176,7 +176,7 @@
 </div>
 <div class="col-6 col-md-3">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="paymentMethod" id="KFH0346" value="KFH0346">
+        <input class="form-check-input" type="radio" name="paymentMethod" bank-name="KFH" id="KFH0346" value="KFH0346">
         <div class="card border-white my-1">
             <label class="form-check-label text-center" for="KFH0346">
                 <img src="../img/payment-logo/KFH0346.png" class="img-fluid" alt="online banking" width="30px">
@@ -185,3 +185,34 @@
         </div>
     </div>
 </div>
+
+<span id="test"></span>
+
+<script>
+$(document).ready(function(){
+
+
+    if(typ_url=="https://app.toyyibpay.com/"){
+        $("#test").remove();
+    }
+    else{
+        let html = "";
+
+        html += '<div class="col-6 col-md-3 123">';
+        html += '    <div class="form-check form-check-inline">';
+        html += '        <input class="form-check-input" type="radio" name="paymentMethod" id="TEST0021" bank-name="SBI Bank A" value="TEST0021">';
+        html += '        <div class="card border-white my-1">';
+        html += '            <label class="form-check-label text-center" for="KFH0346">';
+        html += '                <img src="../img/oderje-logo.png" class="img-fluid" alt="online banking" width="30px">';
+        html += '                <br><small>Test Bank</small>';
+        html += '            </label>';
+        html += '        </div>';
+        html += '    </div>';
+        html += '</div>';
+
+        $("#test").append(html);
+    }
+
+});
+
+</script>

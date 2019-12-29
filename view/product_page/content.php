@@ -4,14 +4,7 @@
 
 <div id="content" class="container-fluid pb-5 d-none" style="margin-bottom:100px">
 	<div class="accordion" id="accordian_div" style="position: sticky;" >
-<<<<<<< HEAD
 		
-=======
-<<<<<<< HEAD
-		
-=======
->>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 		<div class="card ">
 			<div class="card-header p-0 m-0 bg-warning" id="product_div">
 				<button class="btn btn-link col-12" type="button" data-toggle="collapse" data-target="#collapse1" >
@@ -29,15 +22,7 @@
 		</div>
 		<div class="card">
 			<div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordian_div" style="max-height: 100px;overflow-y: scroll;">
-<<<<<<< HEAD
 				<div class="card-body parent_package">
-=======
-<<<<<<< HEAD
-				<div class="card-body parent_package">
-=======
-				<div class="card-body ">
->>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 					
 				</div>
 			</div>
@@ -49,25 +34,11 @@
 
 			
 		</div>
-<<<<<<< HEAD
 		
-=======
-<<<<<<< HEAD
-		
-=======
->>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 	</div>
 </div>
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 <script>
 	$(document).ready(function(){
 		var product_list = new Array();
@@ -154,21 +125,12 @@
 
 	    			}
 				}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 				else
 				{
 					$(".parent_product").append("Search product not available");
 					$(".parent_package").append("Search package not available");
 					
 				}
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 			}, "json").
 			done(function(){
 
@@ -184,15 +146,7 @@
 		        	}
 		        	
 		        });
-<<<<<<< HEAD
 		        //console.log(max);
-=======
-<<<<<<< HEAD
-		        //console.log(max);
-=======
-		        console.log(max);
->>>>>>> 46e199ce84dad53cd3676494765ed78f0dca92cc
->>>>>>> 873edded02029edaad7289563dad745ae14e2fdf
 		        $(".product_card").css("min-height",310);
 		        // alert("ui");
 				$("#loading").addClass("d-none");

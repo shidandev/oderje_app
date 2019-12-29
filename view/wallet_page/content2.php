@@ -1,3 +1,4 @@
+
 <div class="container-fluid my-3 " >
 	<div class="row"  >
 		<div class="col-md-2 d-none  d-md-block "></div>
@@ -123,7 +124,7 @@
 
 <script>
 	$(document).ready(function(){
-		initializer();
+		
 
 		$("#transfer_submit_btn").on("click",function(){
 		
@@ -159,22 +160,5 @@
        	});
 	});
 
-	function initializer(){
-		if(!$_USER['login_status'])
-		{
-			let path = $_USER['path'];
-			if(path == home() || path == (home()+"index.php"))
-	        {
-	            window.location.href = "login.php?d="+url_encode("backpath="+$_USER['path']);
-	        }
-	        else
-	        {
-	            window.location.href = "../login.php?d="+url_encode("backpath="+$_USER['path']);
-	        }
-
-		}
-		else{
-			$("#name_display").text($_USER['name']);
-		}
-	}
+	
 </script>
