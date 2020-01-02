@@ -113,14 +113,14 @@
                 <label for="colFormLabelSm" class="col-sm-3 col-form-label text-md-right">Purchase type:</label>
                 <div class="col-sm-6">
                   <div class="input-group">
-                    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                      <option selected>-choose-</option>
+                    <select class="custom-select" id="purchase_type" aria-label="Example select with button addon">
+                      <option value="0" selected>-choose-</option>
                       <option value="1">Self Collect</option>
                       <option value="2" disabled="">Delivery (Coming Soon)</option>
                       <!-- <option value="3">In-store (coming soon)</option> -->
                     </select>
                     <div class="input-group-append">
-                      <button class="btn btn-dark" type="button">
+                      <button class="btn btn-dark" id="checkout_btn" type="button">
                         Checkout&nbsp;&nbsp;<i class="fas fa-shopping-bag"></i>
                       </button>
                     </div>
@@ -138,47 +138,104 @@
 <script>
   $(document).ready(function () {
     var basket_list = new Array();
+    var products = new Array();
+    var price = 0;
+    var total_product = 0;
+
+
+    $("#checkout_btn").on("click", function () {
+
+      var purchase_type = $("#purchase_type").val();
+      
+      if(purchase_type!=0 && price > 0)
+      {
+        $.post(oderje_url + "api/customer",
+        {
+          function: "user_typ_key",
+          u_id: $_USER['uid']
+        },
+        function (data) {
+          if (data.status == "ok") {
+            $.post(typ_url + "api/typ_accountBalance",
+              {
+                function: "vab_amount",
+                key: data.typ_key
+              }, function (data2) {
+                // console.log(data2.vab_amount);
+                if(price<=data2.vab_amount)
+                {
+
+                }
+                else{
+                }
+              }, "json");
+
+          }
+
+        }, "json");
+      }
+      else{
+        let msg = "";
+        if(purchase_type==0)
+        {
+          msg += "Please pick purchase type\n";
+        }
+        if(price <= 0){
+          msg += "Please pick one item to check out\n";
+
+        }
+
+        alert(msg);
+        
+      }
+      
+    });
+
 
     $.post(oderje_url + "api/customer_basket", {
       function: "get_basket",
       c_id: $_USER['cid'],
       group: "yes"
 
-    }, function (data) {
-      if (data) {
-        list = data;
-        for (let i = 0; i < data.length; i++) {
-          var temp = new BasketByMerchant(data[i]);
+    },
+      function (data) {
+        if (data) {
+          list = data;
+          for (let i = 0; i < data.length; i++) {
+            var temp = new BasketByMerchant(data[i]);
 
-          $("#accordianGeneralStore").prepend(temp.BasketByMerchantView());
-          for (let j = 0; j < data[i].basket.length; j++) {
-            basket_list.push(data[i].basket[j]);
+            $("#accordianGeneralStore").prepend(temp.BasketByMerchantView());
+            for (let j = 0; j < data[i].basket.length; j++) {
+              basket_list.push(data[i].basket[j]);
 
+            }
           }
         }
-      }
-      else {
+        else {
 
 
-      }
-    }, "json").
-      done(function (data) {
-        //console.log(basket_list);
+        }
+      }, "json")
+      .done(function (data) {
 
-        var products = new Array();
-        var price = 0;
-        var total_product = 0;
+        $(".child-check").change(function(e){
+          e.stopPropagation();
+          // alert("click");
+          let pbm_id = $(this).parent().parent().parent().parent().find(".pbm_id").val();
+          console.log(pbm_id);
+          
+          // if ($(this).is(':checked')){
+            
+          // }else{
+
+          // }
+        });
+
 
         $(".edit_btn").on("click", function () {
           let pbm_id = $(this).find(".pbm_id").val();
           modal_setup(find(basket_list, pbm_id));
         });
-
-        //console.log($(".storeCheck1"));
-        // $("#storeCheck1").on("click",function(){
-        //   let check_btn = $(this).parent().parent().parent().find(".child-check");
-
-        // });
 
         $('.storeCheck1:checkbox').change(function (e) {
 
@@ -267,6 +324,7 @@
 
       return list.find(check);
     }
+
 
   });
 </script>

@@ -4,18 +4,15 @@ var typ_url = "https://dev2.toyyibpay.com/";
 // var typ_url = "https://app.toyyibpay.com/";
 var typ_url_dev = "https://dev2.toyyibpay.com/";
 
-function url_encode(str)
-{
+function url_encode(str) {
 	// Create Base64 Object
 	var Base64 = {
-		_keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", encode: function (e)
-		{
+		_keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", encode: function (e) {
 			var t = "";
 			var n, r, i, s, o, u, a;
 			var f = 0;
 			e = Base64._utf8_encode(e);
-			while (f < e.length)
-			{
+			while (f < e.length) {
 				n = e.charCodeAt(f++);
 				r = e.charCodeAt(f++);
 				i = e.charCodeAt(f++);
@@ -23,26 +20,22 @@ function url_encode(str)
 				o = (n & 3) << 4 | r >> 4;
 				u = (r & 15) << 2 | i >> 6;
 				a = i & 63;
-				if (isNaN(r))
-				{
+				if (isNaN(r)) {
 					u = a = 64
 				}
-				else if (isNaN(i))
-				{
+				else if (isNaN(i)) {
 					a = 64
 				}
 				t = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a)
 			}
 			return t
-		}, decode: function (e)
-		{
+		}, decode: function (e) {
 			var t = "";
 			var n, r, i;
 			var s, o, u, a;
 			var f = 0;
 			e = e.replace(/[^A-Za-z0-9\+\/\=]/g, "");
-			while (f < e.length)
-			{
+			while (f < e.length) {
 				s = this._keyStr.indexOf(e.charAt(f++));
 				o = this._keyStr.indexOf(e.charAt(f++));
 				u = this._keyStr.indexOf(e.charAt(f++));
@@ -51,62 +44,50 @@ function url_encode(str)
 				r = (o & 15) << 4 | u >> 2;
 				i = (u & 3) << 6 | a;
 				t = t + String.fromCharCode(n);
-				if (u != 64)
-				{
+				if (u != 64) {
 					t = t + String.fromCharCode(r)
 				}
-				if (a != 64)
-				{
+				if (a != 64) {
 					t = t + String.fromCharCode(i)
 				}
 			}
 			t = Base64._utf8_decode(t);
 			return t
-		}, _utf8_encode: function (e)
-		{
+		}, _utf8_encode: function (e) {
 			e = e.replace(/\r\n/g, "\n");
 			var t = "";
-			for (var n = 0; n < e.length; n++)
-			{
+			for (var n = 0; n < e.length; n++) {
 				var r = e.charCodeAt(n);
-				if (r < 128)
-				{
+				if (r < 128) {
 					t += String.fromCharCode(r)
 				}
-				else if (r > 127 && r < 2048)
-				{
+				else if (r > 127 && r < 2048) {
 					t += String.fromCharCode(r >> 6 | 192);
 					t += String.fromCharCode(r & 63 | 128)
 				}
-				else
-				{
+				else {
 					t += String.fromCharCode(r >> 12 | 224);
 					t += String.fromCharCode(r >> 6 & 63 | 128);
 					t += String.fromCharCode(r & 63 | 128)
 				}
 			}
 			return t
-		}, _utf8_decode: function (e)
-		{
+		}, _utf8_decode: function (e) {
 			var t = "";
 			var n = 0;
 			var r = c1 = c2 = 0;
-			while (n < e.length)
-			{
+			while (n < e.length) {
 				r = e.charCodeAt(n);
-				if (r < 128)
-				{
+				if (r < 128) {
 					t += String.fromCharCode(r);
 					n++
 				}
-				else if (r > 191 && r < 224)
-				{
+				else if (r > 191 && r < 224) {
 					c2 = e.charCodeAt(n + 1);
 					t += String.fromCharCode((r & 31) << 6 | c2 & 63);
 					n += 2
 				}
-				else
-				{
+				else {
 					c2 = e.charCodeAt(n + 1);
 					c3 = e.charCodeAt(n + 2);
 					t += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63);
@@ -119,8 +100,7 @@ function url_encode(str)
 
 	// step 1 : reverse the string
 	var str_reverse = "";
-	for (i = str.length; i > -1; i--)
-	{
+	for (i = str.length; i > -1; i--) {
 		str_reverse = str_reverse + str.substr(i, 1);
 	}
 
@@ -129,8 +109,7 @@ function url_encode(str)
 
 	// step 3 : reverse the encoded reverse string
 	var str_reverse_encode_reverse2 = "";
-	for (i = str_reverse_encode.length; i > -1; i--)
-	{
+	for (i = str_reverse_encode.length; i > -1; i--) {
 		str_reverse_encode_reverse2 = str_reverse_encode_reverse2 + str_reverse_encode.substr(i, 1);
 	}
 
@@ -151,18 +130,15 @@ function url_encode(str)
 	return final_encode_url;
 }
 
-function url_decode(str)
-{
+function url_decode(str) {
 	// Create Base64 Object
 	var Base64 = {
-		_keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", encode: function (e)
-		{
+		_keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", encode: function (e) {
 			var t = "";
 			var n, r, i, s, o, u, a;
 			var f = 0;
 			e = Base64._utf8_encode(e);
-			while (f < e.length)
-			{
+			while (f < e.length) {
 				n = e.charCodeAt(f++);
 				r = e.charCodeAt(f++);
 				i = e.charCodeAt(f++);
@@ -170,26 +146,22 @@ function url_decode(str)
 				o = (n & 3) << 4 | r >> 4;
 				u = (r & 15) << 2 | i >> 6;
 				a = i & 63;
-				if (isNaN(r))
-				{
+				if (isNaN(r)) {
 					u = a = 64
 				}
-				else if (isNaN(i))
-				{
+				else if (isNaN(i)) {
 					a = 64
 				}
 				t = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a)
 			}
 			return t
-		}, decode: function (e)
-		{
+		}, decode: function (e) {
 			var t = "";
 			var n, r, i;
 			var s, o, u, a;
 			var f = 0;
 			e = e.replace(/[^A-Za-z0-9\+\/\=]/g, "");
-			while (f < e.length)
-			{
+			while (f < e.length) {
 				s = this._keyStr.indexOf(e.charAt(f++));
 				o = this._keyStr.indexOf(e.charAt(f++));
 				u = this._keyStr.indexOf(e.charAt(f++));
@@ -198,62 +170,50 @@ function url_decode(str)
 				r = (o & 15) << 4 | u >> 2;
 				i = (u & 3) << 6 | a;
 				t = t + String.fromCharCode(n);
-				if (u != 64)
-				{
+				if (u != 64) {
 					t = t + String.fromCharCode(r)
 				}
-				if (a != 64)
-				{
+				if (a != 64) {
 					t = t + String.fromCharCode(i)
 				}
 			}
 			t = Base64._utf8_decode(t);
 			return t
-		}, _utf8_encode: function (e)
-		{
+		}, _utf8_encode: function (e) {
 			e = e.replace(/\r\n/g, "\n");
 			var t = "";
-			for (var n = 0; n < e.length; n++)
-			{
+			for (var n = 0; n < e.length; n++) {
 				var r = e.charCodeAt(n);
-				if (r < 128)
-				{
+				if (r < 128) {
 					t += String.fromCharCode(r)
 				}
-				else if (r > 127 && r < 2048)
-				{
+				else if (r > 127 && r < 2048) {
 					t += String.fromCharCode(r >> 6 | 192);
 					t += String.fromCharCode(r & 63 | 128)
 				}
-				else
-				{
+				else {
 					t += String.fromCharCode(r >> 12 | 224);
 					t += String.fromCharCode(r >> 6 & 63 | 128);
 					t += String.fromCharCode(r & 63 | 128)
 				}
 			}
 			return t
-		}, _utf8_decode: function (e)
-		{
+		}, _utf8_decode: function (e) {
 			var t = "";
 			var n = 0;
 			var r = c1 = c2 = 0;
-			while (n < e.length)
-			{
+			while (n < e.length) {
 				r = e.charCodeAt(n);
-				if (r < 128)
-				{
+				if (r < 128) {
 					t += String.fromCharCode(r);
 					n++
 				}
-				else if (r > 191 && r < 224)
-				{
+				else if (r > 191 && r < 224) {
 					c2 = e.charCodeAt(n + 1);
 					t += String.fromCharCode((r & 31) << 6 | c2 & 63);
 					n += 2
 				}
-				else
-				{
+				else {
 					c2 = e.charCodeAt(n + 1);
 					c3 = e.charCodeAt(n + 2);
 					t += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63);
@@ -272,8 +232,7 @@ function url_decode(str)
 
 	// step 3 : reversed back the decoded splitted str
 	var decoded_split_str_reverse_back = "";
-	for (i = decoded_split_str.length; i > -1; i--)
-	{
+	for (i = decoded_split_str.length; i > -1; i--) {
 		decoded_split_str_reverse_back = decoded_split_str_reverse_back + decoded_split_str.substr(i, 1);
 	}
 
@@ -282,8 +241,7 @@ function url_decode(str)
 
 	// Final step : reverse the string
 	var Final_str = "";
-	for (i = decoded2_decoded_split_str_reverse_back.length; i > -1; i--)
-	{
+	for (i = decoded2_decoded_split_str_reverse_back.length; i > -1; i--) {
 		Final_str = Final_str + decoded2_decoded_split_str_reverse_back.substr(i, 1);
 	}
 
