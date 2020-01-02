@@ -162,6 +162,13 @@
           {
             alert("Please choose at least one store");
           }
+          else if(count>1)
+          {
+            alert("Check out in store only available for one store at same time");
+          }
+          else{
+            //logic in store
+          }
         }
         else{
         $.post(oderje_url + "api/customer", {
@@ -267,9 +274,15 @@
           if ($(this).is(':checked')) {
             $(this).parent().parent().parent().find(".pbm_id").each(function () {
               var temp = find(basket_list, $(this).val());
-              price += (temp['p_price'] * temp['p_quantity']);
-              check_btn.prop('checked', true);
-              total_product += parseInt(temp['p_quantity'], 10);
+              
+
+              if(!check_btn.prop('checked'))
+              {
+                price += (temp['p_price'] * temp['p_quantity']);
+                check_btn.prop('checked', true);
+                total_product += parseInt(temp['p_quantity'], 10);
+              }
+              
             });
           }
           else {
