@@ -115,9 +115,9 @@
                   <div class="input-group">
                     <select class="custom-select" id="purchase_type" aria-label="Example select with button addon">
                       <option value="0" selected>-choose-</option>
-                      <option value="1">Self Collect</option>
-                      <option value="2" disabled="">Delivery (Coming Soon)</option>
-                      <!-- <option value="3">In-store (coming soon)</option> -->
+                      <option value="in_store">In-store</option>
+                      <option value="self_collect">Self Collect</option>
+                      <option value="delivery" disabled="">Delivery (Coming Soon)</option>
                     </select>
                     <div class="input-group-append">
                       <button class="btn btn-dark" id="checkout_btn" type="button">
@@ -146,49 +146,62 @@
     $("#checkout_btn").on("click", function () {
 
       var purchase_type = $("#purchase_type").val();
-      
-      if(purchase_type!=0 && price > 0)
-      {
-        $.post(oderje_url + "api/customer",
-        {
+
+      if (purchase_type != 0 ) {
+        if (purchase_type == "in_store") {
+          let check_store_count = $(".storeCheck1");
+          let count = 0;
+          check_store_count.each(function(){
+            if($(this).is(":checked"))
+            {
+              count++;
+            }
+          });
+          
+          if(count == 0)
+          {
+            alert("Please choose at least one store");
+          }
+        }
+        else{
+        $.post(oderje_url + "api/customer", {
           function: "user_typ_key",
           u_id: $_USER['uid']
         },
-        function (data) {
-          if (data.status == "ok") {
-            $.post(typ_url + "api/typ_accountBalance",
-              {
-                function: "vab_amount",
-                key: data.typ_key
-              }, function (data2) {
-                // console.log(data2.vab_amount);
-                if(price<=data2.vab_amount)
+          function (data) {
+            if (data.status == "ok") {
+              $.post(typ_url + "api/typ_accountBalance",
                 {
+                  function: "vab_amount",
+                  key: data.typ_key
+                }, function (data2) {
+                  // console.log(data2.vab_amount);
+                  if (price <= data2.vab_amount) {
+                  }
+                  else {
+                  }
+                }, "json");
 
-                }
-                else{
-                }
-              }, "json");
+            }
 
-          }
-
-        }, "json");
+          }, "json");
+      
+        }
       }
-      else{
+      else {
         let msg = "";
-        if(purchase_type==0)
-        {
+        if (purchase_type == 0) {
           msg += "Please pick purchase type\n";
         }
-        if(price <= 0){
-          msg += "Please pick one item to check out\n";
+        // if (price <= 0) {
+        //   msg += "Please pick one item to check out\n";
 
-        }
+        // }
 
         alert(msg);
-        
+
       }
-      
+
     });
 
 
@@ -218,17 +231,24 @@
       }, "json")
       .done(function (data) {
 
-        $(".child-check").change(function(e){
+        $(".child-check").change(function (e) {
           e.stopPropagation();
           // alert("click");
           let pbm_id = $(this).parent().parent().parent().parent().find(".pbm_id").val();
-          console.log(pbm_id);
-          
-          // if ($(this).is(':checked')){
-            
-          // }else{
+          var temp = find(basket_list, pbm_id);
 
-          // }
+          // console.log(temp);
+          if ($(this).is(':checked')) {
+            price += (temp['p_price'] * temp['p_quantity']);
+            $(this).prop('checked', true);
+            total_product += parseInt(temp['p_quantity'], 10);
+          } else {
+            price -= (temp['p_price'] * temp['p_quantity']);
+            $(this).prop('checked', false);
+            total_product -= parseInt(temp['p_quantity'], 10);
+          }
+          $("#totalPrice").text(price);
+          $("#total_product").text(total_product);
         });
 
 
