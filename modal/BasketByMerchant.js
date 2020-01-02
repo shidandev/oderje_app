@@ -16,7 +16,7 @@ class BasketByMerchant{
 		html += '	<div class="card border-white">';
     	html += '		<div class="card-header border-light" id="headingStore1" data-toggle="collapse" data-target="#collapseStore'+this.m_id+'" aria-expanded="false" aria-controls="collapseStore1" style="background-color:#EDF1FF">';
         html += '			<div class="form-check">';
-        html += '				<input class="form-check-input storeCheck1" type="checkbox" value="" >';
+        html += '				<input class="form-check-input storeCheck1 m_id" type="checkbox" value="'+this.m_id+'" >';
         html += '  				<label class="form-check-label" for="storeCheck1">';
         html += '					<span id="store-name">'+this.m_name+'</span>';
         html += '  				</label><br>';

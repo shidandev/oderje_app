@@ -138,61 +138,123 @@
 <script>
   $(document).ready(function () {
     var basket_list = new Array();
+    var merchant_list = new Array();
     var products = new Array();
     var price = 0;
     var total_product = 0;
+    var pass_data = new Array();
+    var basket_checkout = new Array();
 
 
     $("#checkout_btn").on("click", function () {
 
       var purchase_type = $("#purchase_type").val();
 
-      if (purchase_type != 0 ) {
+      if (purchase_type != 0) {
         if (purchase_type == "in_store") {
           let check_store_count = $(".storeCheck1");
           let count = 0;
-          check_store_count.each(function(){
-            if($(this).is(":checked"))
-            {
+          check_store_count.each(function () {
+            if ($(this).is(":checked")) {
               count++;
             }
           });
-          
-          if(count == 0)
-          {
+
+          if (count == 0) {
             alert("Please choose at least one store");
           }
-          else if(count>1)
-          {
+          else if (count > 1) {
             alert("Check out in store only available for one store at same time");
           }
-          else{
+          else {
             //logic in store
+            $.post(oderje_url + "api/customer", {
+              function: "user_typ_key",
+              u_id: $_USER['uid']
+            },
+              function (data) {
+                if (data.status == "ok") {
+                  $.post(typ_url + "api/typ_accountBalance",
+                    {
+                      function: "vab_amount",
+                      key: data.typ_key
+                    }, function (data2) {
+                      // console.log(data2.vab_amount);
+                      if (price <= data2.vab_amount) {
+                        let check_store_count = $(".storeCheck1");
+
+                        check_store_count.each(function () {
+                          if ($(this).is(":checked")) {
+                            let cur_mid = $(this).val();
+                            let cur_merchant = find_merchant(merchant_list, cur_mid);
+
+                            if (cur_merchant) {
+                              if (cur_merchant.basket.length > 0) {
+                                let child_item = $(".child-check");
+                                $.each(cur_merchant.basket, function (key, value) {
+                                  //console.log(value);
+                                  child_item.each(function(){
+                                    if(child_item.is(":checked"))
+                                    {
+                                      console.log(value.p_name);
+                                    }
+                                    else
+                                    {
+                                      console.log("tick");
+                                    }
+                                  });
+                                });
+                                // console.log(cur_merchant.basket);
+                              }
+                            }
+                            pass_data['merchant_data'] = cur_merchant;
+
+
+                          }
+
+                        });
+
+
+
+
+                        //console.log(JSON.stringify(pass_data['merchant_data']));
+                        // window.location.href = "../payment-in-store?d="+url_encode("test");
+                      }
+                      else {
+                        alert("balance not enough");
+                      }
+                    }, "json");
+
+                }
+
+              }, "json");
+
           }
         }
-        else{
-        $.post(oderje_url + "api/customer", {
-          function: "user_typ_key",
-          u_id: $_USER['uid']
-        },
-          function (data) {
-            if (data.status == "ok") {
-              $.post(typ_url + "api/typ_accountBalance",
-                {
-                  function: "vab_amount",
-                  key: data.typ_key
-                }, function (data2) {
-                  // console.log(data2.vab_amount);
-                  if (price <= data2.vab_amount) {
-                  }
-                  else {
-                  }
-                }, "json");
+        else {
+          $.post(oderje_url + "api/customer", {
+            function: "user_typ_key",
+            u_id: $_USER['uid']
+          },
+            function (data) {
+              if (data.status == "ok") {
+                $.post(typ_url + "api/typ_accountBalance",
+                  {
+                    function: "vab_amount",
+                    key: data.typ_key
+                  }, function (data2) {
+                    // console.log(data2.vab_amount);
+                    if (price <= data2.vab_amount) {
 
-            }
+                    }
+                    else {
+                    }
+                  }, "json");
 
-          }, "json");
-      
+              }
+
+            }, "json");
+
         }
       }
       else {
@@ -223,13 +285,18 @@
           list = data;
           for (let i = 0; i < data.length; i++) {
             var temp = new BasketByMerchant(data[i]);
-
+            merchant_list.push(data[i]);
             $("#accordianGeneralStore").prepend(temp.BasketByMerchantView());
             for (let j = 0; j < data[i].basket.length; j++) {
               basket_list.push(data[i].basket[j]);
 
             }
+
+
+            //console.log(basket_list);
           }
+
+          console.table(merchant_list);
         }
         else {
 
@@ -274,15 +341,14 @@
           if ($(this).is(':checked')) {
             $(this).parent().parent().parent().find(".pbm_id").each(function () {
               var temp = find(basket_list, $(this).val());
-              
 
-              if(!check_btn.prop('checked'))
-              {
+
+              if (!check_btn.prop('checked')) {
                 price += (temp['p_price'] * temp['p_quantity']);
                 check_btn.prop('checked', true);
                 total_product += parseInt(temp['p_quantity'], 10);
               }
-              
+
             });
           }
           else {
@@ -358,6 +424,13 @@
       return list.find(check);
     }
 
+    function find_merchant(list, m_id) {
+      function check(list) {
+        return list.m_id == m_id;
+      }
+
+      return list.find(check);
+    }
 
   });
 </script>
