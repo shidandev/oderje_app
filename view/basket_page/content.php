@@ -181,38 +181,64 @@
                     }, function (data2) {
                       // console.log(data2.vab_amount);
                       if (price <= data2.vab_amount) {
-                        let check_store_count = $(".storeCheck1");
+                        var check_store_count = $(".storeCheck1");
 
                         check_store_count.each(function () {
                           if ($(this).is(":checked")) {
+
+
                             let cur_mid = $(this).val();
                             let cur_merchant = find_merchant(merchant_list, cur_mid);
+                            console.log(cur_merchant);
+                            var item_checkBox = $(this).parent().parent().parent().find(".child-check");
 
-                            if (cur_merchant) {
-                              if (cur_merchant.basket.length > 0) {
-                                let child_item = $(".child-check");
-                                $.each(cur_merchant.basket, function (key, value) {
-                                  //console.log(value);
-                                  child_item.each(function(){
-                                    if(child_item.is(":checked"))
-                                    {
-                                      console.log(value.p_name);
-                                    }
-                                    else
-                                    {
-                                      console.log("tick");
-                                    }
-                                  });
-                                });
-                                // console.log(cur_merchant.basket);
+                            item_checkBox.each(function() {
+                              
+                              if (!$(this).is(":checked")) {
+                                var temp = find(cur_merchant.basket,$(this).val());
+
+                                cur_merchant.basket.splice(cur_merchant);
+                                console.log(temp);
                               }
-                            }
-                            pass_data['merchant_data'] = cur_merchant;
+                              else{
+                                alert("ticked");
+                              }
+                            });
 
 
                           }
-
                         });
+
+                        // check_store_count.each(function () {
+                        //   if ($(this).is(":checked")) {
+                        //     let cur_mid = $(this).val();
+                        //     let cur_merchant = find_merchant(merchant_list, cur_mid);
+
+                        //     if (cur_merchant) {
+                        //       if (cur_merchant.basket.length > 0) {
+                        //         let child_item = $(".child-check");
+                        //         $.each(cur_merchant.basket, function (key, value) {
+                        //           //console.log(value);
+                        //           child_item.each(function(){
+                        //             if(child_item.is(":checked"))
+                        //             {
+                        //               console.log(value.p_name);
+                        //             }
+                        //             else
+                        //             {
+                        //               console.log("tick");
+                        //             }
+                        //           });
+                        //         });
+                        //         // console.log(cur_merchant.basket);
+                        //       }
+                        //     }
+                        //     pass_data['merchant_data'] = cur_merchant;
+
+
+                        //   }
+
+                        // });
 
 
 

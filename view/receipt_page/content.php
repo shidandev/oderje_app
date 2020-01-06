@@ -1,8 +1,8 @@
 <div class="container-fluid">
 	
 	<div class="row">
-		<div class="col-md-2 col-sm-1 col-1"></div>
-		<div class="col-md-8 col-sm-10 col-10 border border-rounded bubble-high py-2">
+		<div class="col-md-3 col-sm-1 col-1"></div>
+		<div class="col-md-6 col-sm-10 col-10 border border-rounded bubble-high py-2">
 			
 			<div class="col-md-12 col-sm-12 col-12 text-center text-outline-custom1 text-warning h3 p-0">Receipt</div>
 			<div class="row p-1 ">
@@ -12,7 +12,7 @@
 				<div class="col-md-8 col-sm-7 col-9  p-0">
 					<table class="float-right">
 						<tr>
-							<td class="p-0 text-right " width="40%"><small > Bill Ref </small></td>
+							<td class="p-0 text-right " width="40%"><small > Bill No </small></td>
 							<td width="10%" class="p-0 font-weight-bold text-center">:</td>
 							<td width="50%" class="p-0 text-right"><small><span id="bill_refNo" class="font-weight-bold">OJ99999999</span></small></td>
 						</tr>
@@ -29,10 +29,10 @@
 			
 			<div class="row mx-auto mt-3">
 				<table class="col-md-12 col-sm-12 col-12">
-					<tr><td width="50%" class="text-center">Merchant</td><td width="1%">:</td><td id="merchant_name" class="text-center" width="49%"></td></tr>
-					<tr><td width="50%" class="text-center">Amount</td><td width="1%">:</td><td id="amount" class="text-center" width="49%">RM 5.05</td></tr>
-					<tr><td width="50%" class="text-center">Customer</td><td width="1%">:</td><td id="customer_name" class="text-center" width="49%"></td></tr>
-					<tr><td width="50%" class="text-center">Status</td><td width="1%">:</td><td id="status" class="text-center" width="49%">>successfully<</td></tr>
+					<tr><td width="20%" class="text-right">Merchant</td><td width="1%">:</td><td id="merchant_name" class="text-left" width="49%"></td></tr>
+					<tr><td width="20%" class="text-right">Amount</td><td width="1%">:</td><td id="amount" class="text-left" width="49%">RM 5.05</td></tr>
+					<tr><td width="20%" class="text-right">Customer</td><td width="1%">:</td><td id="customer_name" class="text-left" width="49%"></td></tr>
+					<tr><td width="20%" class="text-right">Status</td><td width="1%">:</td><td id="status" class="text-left" width="49%">>successfully<</td></tr>
 				</table>
 			</div>
 			<div class="row mx-auto mt-5">
@@ -40,7 +40,7 @@
 				<button class="back_btn btn btn-outline-info box-white bubble-high col-6">Back</button>
 			</div>
 		</div>
-		<div class="col-md-2 col-sm-1 col-1"></div>
+		<div class="col-md-3 col-sm-1 col-1"></div>
 	</div>
 </div>
 

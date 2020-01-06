@@ -134,11 +134,14 @@
               {
                 if(confirm("Please Top Up Balance Account\nProceed?"))
                 {
-                  window.location.href = "../reload/?d="+url_encode("amount="+dom_prepaid_balance.text());
+                  window.location.href = "../reload/?d="+url_encode("amount="+dom_prepaid_balance.text()+"&backpath="+$_GET['path']);
 
                 }
 
-
+              }
+              if(data.status == "Failed to deduct price using voucher")
+              {
+                alert($(".list_voucher").find(".vh_id[class='"+cur_vh_id+"']").val());
               }
               if(data.status == "ok")
               {

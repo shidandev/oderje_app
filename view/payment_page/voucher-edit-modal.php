@@ -24,12 +24,12 @@
                     
                 </div>
                 <div class="col-12 mt-2 text-right">
-                    <button class="btn btn-sm btn-light select_voucher_btn">
+                    <button class="btn btn-sm btn-light select_voucher_btn text-light" style="background:#FF9933">
                         <input type="hidden" class="vh_id" value="">
                         <input type="hidden" class="vh_balance" value="">
                         YES
                     </button>
-                    <button type="button" class="btn btn-sm text-light" data-dismiss="modal" style="background:#FF9933">
+                    <button type="button" class="btn btn-sm" data-dismiss="modal" >
                         NO
                     </button>
                 </div>
