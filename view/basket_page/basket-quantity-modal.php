@@ -41,7 +41,7 @@
                                 Remove item&nbsp;&nbsp;<i class="fas fa-eraser"></i>
                             </button>
                             <button type="button" id="add_item_btn" class="btn btn-sm text-light" style="background:#FF9933">
-                                Add item&nbsp;&nbsp;<i class="fas fa-shopping-basket"></i>
+                                Save&nbsp;&nbsp;<i class="fas fa-shopping-basket"></i>
                             </button>
                         </div>
                     </div>

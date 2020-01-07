@@ -153,6 +153,8 @@
                 if (purchase_type == "in_store") {
                     //call function in store check out logic
                     in_store_checkout();
+                } else if (purchase_type == "self_collect") {
+
                 } else {
                     $.post(oderje_url + "api/customer", {
                             function: "user_typ_key",
@@ -222,6 +224,8 @@
                 }, "json")
             .done(function(data) {
 
+
+                // each product card checkbox trigger 
                 $(".child-check").change(function(e) {
                     e.stopPropagation();
                     // alert("click");
@@ -230,10 +234,13 @@
 
                     // console.log(temp);
                     if ($(this).is(':checked')) {
+                        $(this).closest(".collapse").prev().find("input:checkbox").prop("checked", ($(this).closest(".collapse").find("input:checkbox").length > ($(this).closest(".collapse").find(".child-check:checked")).length) ? false : true);
+
                         price += (temp['p_price'] * temp['p_quantity']);
                         $(this).prop('checked', true);
                         total_product += parseInt(temp['p_quantity'], 10);
                     } else {
+                        $(this).closest(".collapse").prev().find("input:checkbox").prop("checked", false);
                         price -= (temp['p_price'] * temp['p_quantity']);
                         $(this).prop('checked', false);
                         total_product -= parseInt(temp['p_quantity'], 10);
@@ -242,37 +249,40 @@
                     $("#total_product").text(total_product);
                 });
 
-
+                // each product card edit button => trigger modal to edit quantity
                 $(".edit_btn").on("click", function() {
                     let pbm_id = $(this).find(".pbm_id").val();
                     modal_setup(find(basket_list, pbm_id));
                 });
 
+                //each merchant card checkbox trigger
                 $('.storeCheck1:checkbox').change(function(e) {
 
                     e.stopPropagation();
 
-                    var check_btn = $(this).parent().parent().parent().find(".child-check");
+                    console.log($(this).parent().parent().parent().attr("class"));
+
+                    $(this).parent().parent().parent()
                     var cb_id = new Array();
-
+                    var check_btn = $(this).parent().parent().parent().find(".child-check");
                     if ($(this).is(':checked')) {
-                        $(this).parent().parent().parent().find(".pbm_id").each(function() {
-                            var temp = find(basket_list, $(this).val());
 
-
-                            if (!check_btn.prop('checked')) {
+                        check_btn.each(function() {
+                            console.log("lalal");
+                            if (!$(this).is(':checked')) {
+                                var temp = find(basket_list, $(this).val());
                                 price += (temp['p_price'] * temp['p_quantity']);
-                                check_btn.prop('checked', true);
+                                $(this).prop('checked', true);
                                 total_product += parseInt(temp['p_quantity'], 10);
                             }
-
                         });
+
                     } else {
-                        $(this).parent().parent().parent().find(".pbm_id").each(function() {
+                        check_btn.each(function() {
                             var temp = find(basket_list, $(this).val());
                             price -= (temp['p_price'] * temp['p_quantity']);
                             $("#totalPrice").text(price);
-                            check_btn.prop('checked', false);
+                            $(this).prop('checked', false);
                             // total_product-=check_btn.length;
                             total_product -= parseInt(temp['p_quantity'], 10);
                         });
@@ -287,6 +297,7 @@
 
 
         //function definition
+
         //function in store check out logic
         function in_store_checkout() {
             let check_store_count = $(".storeCheck1");
