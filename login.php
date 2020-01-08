@@ -109,8 +109,10 @@
         
         $(document).ready(function(){
             
-            if($_USER['login_status'])
+            
+            if($_USER['login_status'] && $_GET  && $_GET['backpath'] == null)
             {
+                // alert($_GET['backpath'] == "");    
                 window.location.href = "wallet";
             }
 
@@ -152,13 +154,13 @@
                             //console.log(data);
                             if(data)
                             {
-                                if($_GET['merchant_uid'] && $_GET['merchant_id'] && $_GET['price'])
+                                if($_GET['MID'] && $_GET['UID'] && $_GET['bill_id'])
                                 {
-                                    var url = "payment/index.php?d="+url_encode("UID="+$_GET['merchant_uid']+"&MID="+$_GET['merchant_id']+"&PRICE="+$_GET['price']+"&bill_id="+$_GET['bill_id']);
+                                    var url = "payment/index.php?d="+url_encode("UID="+$_GET['UID']+"&MID="+$_GET['MID']+"&bill_id="+$_GET['bill_id']);
                                     console.log(url);
                                     window.location.href = url;
                                 }
-                                else if($_USER['path'])
+                                else if($_USER['path'] && !$_GET['backpath'])
                                 {
                                     // console.log("here");
                                     // window.location.href = $_GET['backpath'];
