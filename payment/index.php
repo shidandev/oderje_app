@@ -13,12 +13,12 @@
 				let path = $_USER['path'];
 				if(path == home() || path == (home()+"index.php"))
 				{
-					window.location.href = "login.php?d="+url_encode("backpath="+$_USER['path']);
+					window.location.href = "login.php?d="+url_encode("backpath="+$_USER['path']+"&MID="+$_GET['MID']+"&UID="+$_GET['UID']+"&bill_id="+$_GET['bill_id']);
 
 				}
 				else
 				{
-					window.location.href = "../login.php?d="+url_encode("backpath="+$_USER['path']);
+					window.location.href = "../login.php?d="+url_encode("backpath="+$_USER['path']+"&MID="+$_GET['MID']+"&UID="+$_GET['UID']+"&bill_id="+$_GET['bill_id']);
 				}
 
 			}
