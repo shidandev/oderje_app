@@ -66,6 +66,24 @@
     </div>
   </div>
 </div>
+<?php
+
+	//$_SESSION['login_status'] = TRUE;
+
+	if(isset($_SESSION['login_status']) && $_SESSION['login_status'] == TRUE)
+	{
+		//echo '<script>alert("dah sign in")</script>';
+		// var_dump($_SESSION);
+	}
+	else
+	{
+		
+		// echo '<script>window.location="../login.php?d="+url_encode("merchant_uid="+$_GET["UID"]+"&merchant_id="+$_GET["MID"]+"&price="+$_GET["PRICE"]+"&bill_id="+$_GET["bill_id"])</script>';
+	}
+	
+	
+
+?>
 <script>
   
   $(document).ready(function(){
@@ -141,7 +159,15 @@
               }
               if(data.status == "Failed to deduct price using voucher")
               {
-                alert($(".list_voucher").find(".vh_id[class='"+cur_vh_id+"']").val());
+                alert("voucher are not applicable, contact voucher provider");
+                var root = $(".vh_id").parent().parent().parent();
+                root.addClass("blur");
+                root.parent().find("button").attr("disabled",true);
+                
+                $(".voucher_use_div").addClass("d-none");
+                $(".prepaid_balance").text(parseFloat($(".prepaid_balance").text())+parseFloat(deduction_for_voucher));
+                cur_vh_id = -1;
+                // $(".vh_id").parent().parent().parent().blur();
               }
               if(data.status == "ok")
               {
@@ -325,7 +351,7 @@
         {
           $("#input_price").text(data.amount);
           $(".prepaid_balance").text(data.amount);
-          $("#sign").text(" - ");
+          $("#sign").text(" Use ");
 
         }
         else
@@ -374,6 +400,7 @@
 
       if(list.length > 0)
       {
+        $(".list_voucher").empty();
         var html = "";
         for(var i = 0 ; i < list.length; i++)
         {
@@ -496,7 +523,7 @@
           //dom_prepaid_balance.text($("#input_price").text());
 
           $(".prepaid_balance").text($("#input_price").text() - $(".voucher_to_use_input").val() );
-          $("#sign").text(" - ");
+          $("#sign").text(" Use ");
         }
         else
         {

@@ -38,7 +38,7 @@
                         data-parent="#paymentVoucher">
                         <div class="card-body">
                             <div class="row list_voucher" >
-
+                                <label align="center">No Voucher Available</label>
                                 <!-- <?php include '../../inc/voucherCash.php' ?>
                                 <?php include '../../inc/voucherPercent.php' ?>
                                 <?php include '../../inc/voucherDelivery.php' ?>
