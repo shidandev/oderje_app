@@ -129,6 +129,12 @@ function url_encode(str) {
     return final_encode_url;
 }
 
+function get_hash_param() {
+    var url = window.location.href.split("?");
+    var str = url_decode(url[1].trim().substring(2));
+    return str;
+}
+
 function url_decode(str) {
     // Create Base64 Object
     var Base64 = {

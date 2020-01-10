@@ -66,24 +66,7 @@
     </div>
   </div>
 </div>
-<?php
 
-	//$_SESSION['login_status'] = TRUE;
-
-	if(isset($_SESSION['login_status']) && $_SESSION['login_status'] == TRUE)
-	{
-		//echo '<script>alert("dah sign in")</script>';
-		// var_dump($_SESSION);
-	}
-	else
-	{
-		
-		// echo '<script>window.location="../login.php?d="+url_encode("merchant_uid="+$_GET["UID"]+"&merchant_id="+$_GET["MID"]+"&price="+$_GET["PRICE"]+"&bill_id="+$_GET["bill_id"])</script>';
-	}
-	
-	
-
-?>
 <script>
   
   $(document).ready(function(){
@@ -94,10 +77,25 @@
     var prepaid_balance = 0;
     var use_pin = true;
     var dom_prepaid_balance = $(".prepaid_balance");
+    var payment_method = "";
+
 
     initializer();
 
+    $("#oderjePrepaid").change(function(e){
+     
+      payment_method = ($(this).is(":checked"))? "oderje_wallet":"";
+
+      $(this).attr("checked",($(this).is(":checked"))? false:true);
+    });
     $("#request_pin").on("click",function(e){
+
+      if(payment_method == "")
+      {
+        alert("Please pick payment method");
+        return;
+      }
+            
       let vt_id = "";
       let vt_idArr = new Array();
       let t_id = "";
@@ -152,7 +150,7 @@
               {
                 if(confirm("Please Top Up Balance Account\nProceed?"))
                 {
-                  window.location.href = "../reload/?d="+url_encode("amount="+dom_prepaid_balance.text()+"&backpath="+$_GET['path']);
+                  window.location.href = "../reload/?d="+url_encode("amount="+dom_prepaid_balance.text()+"&backpath="+$_GET['path']+"&"+get_hash_param());
 
                 }
 
@@ -472,8 +470,10 @@
         var root = $(this).parent();
         var vh_id = root.find(".vh_id").val();
         var balance = root.find(".balance").val();
-        $(".vh_balance").text(balance);
-        $(".vh_balance").val(balance);
+
+        // console.log((balance>parseFloat($("#input_price").text()))? parseFloat($("#input_price").text()):balance);
+        $(".vh_balance").val((balance>parseFloat($("#input_price").text()))? parseFloat($("#input_price").text()):balance);
+        // $(".vh_balance").val(balance);
         $(".vh_id").val(vh_id);
         modal_listener();
         // reset_voucher_selection();
@@ -515,15 +515,35 @@
 
         if($(".voucher_to_use_input").val() <= $(".voucher_to_use_input").parent().find(".vh_balance").val())
         {
-          deduction_for_voucher = $(".voucher_to_use_input").val();
-          $(".voucher_use_div").removeClass("d-none");
-          $(".voucher_use_div").find("#voucher_span").text(" RM "+ $(".voucher_to_use_input").val());
-          $('#editVoucher').modal('hide');
-          $("#collapseVouchers").removeClass("show");
-          //dom_prepaid_balance.text($("#input_price").text());
+          // console.log(parseFloat($("#input_price").text()) < parseFloat($(".voucher_to_use_input").parent().find(".vh_balance").val()));
+          if(parseFloat($("#input_price").text()) < parseFloat($(".voucher_to_use_input").parent().find(".vh_balance").val()))
+          {
+           
+            deduction_for_voucher = $("#input_price").text();
+            
+            $(".voucher_use_div").removeClass("d-none");
+            $(".voucher_use_div").find("#voucher_span").text(" RM "+ deduction_for_voucher);
+            $('#editVoucher').modal('hide');
+            $("#collapseVouchers").removeClass("show");
+            //dom_prepaid_balance.text($("#input_price").text());
 
-          $(".prepaid_balance").text($("#input_price").text() - $(".voucher_to_use_input").val() );
-          $("#sign").text(" Use ");
+            $(".prepaid_balance").text($("#input_price").text() - deduction_for_voucher );
+            $("#sign").text(" Use ");
+          }
+          else
+          {
+            
+            deduction_for_voucher = $(".voucher_to_use_input").val();
+            $(".voucher_use_div").removeClass("d-none");
+            $(".voucher_use_div").find("#voucher_span").text(" RM "+ $(".voucher_to_use_input").val());
+            $('#editVoucher').modal('hide');
+            $("#collapseVouchers").removeClass("show");
+            //dom_prepaid_balance.text($("#input_price").text());
+
+            $(".prepaid_balance").text($("#input_price").text() - $(".voucher_to_use_input").val() );
+            $("#sign").text(" Use ");
+          }
+          
         }
         else
         {
