@@ -87,16 +87,50 @@
             console.log(bank_code);
             if(parseFloat(amount) > 1.0 && bank_code != "" && bank_name !="")
             {
-                $.post(oderje_url+"/api/customer_topup",{
-                    function:"topup_wallet_typ",
-                    c_id:c_id,
-                    amount:amount,
-                    bank_code:bank_code,
-                    bank_name:bank_name
-                },function(data){
-                    console.log(data);
-                    $("#temp").append(data.page);
-                },"json");
+                // $.post(oderje_url+"/api/customer_topup",{
+                //     function:"topup_wallet_typ",
+                //     c_id:c_id,
+                //     amount:amount,
+                //     bank_code:bank_code,
+                //     bank_name:bank_name
+                // },function(data){
+                //     console.log(data);
+                //     $("#temp").append(data.page);
+                // },"json");
+
+                var formData = new FormData();
+                formData.append("function","topup_wallet_typ");
+                formData.append("c_id",c_id);
+                formData.append("amount",amount);
+                formData.append("bank_code",bank_code);
+                formData.append("bank_name",bank_name);
+
+                if($_GET['backpath'])
+                {
+                    if($_GET['MID'] && $_GET['UID']&&$_GET['bill_id'])
+                    {
+                        formData.append("backpath",$_GET['backpath']);
+                        formData.append("MID",$_GET['MID']);
+                        formData.append("UID",$_GET['UID']);
+                        formData.append("bill_id",$_GET['bill_id']);
+                        
+                    }
+                    else{
+                        alert("xde");
+                    }
+                }
+
+                $.ajax({
+                    url:oderje_url+"/api/customer_topup",
+                    type:"POST",
+                    data:formData,
+                    processData: false,
+                    contentType: false,
+                    success:function(data){
+                        console.log(data);
+                        $("#temp").append(data.page);
+                    }
+                });
             }
 			else{
                 alert("Please set amount more than RM 1.00");
