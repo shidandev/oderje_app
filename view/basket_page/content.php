@@ -136,6 +136,11 @@
 </div>
 
 <script>
+    if(!$_USER['login_status'])
+    {
+        // alert($_GET['path']);
+        window.location.href = "../login.php?d="+url_encode("backpath="+$_GET['path']);
+    }
     $(document).ready(function() {
         var basket_list = new Array();
         var merchant_list = new Array();

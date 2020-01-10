@@ -34,7 +34,7 @@
                 </button>
             </li>
             <li class="nav-item mx-2 mt-2 mr-auto wallet_div ">
-                <button type="button" class="btn btn-sm text-light h-100" id="wallet_btn" style="background-color:#FC9732">
+                <button type="button" class="btn btn-sm text-light " id="wallet_btn" style="background-color:#FC9732">
                     <i class="fas fa-wallet fa-lg my-1" style="font-size:20px" s></i>
                     <br>My Wallet<br>
                     <span class="badge badge-pill badge-light my-1"><span id="label1">RM</span> <span id="wallet_balance">500</span></span>

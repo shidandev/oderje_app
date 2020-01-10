@@ -115,6 +115,10 @@
                 // alert($_GET['backpath'] == "");    
                 window.location.href = "wallet";
             }
+            else if($_USER['login_status'])
+            {
+                window.location.href = $_GET['backpath'];
+            }
 
             $(".cancel_back_btn").on("click",function(){
                 window.location.href = "index.php";
@@ -165,6 +169,10 @@
                                     // console.log("here");
                                     // window.location.href = $_GET['backpath'];
                                     window.location.href = "wallet/";
+                                }
+                                else if($_GET['backpath'])
+                                {
+                                    window.location.href = $_GET['backpath'];
                                 }
                                 else
                                 {
