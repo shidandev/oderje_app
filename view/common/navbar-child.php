@@ -74,7 +74,7 @@
 
 
 <script>
-alert("hahah");
+    $(document).ready(function(){
     //all navigation bar logic here
     $("#fullname").text(($_USER['name'])? $_USER['name']:"");
 
@@ -179,5 +179,5 @@ alert("hahah");
             }
 
         },"json");
-   
+    });
 </script>
