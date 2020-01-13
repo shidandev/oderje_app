@@ -74,6 +74,7 @@
 
 
 <script>
+alert("hahah");
     //all navigation bar logic here
     $("#fullname").text(($_USER['name'])? $_USER['name']:"");
 
