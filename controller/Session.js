@@ -7,7 +7,9 @@ var typ_url_dev = "https://dev2.toyyibpay.com/";
 var root_path = "/www.oderje.com/";
 // var root_path = "/dev2.oderje.com/";
 
-var base_home = "/www.oderje.com/";
+// var base_home = "/www.oderje.com/";
+var base_home = "/dev2.oderje.com/";
+
 var api_home = "https://app.oderje.com/";
 var ajax_url = "api/";
 var customer = "customer";

@@ -76,6 +76,19 @@
 <script>
     $(document).ready(function(){
     //all navigation bar logic here
+
+    // alert("ui");
+
+     $("#favourite_btn").click(function(){
+        let path = $_USER['path'];
+        alert(path);
+        if(path === home()+"payment/pos/" || path === "/payment/pos/")
+        {
+            window.location.href = "../../favourite?d="+url_encode("backpath="+$_USER['path']);
+        }
+
+    });
+
     $("#fullname").text(($_USER['name'])? $_USER['name']:"");
 
     (
@@ -124,15 +137,7 @@
         
     });
 
-    $("#favourite_btn").click(function(){
-        let path = $_USER['path'];
-        
-        if(path === "/www.oderje.com/payment/pos/")
-        {
-            window.location.href = "../../favourite?d="+url_encode("backpath="+$_USER['path']);
-        }
-
-    });
+   
     $(".sign_in_btn").click(function(){
         let path = $_USER['path'];
 
