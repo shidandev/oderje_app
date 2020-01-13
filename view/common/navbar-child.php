@@ -88,7 +88,24 @@
         }
 
     });
+    $("#basket_btn").click(function(){
+        
+        let path = $_USER['path'];
 
+        if(path === home()+"payment/pos/" || path === "/payment/pos/")
+        {
+            window.location.href = "../../basket?d="+url_encode("backpath="+$_USER['path']);
+        }
+    });
+    $("#wallet_btn").click(function(){
+        let path = $_USER['path'];
+
+        if(path === home()+"payment/pos/" || path === "/payment/pos/")
+        {
+            window.location.href = "../../wallet?d="+url_encode("backpath="+$_USER['path']);
+        }
+        
+    });
     $("#fullname").text(($_USER['name'])? $_USER['name']:"");
 
     (
@@ -118,24 +135,7 @@
         window.location.href = oderje_home;
     });
 
-    $("#basket_btn").click(function(){
-        
-        let path = $_USER['path'];
-
-        if(path === "/www.oderje.com/payment/pos/")
-        {
-            window.location.href = "../../basket?d="+url_encode("backpath="+$_USER['path']);
-        }
-    });
-    $("#wallet_btn").click(function(){
-        let path = $_USER['path'];
-
-        if(path === "/www.oderje.com/payment/pos/")
-        {
-            window.location.href = "../../wallet?d="+url_encode("backpath="+$_USER['path']);
-        }
-        
-    });
+   
 
    
     $(".sign_in_btn").click(function(){
