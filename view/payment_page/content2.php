@@ -140,7 +140,7 @@
             url:oderje_url+"api/customer_payment",
             data:formData,
             processData: false,
-            contentType: false,
+              contentType: false,
             type:"POST",
             success:function(data)
             {
