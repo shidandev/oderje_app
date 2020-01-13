@@ -81,7 +81,7 @@
 
      $("#favourite_btn").click(function(){
         let path = $_USER['path'];
-        alert(path);
+        
         if(path === home()+"payment/pos/" || path === "/payment/pos/")
         {
             window.location.href = "../../favourite?d="+url_encode("backpath="+$_USER['path']);
