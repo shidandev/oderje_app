@@ -393,7 +393,7 @@
 
                                     if ((cur_merchant.basket).length > 0) {
                                         console.log(JSON.stringify(cur_merchant));
-
+                                        window.location.href = "../payment-in-store";
 
                                     } else {
                                         alert("Please choose at least one product");
