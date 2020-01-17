@@ -514,7 +514,7 @@
         cur_vh_id = $(this).find(".vh_id").val();
         
         
-        if($(".voucher_to_use_input").val() <= $(".voucher_to_use_input").parent().find(".vh_balance").val())
+        if(parseFloat($(".voucher_to_use_input").val()) <= parseFloat($(".voucher_to_use_input").parent().find(".vh_balance").val()))
         {
           // console.log(parseFloat($("#input_price").text()) < parseFloat($(".voucher_to_use_input").parent().find(".vh_balance").val()));
           if(checkVoucherMax($(".voucher_to_use_input").val()))
