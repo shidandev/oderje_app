@@ -547,7 +547,10 @@
               $("#sign").text(" Use ");
             }
           }
-          
+          else{
+            alert("uina");
+
+          }
         }
         else
         {
