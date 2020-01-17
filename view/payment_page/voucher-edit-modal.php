@@ -19,7 +19,7 @@
                             <span class="input-group-text" > RM </span>
                         </div>
                         <input type="hidden" class="vh_balance" value="">
-                        <input type="text" class="vh_balance form-control voucher_to_use_input" value="" >
+                        <input type="number" class="vh_balance form-control voucher_to_use_input" value="" >
                     </div>
                     
                 </div>
