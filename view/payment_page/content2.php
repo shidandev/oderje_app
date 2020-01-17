@@ -503,7 +503,7 @@
         }, 1000);
 
 
-        if(myInterval > 1000)
+        if(myInterval > 5)
         {
           checkVoucherMax($(this));
         }
@@ -514,43 +514,37 @@
         cur_vh_id = $(this).find(".vh_id").val();
         
         
-        if(parseFloat($(".voucher_to_use_input").val()) <= parseFloat($(".voucher_to_use_input").parent().find(".vh_balance").val()))
+        if($(".voucher_to_use_input").val() <= $(".voucher_to_use_input").parent().find(".vh_balance").val())
         {
           // console.log(parseFloat($("#input_price").text()) < parseFloat($(".voucher_to_use_input").parent().find(".vh_balance").val()));
-          if(checkVoucherMax($(".voucher_to_use_input").val()))
+          if(parseFloat($("#input_price").text()) < parseFloat($(".voucher_to_use_input").parent().find(".vh_balance").val()))
           {
-            if(parseFloat($("#input_price").text()) < parseFloat($(".voucher_to_use_input").parent().find(".vh_balance").val()))
-            {
-              
-              deduction_for_voucher = $("#input_price").text();
-              
-              $(".voucher_use_div").removeClass("d-none");
-              $(".voucher_use_div").find("#voucher_span").text(" RM "+ deduction_for_voucher);
-              $('#editVoucher').modal('hide');
-              $("#collapseVouchers").removeClass("show");
-              //dom_prepaid_balance.text($("#input_price").text());
+           
+            deduction_for_voucher = $("#input_price").text();
+            
+            $(".voucher_use_div").removeClass("d-none");
+            $(".voucher_use_div").find("#voucher_span").text(" RM "+ deduction_for_voucher);
+            $('#editVoucher').modal('hide');
+            $("#collapseVouchers").removeClass("show");
+            //dom_prepaid_balance.text($("#input_price").text());
 
-              $(".prepaid_balance").text($("#input_price").text() - deduction_for_voucher );
-              $("#sign").text(" Use ");
-            }
-            else
-            {
-              
-              deduction_for_voucher = $(".voucher_to_use_input").val();
-              $(".voucher_use_div").removeClass("d-none");
-              $(".voucher_use_div").find("#voucher_span").text(" RM "+ $(".voucher_to_use_input").val());
-              $('#editVoucher').modal('hide');
-              $("#collapseVouchers").removeClass("show");
-              //dom_prepaid_balance.text($("#input_price").text());
-
-              $(".prepaid_balance").text($("#input_price").text() - $(".voucher_to_use_input").val() );
-              $("#sign").text(" Use ");
-            }
+            $(".prepaid_balance").text($("#input_price").text() - deduction_for_voucher );
+            $("#sign").text(" Use ");
           }
-          else{
-            alert("uina");
+          else
+          {
+            
+            deduction_for_voucher = $(".voucher_to_use_input").val();
+            $(".voucher_use_div").removeClass("d-none");
+            $(".voucher_use_div").find("#voucher_span").text(" RM "+ $(".voucher_to_use_input").val());
+            $('#editVoucher').modal('hide');
+            $("#collapseVouchers").removeClass("show");
+            //dom_prepaid_balance.text($("#input_price").text());
 
+            $(".prepaid_balance").text($("#input_price").text() - $(".voucher_to_use_input").val() );
+            $("#sign").text(" Use ");
           }
+          
         }
         else
         {
@@ -567,14 +561,11 @@
         if(isNaN(input.val()))
         {
           alert("Not a Number");
-          return false;
         }
         else if(input.val() > input.parent().find(".vh_balance").val())
         {
           alert("Maximum: " + input.parent().find(".vh_balance").val());
-          return false;
         }
-        return true;
     }
 
     
