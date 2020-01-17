@@ -514,7 +514,7 @@
         cur_vh_id = $(this).find(".vh_id").val();
         
         
-        if($(".voucher_to_use_input").val() <= $(".voucher_to_use_input").parent().find(".vh_balance").val())
+        if($(".voucher_to_use_input").val() <= $(".voucher_to_use_input").parent().find(".vh_balance").val() && parseFloat($(".voucher_to_use_input").val()) > 0 && !isNaN($(".voucher_to_use_input").val()))
         {
           // console.log(parseFloat($("#input_price").text()) < parseFloat($(".voucher_to_use_input").parent().find(".vh_balance").val()));
           if(parseFloat($("#input_price").text()) < parseFloat($(".voucher_to_use_input").parent().find(".vh_balance").val()))
