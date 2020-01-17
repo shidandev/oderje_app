@@ -561,10 +561,12 @@
         if(isNaN(input.val()))
         {
           alert("Not a Number");
+          input.val("0.00");
         }
         else if(input.val() > input.parent().find(".vh_balance").val())
         {
           alert("Maximum: " + input.parent().find(".vh_balance").val());
+          input.val("0.00");
         }
     }
 
