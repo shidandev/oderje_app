@@ -250,7 +250,7 @@
                         $(this).prop('checked', false);
                         total_product -= parseInt(temp['p_quantity'], 10);
                     }
-                    $("#totalPrice").text(price);
+                    $("#totalPrice").text(price/100);
                     $("#total_product").text(total_product);
                 });
 
@@ -286,13 +286,13 @@
                         check_btn.each(function() {
                             var temp = find(basket_list, $(this).val());
                             price -= (temp['p_price'] * temp['p_quantity']);
-                            $("#totalPrice").text(price);
+                            $("#totalPrice").text(price/100);
                             $(this).prop('checked', false);
                             // total_product-=check_btn.length;
                             total_product -= parseInt(temp['p_quantity'], 10);
                         });
                     }
-                    $("#totalPrice").text(price);
+                    $("#totalPrice").text(price/100);
                     $("#total_product").text(total_product);
 
                 });

@@ -4,7 +4,7 @@ class ProductBasket {
         this.pbm_id = p.pbm_id;
         this.p_id = p.p_id;
         this.p_name = p.p_name;
-        this.p_price = p.p_price;
+        this.p_price = p.p_price / 100;
         this.p_img = p.p_image;
         this.p_quantity = p.p_quantity;
         this.type = p.type;
@@ -18,7 +18,7 @@ class ProductBasket {
         html += '  <div class="card border-light">';
         html += '    <div class="card-body">';
         html += '      <div class="form-check text-center">';
-        html += '        <input class="form-check-input child-check" type="checkbox" value="'+this.pbm_id+'">';
+        html += '        <input class="form-check-input child-check" type="checkbox" value="' + this.pbm_id + '">';
         html += '      </div>';
         html += '    </div>';
         html += '    <img src="https://app.oderje.com/images/product/' + this.p_img + '" class="card-img-top mx-auto" style="width:200px" alt="Product Name">';
