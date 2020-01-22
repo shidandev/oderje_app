@@ -21,9 +21,9 @@
     <script src="../controller/Session.js"></script>
     <script src="../controller/encodedecode.js"></script>
     <script src="../controller/PARAM.js"></script>
-    <script src="../modal/Product.js"></script>
-    <script src="../modal/ProductBasket.js"></script>
-    <script src="../modal/BasketByMerchant.js"></script>
-    <script src="../modal/CheckOutMerchant.js"></script>
-    <script src="../modal/ProductCheckOut.js"></script>
+    <script src="../modal/Product.js?"></script>
+    <script src="../modal/ProductBasket.js?"></script>
+    <script src="../modal/BasketByMerchant.js?"></script>
+    <script src="../modal/CheckOutMerchant.js?"></script>
+    <script src="../modal/ProductCheckOut.js?"></script>
 </head>
