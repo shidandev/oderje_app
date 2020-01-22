@@ -330,7 +330,7 @@
                                 key: data.typ_key
                             }, function(data2) {
                                 // console.log(data2.vab_amount);
-                                if (price <= data2.vab_amount) {
+                                if ((price/100) <= data2.vab_amount) {
                                     var check_store_count = $(".storeCheck1");
                                     var cur_merchant;
                                     check_store_count.each(function() {
