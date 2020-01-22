@@ -17,6 +17,36 @@
         </a>
     </div>
 
+    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-2 mt-2 mr-auto " style="max-height:81;max-weight:76.76">
+                
+                <button class="btn btn-sm text-light h-100" id="favourite_btn" style="background-color:#FF9933">
+                    <i class="fas fa-heart fa-lg my-1"></i><br><span class="text-center">Favourites</span><br><span
+                        class="badge badge-pill badge-light my-1">0</span>
+                </button>
+                
+            </li>
+            <li class="nav-item mx-2 mt-2 mr-auto" style="max-height:81;max-weight:76.76">
+                <button class="btn btn-sm text-light h-100" id="basket_btn" style="background-color:#FF9933">
+                    <i class="fas fa-shopping-basket my-1 fa-lg"></i><br>My Basket<br><span
+                        class="badge badge-pill badge-light my-1">0</span>
+                </button>
+            </li>
+            <li class="nav-item mx-2 mt-2 mr-auto wallet_div " style="max-height:81;max-weight:76.76">
+                <button type="button" class="btn btn-sm text-light " id="wallet_btn" style="background-color:#FC9732">
+                    <i class="fas fa-wallet fa-lg my-1" style="font-size:20px" s></i>
+                    <br>My Wallet<br>
+                    <span class="badge badge-pill badge-light my-1"><span id="label1">RM</span> <span id="wallet_balance">500</span></span>
+                </button>
+            </li>
+             <li class="nav-item mx-2 mt-2 mr-auto login_nav_div d-none">
+                <button class="btn btn-sm text-light sign_in_btn px-3" style="background-color:#FC9732">
+                    <i class="fas fa-sign-in-alt" style="font-size:20px"></i></i><br>Log In<br>
+                </button>
+            </li>
+        </ul>
+    </div> -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-2 mt-2 mr-auto " style="max-height:81;max-weight:76.76">
