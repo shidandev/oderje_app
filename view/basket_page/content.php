@@ -392,7 +392,8 @@
                                     });
 
                                     if ((cur_merchant.basket).length > 0) {
-                                        console.log(JSON.stringify(cur_merchant));
+                                        var data = JSON.stringify(cur_merchant);
+                                        localStorage.setItem("data",data);
                                         window.location.href = "../payment-in-store";
 
                                     } else {

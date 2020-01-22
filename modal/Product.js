@@ -4,7 +4,7 @@ class Product {
         this.p_id = p.p_id;
         this.p_code = p.category_code;
         this.p_name = p.p_name;
-        this.p_price = (p.p_price * 100);
+        this.p_price = (p.p_price / 100);
         this.p_brand = p.p_brand;
         this.p_img = p.p_image;
         this.pbm_id = p.pbm_id;

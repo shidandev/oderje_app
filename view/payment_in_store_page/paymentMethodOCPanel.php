@@ -9,11 +9,11 @@
                     </tr>
                     <tr>
                         <th>Total Item</th>
-                        <td>&nbsp;&#58;&nbsp;<span id="total-item">0</span></td>
+                        <td>&nbsp;&#58;&nbsp;<span id="total_item">0</span></td>
                     </tr>
                     <tr>
                         <th>Total Price</th>
-                        <td>&nbsp;&#58;&nbsp;RM&nbsp;<span id="total-price">0.00</span></td>
+                        <td>&nbsp;&#58;&nbsp;RM&nbsp;<span id="total_price">0.00</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -26,7 +26,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-12">
+        <div class="col-12 d-none">
             <div class="accordian" id="paymentVoucher">
                 <div class="card">
                     <div class="card-header collapsed" id="headingVouchers" data-toggle="collapse"
