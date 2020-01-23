@@ -144,7 +144,7 @@
                     }
                     else
                     {
-                        //console.log("ui");
+                        alert("Username or E - mail already in used");
                     }
                 },"json");
             }
