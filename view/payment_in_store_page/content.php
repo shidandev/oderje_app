@@ -59,12 +59,18 @@
 
 <script>
     $(document).ready(function() {
+        $("#oderjePrepaid").attr("checked", true);
+
+        $("#pay_btn").on("click", function() {
+            console.log("proceed payment");
+        });
         if (localStorage.data) {
-            var data = JSON.parse(localStorage.data);
-            var lel = new CheckOutMerchant(data);
-            console.log(data);
+
 
             try {
+                var data = JSON.parse(localStorage.data);
+                var lel = new CheckOutMerchant(data);
+                console.log(data);
                 if (data) {
                     $("#accordionItemList ").append(lel.CheckOutByMerchantView());
                     $("#customerName").text($_USER['name']);
@@ -77,7 +83,8 @@
                     }
 
                     $("#total_item").text(count);
-                    $("#total_price").text(total_price);
+                    $("#total_price").text((total_price).toFixed(2));
+                    $("#amount_need_to_pay").text(total_price.toFixed(2));
                 }
             } catch (e) {}
 
@@ -85,6 +92,7 @@
             alert("Please back to basket to check out ");
 
         }
+
 
     });
 </script>

@@ -29,19 +29,16 @@
         <div class="col-12 d-none">
             <div class="accordian" id="paymentVoucher">
                 <div class="card">
-                    <div class="card-header collapsed" id="headingVouchers" data-toggle="collapse"
-                        data-target="#collapseVouchers" aria-expanded="false" aria-controls="collapseVouchers"
-                        style="border-color:#EDF1FF">
+                    <div class="card-header collapsed" id="headingVouchers" data-toggle="collapse" data-target="#collapseVouchers" aria-expanded="false" aria-controls="collapseVouchers" style="border-color:#EDF1FF">
                         <b>Vouchers&nbsp;&nbsp;</b><i class="float-right mt-2 fas fa-chevron-down fa-xs"></i>
                     </div>
-                    <div id="collapseVouchers" class="collapse" aria-labelledby="headingVouchers"
-                        data-parent="#paymentVoucher">
+                    <div id="collapseVouchers" class="collapse" aria-labelledby="headingVouchers" data-parent="#paymentVoucher">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-3 col-6 my-1">
                                     <div class="card border-light" style="background-color:lightgoldenrodyellow">
                                         <div class="card-header text-center border-white" style="background-color:transparent;color:#FF6600">
-                                        <small>Cash<br>Voucher</small>
+                                            <small>Cash<br>Voucher</small>
                                         </div>
                                         <div class="card-body mt-n3">
                                             <span style="font-size:x-small">Reddem at:</span>
@@ -50,7 +47,7 @@
                                                 RM 6.00
                                             </div>
                                             <div class="text-center text-secondary" style="font-size:xx-small">
-                                                Valid till&nbsp;&#58;&nbsp;<span id="cashVoucherValid" >01/01/2021</span>
+                                                Valid till&nbsp;&#58;&nbsp;<span id="cashVoucherValid">01/01/2021</span>
                                             </div>
                                         </div>
                                         <div class="card-footer text-center border-white mt-n2" style="background-color:transparent">
@@ -58,7 +55,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -75,19 +72,17 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="oderjePrepaid"
-                                value="oderje">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="oderjePrepaid" value="oderje">
                             <label class="form-check-label" for="oderjePrepaid">
                                 <img src="../img/oderje-prepaid.png" class="img-fluid" alt="oderje prepaid" width="150px">
                             </label>
+                            <label class="my-auto font-weight-bold text-warning">RM <span id="amount_need_to_pay"> 0.00 </span> </label>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header collapse" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo"
-                        aria-expanded="false" aria-controls="collapseTwo">
-                        <img src="../../img/Logo-FPX.png" class="img-fluid" alt="online banking" width="60px">
-                        (Online Banking)<i class="float-right mt-2 fas fa-chevron-down fa-xs"></i>
+                    <div class="card-header collapse" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <img src="../../img/Logo-FPX.png" class="img-fluid" alt="online banking" width="60px"> (Online Banking)<i class="float-right mt-2 fas fa-chevron-down fa-xs"></i>
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#paymentMethod">
                         <div class="card-body">
@@ -116,8 +111,7 @@
                 <div class="card">
                     <div class="card-header collapse">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="paymentMethod3"
-                                value="card">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="paymentMethod3" value="card">
                             <label class="form-check-label" for="paymentMethod3">
                                 <img src="../../img/visa-mastercard.png" class="img-fluid" alt="card" width="100px">
                                 (Card)
@@ -126,6 +120,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12 text-center">
+            <button class="btn btn-success btn-block" id="pay_btn">Pay</button>
         </div>
     </div>
 </div>

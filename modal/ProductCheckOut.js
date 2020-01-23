@@ -17,7 +17,7 @@ class ProductCheckOut {
 
         html += '<div class="col-xl-4 col-md-6 border p-3 my-1 bg-light">';
         html += '   <div class="col-12 text-center border p-3">';
-        html += '       <img src=" https://app.oderje.com/images/product/' + this.p_img + '" class="card-img-top mx-auto " style="width:200px;min-height:200px;max-height: 100px;" alt="Product Name ">';
+        html += '       <img src=" https://app.oderje.com/images/product/' + this.p_img + '" class="card-img-top mx-auto img-fluid" style="width:200px;min-height:200px;max-height: 100px;" alt="Product Name ">';
         html += '   </div>';
         html += '   <div class="p-0 w-100 border p-1">';
         html += '       <div class="col-12 text-center">' + this.p_name + '</div>';
