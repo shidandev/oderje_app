@@ -64,6 +64,7 @@
         $("#pay_btn").on("click", function() {
             console.log("proceed payment");
         });
+
         if (localStorage.data) {
 
 
