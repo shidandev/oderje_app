@@ -105,6 +105,7 @@
                     if(data.status == "ok")
                     {
                         alert("Succesfully paid");
+                        // window.href.location = "/bill/d?=";
                     }
                     else{
                         alert(data.msg);

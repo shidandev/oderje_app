@@ -18,12 +18,12 @@
     <script src="../js/popper.min.js?"></script>
     <script src="../js/number-input-spinner.js?"></script>
   
-    <script src="../controller/Session.js?"></script>
-    <script src="../controller/encodedecode.js?"></script>
-    <script src="../controller/PARAM.js?"></script>
-    <script src="../modal/Product.js?"></script>
-    <script src="../modal/ProductBasket.js?"></script>
-    <script src="../modal/BasketByMerchant.js?"></script>
-    <script src="../modal/CheckOutMerchant.js?"></script>
-    <script src="../modal/ProductCheckOut.js?"></script>
+    <script src="../controller/Session.js?random=<?php echo uniqid(); ?>"></script>
+    <script src="../controller/encodedecode.js?random=<?php echo uniqid(); ?>"></script>
+    <script src="../controller/PARAM.js?random=<?php echo uniqid(); ?>"></script>
+    <script src="../modal/Product.js?random=<?php echo uniqid(); ?>"></script>
+    <script src="../modal/ProductBasket.js?random=<?php echo uniqid(); ?>"></script>
+    <script src="../modal/BasketByMerchant.js?random=<?php echo uniqid(); ?>"></script>
+    <script src="../modal/CheckOutMerchant.js?random=<?php echo uniqid(); ?>"></script>
+    <script src="../modal/ProductCheckOut.js?random=<?php echo uniqid(); ?>"></script>
 </head>
