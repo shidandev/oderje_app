@@ -83,7 +83,6 @@
 			let bank_code = $("input[name='paymentMethod']:checked").val();
             let bank_name = $("input[name='paymentMethod']:checked").attr("bank-name");
             
-
             console.log(bank_code);
             if(parseFloat(amount) > 1.0 && bank_code != "" && bank_name !="")
             {

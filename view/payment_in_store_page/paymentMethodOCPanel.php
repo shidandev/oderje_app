@@ -13,7 +13,7 @@
                     </tr>
                     <tr>
                         <th>Total Price</th>
-                        <td>&nbsp;&#58;&nbsp;RM&nbsp;<span id="total_price">0.00</span></td>
+                        <td>&nbsp;&#58;&nbsp;RM&nbsp;<span id="total_price">0.00</span><input class="total_price" type="hidden" value="0.00"></td>
                     </tr>
                 </tbody>
             </table>

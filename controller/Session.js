@@ -1,7 +1,14 @@
 var oderje_home = "https://www.oderje.com/";
-var oderje_url = "https://app.oderje.com/";
+
+//development
+// var oderje_url = "https://dev1.oderje.com/";
 // var typ_url = "https://dev2.toyyibpay.com/";
+
+//production
+var oderje_url = "https://app.oderje.com/";
 var typ_url = "https://app.toyyibpay.com/";
+
+
 var typ_url_dev = "https://dev2.toyyibpay.com/";
 
 var root_path = "/www.oderje.com/";

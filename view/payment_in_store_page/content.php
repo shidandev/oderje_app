@@ -59,11 +59,59 @@
 
 <script>
     $(document).ready(function() {
+        var order_by_merchant = "";
         $("#oderjePrepaid").attr("checked", true);
 
         $("#pay_btn").on("click", function() {
-            console.log("proceed payment");
+
+            var remarks = $("#orderNote").val().trim();
+            var total_price = $(".total_price").val();
+
+            var formData = {
+                items_by_merchant:[order_by_merchant],
+                c_id:$_USER['cid'],
+                vouchers:null,
+                type:"in-store"
+            };
             
+            var formData = new FormData();
+            
+            formData.append("function","customer_make_payment");
+            formData.append("items_by_merchant",JSON.stringify([order_by_merchant]));
+            formData.append("type","in-store");
+            formData.append("c_id",$_USER['cid']);
+            formData.append("total_amount",total_price);
+            if(remarks!="")
+            {
+                formData.append("remarks",remarks);
+            }
+
+            // if(cur_vh_id > 0)
+            // {
+                // formData.append("vouchers",null);
+                // formData.append("vh_id",cur_vh_id);
+                // formData.append("voucher_deduction",(deduction_for_voucher*100));
+            // }
+
+            $.ajax({
+                url:oderje_url+"api/customer_payment",
+                data:formData,
+                processData: false,
+                contentType: false,
+                type:"POST",
+                success:function(data)
+                {
+                    // alert("submit");
+                    if(data.status == "ok")
+                    {
+                        alert("Succesfully paid");
+                    }
+                    else{
+                        alert(data.msg);
+                    }
+                }
+
+            });
         });
 
         if (localStorage.data) {
@@ -71,6 +119,7 @@
 
             try {
                 var data = JSON.parse(localStorage.data);
+                order_by_merchant = data;
                 var lel = new CheckOutMerchant(data);
                 console.log(data);
                 if (data) {
@@ -86,6 +135,7 @@
 
                     $("#total_item").text(count);
                     $("#total_price").text((total_price).toFixed(2));
+                    $(".total_price").val((total_price).toFixed(2));
                     $("#amount_need_to_pay").text(total_price.toFixed(2));
                 }
             } catch (e) {}
