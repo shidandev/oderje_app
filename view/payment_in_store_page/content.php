@@ -105,7 +105,7 @@
                     if(data.status == "ok")
                     {
                         alert("Succesfully paid");
-                        // window.href.location = "/bill/d?=";
+                        window.location.href = "../bill/?d="+url_encode("bill_code="+data.bill_code);
                     }
                     else{
                         alert(data.msg);
