@@ -69,7 +69,7 @@
                     <small class="w-100">
                         <i class="fas fa-wallet fa-lg my-1 col-12 "></i>
                         <span class="badge  my-1 col-12">My Wallet</span>
-                        <span class="badge badge-pill badge-light my-1 "><span id="label1">RM</span> <span class="wallet_balance">0</span></span>
+                        <span class="badge badge-pill badge-light my-1 loginStat"><span id="label1">RM</span> <span class="wallet_balance">0</span></span>
                     </small>
                 </button>
             </li>
@@ -122,8 +122,9 @@
     if ($_USER['login_status'] == true) {
         // $(".wallet_div").removeClass("d-none");
         // $(".login_nav_div").addClass("d-none");
-    } else {
 
+    } else {
+        $(".loginStat").text("login");
         // $(".wallet_div").addClass("d-none");
         // $(".login_nav_div").removeClass("d-none");
     }
