@@ -17,31 +17,59 @@
     </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto ">
+            <li class="px-1">
+                <button class="btn d-md-block d-none d-sm-none btn text-white favourite_btn" style="background-color:#FF9933">
+                    <small>
+                        <i class="fas fa-heart fa-lg my-1 "></i><br>
+                        <label class="font-weight-bold">Favourites</label><br>
+                        <span class="badge badge-pill badge-light my-1 ">0</span>
+                    </small>
+                </button>
+            </li>
+            <li class="px-1">
+                <button class="btn d-md-block d-none d-sm-none btn text-white basket_btn" style="background-color:#FF9933">
+                    <small>
+                        <i class="fas fa-shopping-basket fa-lg my-1 "></i><br>
+                        <label class="font-weight-bold">My Basket</label><br>
+                        <span class="badge badge-pill badge-light my-1 ">0</span>
+                    </small>
+                </button>
+            </li>
+            <li class="px-1">
+                <button class="btn d-md-block d-none d-sm-none btn text-white wallet_btn" style="background-color:#FF9933">
+                    <small>
+                        <i class="fas fa-wallet  fa-lg my-1 "></i><br>
+                        <label class="font-weight-bold">My Wallet</label><br>
+                        <span class="badge badge-pill badge-light my-1"><span id="label1">RM</span> <span class="wallet_balance">0</span></span>
+                    </small>
+                </button>
+            </li>
+
             <li class="py-1">
-                <button class="btn col-md-12 col-3 text-white" id="favourite_btn" style="background-color:#FF9933">
+                <button class="btn d-md-none col-sm-3 col-3 text-white favourite_btn" style="background-color:#FF9933">
                     <small class="w-100">
                         <i class="fas fa-heart fa-lg my-1 col-12 "></i>
                         <span class="badge  my-1 col-12">Favourites</span>
-                        <span class="badge badge-pill badge-light my-1 col-6">0</span>
+                        <span class="badge badge-pill badge-light my-1 ">0</span>
                     </small>
                 </button>
             </li>
             <li class="py-1">
-                <button class="btn col-md-12 col-3 text-white" id="basket_btn" style="background-color:#FF9933">
+                <button class="btn d-md-none col-sm-3 col-3 text-white basket_btn" style="background-color:#FF9933">
                     <small class="w-100">
                         <i class="fas fa-shopping-basket fa-lg my-1 col-12 "></i>
                         <span class="badge  my-1 col-12">My Basket</span>
-                        <span class="badge badge-pill badge-light my-1 col-6">0</span>
+                        <span class="badge badge-pill badge-light my-1">0</span>
                     </small>
                 </button>
             </li>
             <li class="py-1 wallet_div">
-                <button class="btn col-md-12 col-3 text-white " id="wallet_btn" style="background-color:#FF9933">
+                <button class="btn d-md-none col-sm-3 col-3 text-white  wallet_btn" style="background-color:#FF9933">
                     <small class="w-100">
                         <i class="fas fa-wallet fa-lg my-1 col-12 "></i>
                         <span class="badge  my-1 col-12">My Wallet</span>
-                        <span class="badge badge-pill badge-light my-1 col-12"><span id="label1">RM</span> <span id="wallet_balance">500</span></span>
+                        <span class="badge badge-pill badge-light my-1 "><span id="label1">RM</span> <span class="wallet_balance">0</span></span>
                     </small>
                 </button>
             </li>
@@ -104,7 +132,7 @@
         window.location.href = oderje_home;
     });
 
-    $("#basket_btn").click(function() {
+    $(".basket_btn").click(function() {
         let path = $_USER['path'];
 
         if (path == home() || path == (home() + "index.php")) {
@@ -113,7 +141,7 @@
             window.location.href = "../basket?d=" + url_encode("backpath=" + $_USER['path']);
         }
     });
-    $("#wallet_btn").click(function() {
+    $(".wallet_btn").click(function() {
         let path = $_USER['path'];
 
         if (path == home() || path == (home() + "index.php")) {
@@ -123,7 +151,7 @@
         }
     });
 
-    $("#favourite_btn").click(function() {
+    $(".favourite_btn").click(function() {
         let path = $_USER['path'];
 
         if (path == home() || path == (home() + "index.php")) {
@@ -166,7 +194,7 @@
                     function: "vab_amount",
                     key: data.typ_key
                 }, function(data2) {
-                    $("#wallet_balance").text(data2.vab_amount);
+                    $(".wallet_balance").text(data2.vab_amount);
 
 
                 }, "json");
