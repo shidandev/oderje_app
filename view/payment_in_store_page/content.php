@@ -67,12 +67,7 @@
             var remarks = $("#orderNote").val().trim();
             var total_price = $(".total_price").val();
 
-            var formData = {
-                items_by_merchant:[order_by_merchant],
-                c_id:$_USER['cid'],
-                vouchers:null,
-                type:"in-store"
-            };
+           
             
             var formData = new FormData();
             
