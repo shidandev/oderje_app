@@ -1,14 +1,13 @@
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top">
-    
-    <!-- <img src="http://www.oderje.com/img/oderje-logo.png" class="img-fluid d-none d-sm-block" style="width:10%"> -->
-    
 
-    <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- <img src="http://www.oderje.com/img/oderje-logo.png" class="img-fluid d-none d-sm-block" style="width:10%"> -->
+
+
+    <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <span  class="d-none header-logo">
+    <span class="d-none header-logo">
         <img src="../img/oderje-logo.png?" class="img-fluid d-block d-sm-none ml-auto btn_homepage" style="width:30%;margin-top:-35px" >
     </span>
     <div class="col-2">
@@ -17,66 +16,40 @@
         </a>
     </div>
 
-    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-2 mt-2 mr-auto " style="max-height:81;max-weight:76.76">
-                
-                <button class="btn btn-sm text-light h-100" id="favourite_btn" style="background-color:#FF9933">
-                    <i class="fas fa-heart fa-lg my-1"></i><br><span class="text-center">Favourites</span><br><span
-                        class="badge badge-pill badge-light my-1">0</span>
-                </button>
-                
-            </li>
-            <li class="nav-item mx-2 mt-2 mr-auto" style="max-height:81;max-weight:76.76">
-                <button class="btn btn-sm text-light h-100" id="basket_btn" style="background-color:#FF9933">
-                    <i class="fas fa-shopping-basket my-1 fa-lg"></i><br>My Basket<br><span
-                        class="badge badge-pill badge-light my-1">0</span>
-                </button>
-            </li>
-            <li class="nav-item mx-2 mt-2 mr-auto wallet_div " style="max-height:81;max-weight:76.76">
-                <button type="button" class="btn btn-sm text-light " id="wallet_btn" style="background-color:#FC9732">
-                    <i class="fas fa-wallet fa-lg my-1" style="font-size:20px" s></i>
-                    <br>My Wallet<br>
-                    <span class="badge badge-pill badge-light my-1"><span id="label1">RM</span> <span id="wallet_balance">500</span></span>
-                </button>
-            </li>
-             <li class="nav-item mx-2 mt-2 mr-auto login_nav_div d-none">
-                <button class="btn btn-sm text-light sign_in_btn px-3" style="background-color:#FC9732">
-                    <i class="fas fa-sign-in-alt" style="font-size:20px"></i></i><br>Log In<br>
-                </button>
-            </li>
-        </ul>
-    </div> -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-2 mt-2 mr-auto " style="max-height:81;max-weight:76.76">
-                
-                <button class="btn btn-sm text-light h-100" id="favourite_btn" style="background-color:#FF9933">
-                    <i class="fas fa-heart fa-lg my-1"></i><br><span class="text-center">Favourites</span><br><span
-                        class="badge badge-pill badge-light my-1">0</span>
-                </button>
-                
-            </li>
-            <li class="nav-item mx-2 mt-2 mr-auto" style="max-height:81;max-weight:76.76">
-                <button class="btn btn-sm text-light h-100" id="basket_btn" style="background-color:#FF9933">
-                    <i class="fas fa-shopping-basket my-1 fa-lg"></i><br>My Basket<br><span
-                        class="badge badge-pill badge-light my-1">0</span>
+            <li class="py-1">
+                <button class="btn col-md-12 col-3 text-white" id="favourite_btn" style="background-color:#FF9933">
+                    <small class="w-100">
+                        <i class="fas fa-heart fa-lg my-1 col-12 "></i>
+                        <span class="badge  my-1 col-12">Favourites</span>
+                        <span class="badge badge-pill badge-light my-1 col-6">0</span>
+                    </small>
                 </button>
             </li>
-            <li class="nav-item mx-2 mt-2 mr-auto wallet_div " style="max-height:81;max-weight:76.76">
-                <button type="button" class="btn btn-sm text-light " id="wallet_btn" style="background-color:#FC9732">
-                    <i class="fas fa-wallet fa-lg my-1" style="font-size:20px" s></i>
-                    <br>My Wallet<br>
-                    <span class="badge badge-pill badge-light my-1"><span id="label1">RM</span> <span id="wallet_balance">500</span></span>
+            <li class="py-1">
+                <button class="btn col-md-12 col-3 text-white" id="basket_btn" style="background-color:#FF9933">
+                    <small class="w-100">
+                        <i class="fas fa-shopping-basket fa-lg my-1 col-12 "></i>
+                        <span class="badge  my-1 col-12">My Basket</span>
+                        <span class="badge badge-pill badge-light my-1 col-6">0</span>
+                    </small>
                 </button>
             </li>
-             <li class="nav-item mx-2 mt-2 mr-auto login_nav_div d-none">
-                <button class="btn btn-sm text-light sign_in_btn px-3" style="background-color:#FC9732">
-                    <i class="fas fa-sign-in-alt" style="font-size:20px"></i></i><br>Log In<br>
+            <li class="py-1 wallet_div">
+                <button class="btn col-md-12 col-3 text-white " id="wallet_btn" style="background-color:#FF9933">
+                    <small class="w-100">
+                        <i class="fas fa-wallet fa-lg my-1 col-12 "></i>
+                        <span class="badge  my-1 col-12">My Wallet</span>
+                        <span class="badge badge-pill badge-light my-1 col-12"><span id="label1">RM</span> <span id="wallet_balance">500</span></span>
+                    </small>
                 </button>
             </li>
+
+
         </ul>
     </div>
+
 </nav>
 <div class="container-fluid d-none" id="basket_custom">
     <div class="row bg-white">
@@ -105,121 +78,103 @@
 
 <script>
     //all navigation bar logic here
-    $("#fullname").text(($_USER['name'])? $_USER['name']:"");
+    $("#fullname").text(($_USER['name']) ? $_USER['name'] : "");
 
     (
         $_USER['path'] == "/www.oderje.com/index.php" ||
         $_USER['path'] == "/www.oderje.com/" ||
         $_USER['path'] == "/" ||
         $_USER['path'] == "/index.php" ||
-        $_USER['path'] == "/dev2.oderje.com/index.php" || 
-        $_USER['path'] == "/dev2.oderje.com/" 
-    )?$(".header-logo").addClass("d-none"):$(".header-logo").removeClass("d-none");
+        $_USER['path'] == "/dev2.oderje.com/index.php" ||
+        $_USER['path'] == "/dev2.oderje.com/"
+    ) ? $(".header-logo").addClass("d-none"): $(".header-logo").removeClass("d-none");
 
     //($_USER['path'] == "/www.oderje.com/basket/index.php" || $_USER['path'] == "/www.oderje.com/basket/"  )?$("#basket_custom").removeClass("d-none"):$("#basket_custom").addClass("d-none");
 
-    if($_USER['login_status'] == true)
-    {
+    if ($_USER['login_status'] == true) {
         // $(".wallet_div").removeClass("d-none");
         // $(".login_nav_div").addClass("d-none");
-    }
-    else
-    {
+    } else {
 
         // $(".wallet_div").addClass("d-none");
         // $(".login_nav_div").removeClass("d-none");
     }
 
-    $(".btn_homepage").click(function(){
+    $(".btn_homepage").click(function() {
         window.location.href = oderje_home;
     });
 
-    $("#basket_btn").click(function(){
+    $("#basket_btn").click(function() {
         let path = $_USER['path'];
 
-        if(path == home() || path == (home()+"index.php"))
-        {
-            window.location.href = "basket?d="+url_encode("backpath="+$_USER['path']);
-        }
-        else
-        {
-            window.location.href = "../basket?d="+url_encode("backpath="+$_USER['path']);
+        if (path == home() || path == (home() + "index.php")) {
+            window.location.href = "basket?d=" + url_encode("backpath=" + $_USER['path']);
+        } else {
+            window.location.href = "../basket?d=" + url_encode("backpath=" + $_USER['path']);
         }
     });
-    $("#wallet_btn").click(function(){
+    $("#wallet_btn").click(function() {
         let path = $_USER['path'];
 
-        if(path == home() || path == (home()+"index.php"))
-        {
-            window.location.href = "wallet?d="+url_encode("backpath="+$_USER['path']);
-        }
-        else
-        {
-            window.location.href = "../wallet?d="+url_encode("backpath="+$_USER['path']);
+        if (path == home() || path == (home() + "index.php")) {
+            window.location.href = "wallet?d=" + url_encode("backpath=" + $_USER['path']);
+        } else {
+            window.location.href = "../wallet?d=" + url_encode("backpath=" + $_USER['path']);
         }
     });
 
-    $("#favourite_btn").click(function(){
+    $("#favourite_btn").click(function() {
         let path = $_USER['path'];
-        
-        if(path == home() || path == (home()+"index.php"))
-        {
-            window.location.href = "favourite?d="+url_encode("backpath="+$_USER['path']);
-        }
-        else
-        {
-            window.location.href = "../favourite?d="+url_encode("backpath="+$_USER['path']);
+
+        if (path == home() || path == (home() + "index.php")) {
+            window.location.href = "favourite?d=" + url_encode("backpath=" + $_USER['path']);
+        } else {
+            window.location.href = "../favourite?d=" + url_encode("backpath=" + $_USER['path']);
         }
 
     });
-    $(".sign_in_btn").click(function(){
+    $(".sign_in_btn").click(function() {
         let path = $_USER['path'];
 
-        if(path == home() || path == (home()+"index.php"))
-        {
-            window.location.href = "login.php?d="+url_encode("backpath="+$_USER['path']);
-        }
-        else
-        {
-            window.location.href = "../login.php?d="+url_encode("backpath="+$_USER['path']);
+        if (path == home() || path == (home() + "index.php")) {
+            window.location.href = "login.php?d=" + url_encode("backpath=" + $_USER['path']);
+        } else {
+            window.location.href = "../login.php?d=" + url_encode("backpath=" + $_USER['path']);
         }
     });
 
-     $("#basketGeneral").click(function () {
+    $("#basketGeneral").click(function() {
         $("#collapseGeneralContent").slideToggle("fast");
         if ($("#collapseFoodContent").is(":visible")) {
             $("#collapseFoodContent").slideUp("fast");
         }
     });
-    $("#basketFood").click(function () {
+    $("#basketFood").click(function() {
         $("#collapseFoodContent").slideToggle("fast");
         if ($("#collapseGeneralContent").is(":visible")) {
             $("#collapseGeneralContent").slideUp("fast");
         }
     });
 
-    $.post(oderje_url+"api/customer",
-        {
-            function:"user_typ_key",
-            u_id:$_USER['uid']
+    $.post(oderje_url + "api/customer", {
+            function: "user_typ_key",
+            u_id: $_USER['uid']
         },
-        function(data){
-            if(data.status == "ok")
-            {
-                $.post(typ_url+"api/typ_accountBalance",
-                {
-                    function:"vab_amount",
-                    key:data.typ_key
-                },function(data2){
+        function(data) {
+            if (data.status == "ok") {
+                $.post(typ_url + "api/typ_accountBalance", {
+                    function: "vab_amount",
+                    key: data.typ_key
+                }, function(data2) {
                     $("#wallet_balance").text(data2.vab_amount);
-                    
-                    
-                },"json");
+
+
+                }, "json");
 
                 $("#accountName").text($_USER['name']);
             }
 
-        },"json");
+        }, "json");
     // $(".sign_out_btn").click(function(){
 
     //     if(confirm("Are you sure log out?"))
@@ -264,7 +219,7 @@
     //             alert("uina");
     //         });
     //     }
-        
+
     // });
 
     // $("#back_btn_global").click(function(){
