@@ -84,7 +84,7 @@
             let bank_name = $("input[name='paymentMethod']:checked").attr("bank-name");
             
             console.log(bank_code);
-            if(parseFloat(amount) > 1.0 && bank_code != "" && bank_name !="")
+            if(parseFloat(amount) >= 1.0 && bank_code != "" && bank_name !="")
             {
                 // $.post(oderje_url+"/api/customer_topup",{
                 //     function:"topup_wallet_typ",
