@@ -7,10 +7,10 @@
     <?php include_once("../view/common/navbar.php");?>
     <div class="container mt-3">
         <div class="row text-center">
-            <div class="col-12 h4">Your order</div>
+            <div class="col-12 h4">Your Order</div>
         </div>
         <div class="row text-center">
-            <div class="col-12 h5">Bill number</div>
+            <div class="col-12 h5">Number</div>
         </div>
         <div class="row text-center my-5">
             <div class="col-12 h5">
