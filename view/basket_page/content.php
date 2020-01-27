@@ -157,9 +157,9 @@
             if (purchase_type != 0) {
                 if (purchase_type == "in_store") {
                     //call function in store check out logic
-                    in_store_checkout();
+                    in_store_checkout("in_store");
                 } else if (purchase_type == "self_collect") {
-
+                    in_store_checkout("pre_order");
                 } else {
                     $.post(oderje_url + "api/customer", {
                             function: "user_typ_key",
@@ -304,7 +304,7 @@
         //function definition
 
         //function in store check out logic
-        function in_store_checkout() {
+        function in_store_checkout(type) {
             let check_store_count = $(".storeCheck1");
             let count = 0;
             check_store_count.each(function() {
@@ -394,8 +394,13 @@
                                     if ((cur_merchant.basket).length > 0) {
                                         var data = JSON.stringify(cur_merchant);
                                         localStorage.setItem("data",data);
-                                        window.location.href = "../payment-in-store";
-
+                                        if(type=="in_store"){
+                                            window.location.href = "../payment-in-store";
+                                        }
+                                        else if(type=="pre_order")
+                                        {
+                                            window.location.href = "../payment-pre-order";
+                                        }
                                     } else {
                                         alert("Please choose at least one product");
                                     }
