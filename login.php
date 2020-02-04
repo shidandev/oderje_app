@@ -90,7 +90,7 @@
                                     </div>
                                     <button type="button" class="btn btn-info login_btn">Submit</button>
                                
-                                <p class="text-right"><a href="#" class="text-secondary">Forgot password?</a></p>
+                                <p class="text-right"><a href="forgotpassword.php" class="text-secondary">Forgot password?</a></p>
                             </div>
                         </div>
                     </div>
