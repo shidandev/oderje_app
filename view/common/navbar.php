@@ -32,7 +32,7 @@
                     <small>
                         <i class="fas fa-shopping-basket fa-lg my-1 "></i><br>
                         <label class="font-weight-bold">My Basket</label><br>
-                        <span class="badge badge-pill badge-light my-1 ">0</span>
+                        <span class="badge badge-pill badge-light my-1 basketCount">0</span>
                     </small>
                 </button>
             </li>
@@ -41,7 +41,7 @@
                     <small>
                         <i class="fas fa-wallet  fa-lg my-1 "></i><br>
                         <label class="font-weight-bold">My Wallet</label><br>
-                        <span class="badge badge-pill badge-light my-1"><span id="label1">RM</span> <span class="wallet_balance">0</span></span>
+                        <span class="badge badge-pill badge-light my-1 loginStat"><span id="label1">RM</span> <span class="wallet_balance">0</span></span>
                     </small>
                 </button>
             </li>
@@ -51,7 +51,7 @@
                     <small class="w-100">
                         <i class="fas fa-heart fa-lg my-1 col-12 "></i>
                         <span class="badge  my-1 col-12">Favourites</span>
-                        <span class="badge badge-pill badge-light my-1 ">0</span>
+                        <span class="badge badge-pill badge-light my-1 basketCount">0</span>
                     </small>
                 </button>
             </li>
@@ -196,7 +196,7 @@
                     key: data.typ_key
                 }, function(data2) {
                     $(".wallet_balance").text(data2.vab_amount);
-
+                    
 
                 }, "json");
 
