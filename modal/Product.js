@@ -52,7 +52,7 @@ class Product {
         var html = '    <div class="col-xl-3 col-md-6 my-2">';
         html += '        <div class="card border-light">';
         html += '            <img src="';
-        html += (!this.p_img) ? 'https://www.oderje.com/img/products/generic-product.jpg"' : 'https://app.oderje.com/images/product/' + this.p_img + '"';
+        html += (!this.p_img) ? 'https://www.oderje.com/img/products/generic-product.jpg"' : oderje_url + 'images/product/' + this.p_img + '"';
         html += '             class="card-img-top mx-auto" style="width:200px" alt="Product Name">';
         html += '            <div class="card-body">';
         html += '                <div class="card-title overflow-hidden" style="height:40px">';
