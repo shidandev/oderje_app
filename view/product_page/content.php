@@ -187,7 +187,7 @@
 			$("#exact_price").text((p.exact_price)?p.exact_price:"0.00");
 			$(".pbm_id").val((p.pbm_id)?p.pbm_id:"null");
 			$("#quantity").val("0");
-			let img_url = (p.p_img)?"https://app.oderje.com/images/product/"+p.p_img+"?"+temp:"https://www.oderje.com/img/products/generic-product.jpg?"+temp;
+			let img_url = (p.p_img)?oderje_url+"images/product/"+p.p_img+"?"+temp:"https://www.oderje.com/img/products/generic-product.jpg?"+temp;
 			$("#image_slider").find('img').attr('src',img_url);
 			if(p.rating)
 			{
