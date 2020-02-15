@@ -21,7 +21,7 @@ class ProductBasket {
         html += '        <input class="form-check-input child-check" type="checkbox" value="' + this.pbm_id + '">';
         html += '      </div>';
         html += '    </div>';
-        html += '    <img src="https://app.oderje.com/images/product/' + this.p_img + '" class="card-img-top mx-auto" style="width:200px" alt="Product Name">';
+        html += '    <img src="' + oderje_url + 'images/product/' + this.p_img + '" class="card-img-top mx-auto" style="width:200px" alt="Product Name">';
         html += '    <div class="card-body">';
         html += '      <div class="card-title overflow-hidden" style="height:20px">';
         html += '        <span>' + this.p_name + '</span>';
