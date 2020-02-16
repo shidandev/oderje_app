@@ -17,9 +17,9 @@
     </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto ">
-            <li class="px-1">
-                <button class="btn d-md-block d-none d-sm-none btn text-white favourite_btn" style="background-color:#FF9933">
+        <ul class="nav list-inline ml-auto mt-3">
+            <li class="px-1 list-inline-item">
+                <button class="btn text-white favourite_btn" style="background-color:#FF9933">
                     <small>
                         <i class="fas fa-heart fa-lg my-1 "></i><br>
                         <label class="font-weight-bold">Favourites</label><br>
@@ -27,8 +27,8 @@
                     </small>
                 </button>
             </li>
-            <li class="px-1">
-                <button class="btn d-md-block d-none d-sm-none btn text-white basket_btn" style="background-color:#FF9933">
+            <li class="px-1 list-inline-item">
+                <button class="btn text-white basket_btn" style="background-color:#FF9933">
                     <small>
                         <i class="fas fa-shopping-basket fa-lg my-1 "></i><br>
                         <label class="font-weight-bold">My Basket</label><br>
@@ -36,44 +36,15 @@
                     </small>
                 </button>
             </li>
-            <li class="px-1">
-                <button class="btn d-md-block d-none d-sm-none btn text-white wallet_btn" style="background-color:#FF9933">
+            <li class="px-1 list-inline-item">
+                <button class="btn text-white wallet_btn" style="background-color:#FF9933">
                     <small>
-                        <i class="fas fa-wallet  fa-lg my-1 "></i><br>
+                        <i class="fas fa-wallet fa-lg my-1 "></i><br>
                         <label class="font-weight-bold">My Wallet</label><br>
                         <span class="badge badge-pill badge-light my-1 loginStat"><span id="label1">RM</span> <span class="wallet_balance">0</span></span>
                     </small>
                 </button>
             </li>
-
-            <li class="py-1">
-                <button class="btn d-md-none col-sm-3 col-3 text-white favourite_btn" style="background-color:#FF9933">
-                    <small class="w-100">
-                        <i class="fas fa-heart fa-lg my-1 col-12 "></i>
-                        <span class="badge  my-1 col-12">Favourites</span>
-                        <span class="badge badge-pill badge-light my-1 basketCount">0</span>
-                    </small>
-                </button>
-            </li>
-            <li class="py-1">
-                <button class="btn d-md-none col-sm-3 col-3 text-white basket_btn" style="background-color:#FF9933">
-                    <small class="w-100">
-                        <i class="fas fa-shopping-basket fa-lg my-1 col-12 "></i>
-                        <span class="badge  my-1 col-12">My Basket</span>
-                        <span class="badge badge-pill badge-light my-1">0</span>
-                    </small>
-                </button>
-            </li>
-            <li class="py-1 wallet_div">
-                <button class="btn d-md-none col-sm-3 col-3 text-white  wallet_btn" style="background-color:#FF9933">
-                    <small class="w-100">
-                        <i class="fas fa-wallet fa-lg my-1 col-12 "></i>
-                        <span class="badge  my-1 col-12">My Wallet</span>
-                        <span class="badge badge-pill badge-light my-1 loginStat"><span id="label1">RM</span> <span class="wallet_balance">0</span></span>
-                    </small>
-                </button>
-            </li>
-
 
         </ul>
     </div>
