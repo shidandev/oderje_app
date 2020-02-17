@@ -157,7 +157,7 @@ class Product {
             html += '                    </span>';
             html += '                    <span id="price-selling">';
             html += '                        <b>';
-            html += '                            RM&nbsp;' + this.p_price;
+            html += '                            RM&nbsp;' + parseFloat(this.p_price).toFixed(2);
             html += '                        </b>';
             html += '                        &nbsp;';
             html += '                        <small class="text-primary d-none">%&nbsp;</small>';

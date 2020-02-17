@@ -30,12 +30,12 @@ class ProductBasket {
         html += '        <div class="col-12 text-center text-secondary">';
         html += '          <input value="' + this.cb_id + '" class="cb_id" type="hidden">';
         html += '          <small id="productQuantity">' + this.p_quantity + '</small>&times;';
-        html += '          <small>RM&nbsp;<span id="productPrice">' + this.p_price + '</span></small>';
+        html += '          <small>RM&nbsp;<span id="productPrice">' + parseFloat(this.p_price).toFixed(2) + '</span></small>';
         html += '        </div>';
         html += '      </div>';
         html += '      <div class="row">';
         html += '        <div class="col-12 text-center" style="color:#FF9933">';
-        html += '          <span>RM ' + (this.p_quantity * this.p_price) + '</span>';
+        html += '          <span>RM ' + parseFloat(this.p_quantity * this.p_price).toFixed(2) + '</span>';
         html += '        </div>';
         html += '      </div>';
         html += '      <div class="row">';
