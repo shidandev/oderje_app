@@ -250,7 +250,7 @@
                         $(this).prop('checked', false);
                         total_product -= parseInt(temp['p_quantity'], 10);
                     }
-                    $("#totalPrice").text(price/100);
+                    $("#totalPrice").text(parseFloat(price/100).toFixed(2));
                     $("#total_product").text(total_product);
                 });
 
@@ -292,7 +292,7 @@
                             total_product -= parseInt(temp['p_quantity'], 10);
                         });
                     }
-                    $("#totalPrice").text(price/100);
+                    $("#totalPrice").text(parseFloat(price/100).toFixed(2));
                     $("#total_product").text(total_product);
 
                 });
