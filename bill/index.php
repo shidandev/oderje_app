@@ -25,7 +25,7 @@
     <script>
         $(document).ready(function() {
 
-            var temp = ($_GET['bill_code']).substing(1,4);
+            var temp = ($_GET['bill_code']).substring(1,4);
             console.log(temp);
             $("#bill_code").text(($_GET['bill_code']).substring(1, 4));
         });
