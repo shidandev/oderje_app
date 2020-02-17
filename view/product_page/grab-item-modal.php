@@ -52,7 +52,7 @@
                             <small class="text-secondary">
                                 <span id="store_name">Store Name</span> | <span id="location">location</span>
                             </small>
-                            <div style="font-size:12px" id="star_rating">
+                            <div class="d-none" style="font-size:12px" id="star_rating">
                                 <!-- <i class="fas fa-star text-warning"></i>
                                 <i class="fas fa-star text-warning"></i>
                                 <i class="fas fa-star"></i>
@@ -69,18 +69,18 @@
                                 </span>
                             </div>
                             <div class="card-header border-light" style="height:120px">
-                                <span id="price-slash" class="text-secondary" style="font-size:10px">
+                                <span id="price-slash" class="text-secondary d-none discount" style="font-size:10px">
                                     <s>
-                                        RM&nbsp;300.00
+                                        RM&nbsp;<span class="exact_price">0.00</span>
                                     </s>&nbsp;
                                 </span>
                                 <span id="price-selling">
                                     <b>
-                                        RM&nbsp;<span id="exact_price">150.00</span>
+                                        RM&nbsp;<span id="exact_price">0.00</span>
                                     </b>
-                                    &nbsp;<small class="text-primary">-50%</small>
+                                    &nbsp;<small class="text-primary d-none discount">-<span class="percentage_value">50</span>%</small>
                                 </span>
-                                <p id="price-slash" class="text-secondary" style="font-size:10px">
+                                <p id="price-slash" class="text-secondary d-none" style="font-size:10px">
                                     <span id="price-slash-cond1">
                                         [ End: <span id="">[21/32/2132]</span> ]&nbsp;
                                         <span id="badge-promo" class="badge badge-pill badge-info">
@@ -95,7 +95,7 @@
                                         </span>
                                     </span>
                                 </p>
-                                <p class="col-12 text-center" style="font-size:10px">
+                                <p class="col-12 text-center d-none" style="font-size:10px">
                                     tag1, tag2, tag3, tag4, tag5
                                 </p>
                             </div>

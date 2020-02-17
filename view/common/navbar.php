@@ -156,15 +156,33 @@
         }
     });
 
-    $.post(oderje_url + "api/customer_basket", {
-        function: "get_basket",
+    setTimeout(check_count_basket, 1000);
+
+    var cur_basket_count = 0;
+    function check_count_basket()
+    {
+        $.post(oderje_url + "api/customer_basket", {
+            function: "get_basket",
             c_id: $_USER['cid']
-        },
-        function(data) {
-           $(".basketCount").text(data.length);
+        },function(data) {
+            //console.log(data);
+            var temp = 0;
+            data.map(function(e){
+                temp +=parseInt(e.quantity);
+                
+            });
+
+            console.log(temp);
+            if(cur_basket_count != temp)
+            {
+                cur_basket_count = temp;
+                $(".basketCount").text(temp);
+            }
+            
+            setTimeout(check_count_basket, 1000);
 
         }, "json");
-
+    }
     $.post(oderje_url + "api/customer", {
             function: "user_typ_key",
             u_id: $_USER['uid']
