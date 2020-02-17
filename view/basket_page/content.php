@@ -114,8 +114,8 @@
                                 <div class="col-sm-6">
                                     <div class="input-group">
                                         <select class="custom-select" id="purchase_type" aria-label="Example select with button addon">
-                                    <option value="0" selected>-choose-</option>
-                                    <option value="in_store">In-store</option>
+                                    <option value="0" >-choose-</option>
+                                    <option value="in_store" selected>In-store</option>
                                     <option value="self_collect">Self Collect</option>
                                     <option value="delivery" disabled="">Delivery (Coming Soon)</option>
                                   </select>
@@ -297,6 +297,8 @@
 
                 });
 
+                //default
+                $("input:checkbox").prop("checked","checked").change();
 
             });
 

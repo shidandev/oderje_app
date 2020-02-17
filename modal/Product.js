@@ -107,7 +107,7 @@ class Product {
                 html += '                            RM&nbsp;' + parseFloat(this.exact_price).toFixed(2);
                 html += '                        </b>';
                 html += '                        &nbsp;';
-                html += '                        <small class="text-primary">' + this.promotion_list[0].DISCOUNT_VALUE + '%&nbsp;</small>';
+                html += '                        <small class="text-primary">' + parseFloat(this.promotion_list[0].DISCOUNT_VALUE).toFixed(2) + '%&nbsp;</small>';
                 html += '                    </span>';
 
                 html += '</b>';
@@ -126,7 +126,7 @@ class Product {
                 html += '                            RM&nbsp;' + parseFloat(this.exact_price).toFixed(2);
                 html += '                        </b>';
                 html += '                        &nbsp;';
-                html += '                        <small class="text-primary">' + this.discount_cal + '%&nbsp;</small>';
+                html += '                        <small class="text-primary">' + parseFloat(this.discount_cal).toFixed(2) + '%&nbsp;</small>';
                 html += '                    </span>';
 
                 // html += '                   <small><s>RM '+parseFloat(this.p_price).toFixed(2)+'</s></small> - <small class="text-primary">'+this.discount_cal+'%</small> <b class="float-right">RM '+parseFloat(this.exact_price).toFixed(2);
@@ -143,7 +143,7 @@ class Product {
                 html += '                            RM&nbsp;150.00';
                 html += '                        </b>';
                 html += '                        &nbsp;';
-                html += '                        <small class="text-primary">' + this.promotion_list[0].DISCOUNT_VALUE + '%&nbsp;</small>';
+                html += '                        <small class="text-primary">' + parseFloat(this.promotion_list[0].DISCOUNT_VALUE).toFixed(2) + '%&nbsp;</small>';
                 html += '                    </span>';
 
                 // html += '                   <small><s>RM </s></small> - <small class="text-primary">%</small> <b class="float-right">RM </b>';
