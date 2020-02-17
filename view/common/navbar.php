@@ -197,7 +197,7 @@
                     function: "vab_amount",
                     key: data.typ_key
                 }, function(data2) {
-                    $(".wallet_balance").text(data2.vab_amount);
+                    $(".wallet_balance").text((data2.vab_amount).toFixed(2));
                     
 
                 }, "json");
