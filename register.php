@@ -109,7 +109,7 @@
                 let password = $("#password-input").val();
 
                 if (username != "" && email != "" && password != "") {
-                    $.post("https://app.oderje.com/api/customer", {
+                    $.post(oderje_url+"api/customer", {
                             function: "register",
                             username: username,
                             pass: password,
