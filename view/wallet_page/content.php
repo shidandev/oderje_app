@@ -1,5 +1,5 @@
 <div class="container-fluid mt-2" style="margin-bottom:50px">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center d-none">
         <div class="col-md-6">
             <select class="form-control" id="account_option_btn">
                 <option>Main Account</option>
@@ -32,9 +32,8 @@
                 </div>
             </div>
             <div id="accordion">
-                <div class="card border-white">
-                    <div class="card-header border-white bg-white text-center" id="headingvouchers"
-                        data-toggle="collapse" data-target="#vouchers" aria-expanded="false" aria-controls="vouchers">
+                <div class="card border-white d-none">
+                    <div class="card-header border-white bg-white text-center" id="headingvouchers" data-toggle="collapse" data-target="#vouchers" aria-expanded="false" aria-controls="vouchers">
                         <p class="text-center text-secondary">
                             Vouchers&nbsp;&nbsp;<i class="fas fa-chevron-down fa-xs"></i>
                         </p>
@@ -213,14 +212,14 @@
                                         Reload Credit
                                     </button>
                                 </div>
-                                <div class="p-1">
+                                <div class="p-1 d-none">
                                     <button class="btn btn-sm" id="transfer_btn" style="background-color:#FFF2F4;width:105px">
                                         <i class="fas fa-exchange-alt"></i>
                                         <br>
                                         Pay / Transfer
                                     </button>
                                 </div>
-                                <div class="p-1">
+                                <div class="p-1 d-none">
                                     <button class="btn btn-sm" id="withdraw_btn" style="background-color:#FFF2F4;width:105px">
                                         <i class="fas fa-hand-holding"></i>
                                         <br>
@@ -233,7 +232,7 @@
                     <div class="col-12 mt-n4">
                         <div class="card-body text-center">
                             <div class="d-flex justify-content-center ">
-                                <div class="p-1" >
+                                <div class="p-1 d-none" >
                                     <button class="btn btn-sm" id="help_btn" style="background:#FFF2F4;width:105px">
                                         <i class="fas fa-question-circle"></i>
                                         <br>
