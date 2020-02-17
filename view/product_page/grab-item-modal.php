@@ -155,8 +155,8 @@
                                         function(data){
                                             if(data.status == "ok")
                                             {
-                                                //alert("Succesfully add to basket");
-                                                window.location.href = "../basket/";
+                                                alert("Succesfully add to basket");
+                                                //window.location.href = "../basket/";
                                             }
                                             else{
                                                 alert("Try again, check internet connection");
