@@ -9,6 +9,9 @@ class BasketByMerchant {
     }
 
     BasketByMerchantView() {
+        var date = new Date();
+        var temp = date.toString();
+
         var html = '';
 
         html += '	<div class="card border-white">';
