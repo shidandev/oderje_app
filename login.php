@@ -128,7 +128,7 @@
                 var username = $("#username").val().trim();
                 var password = $("#password").val().trim();
 
-                $.post("https://app.oderje.com/api/customer",
+                $.post(oderje_url+"api/customer",
                 {
                     function:"login",
                     username:username,
