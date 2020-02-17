@@ -157,7 +157,7 @@ class Product {
             html += '                    </span>';
             html += '                    <span id="price-selling">';
             html += '                        <b>';
-            html += '                            RM&nbsp;' + this.p_price;
+            html += '                            RM&nbsp;' + parseFloat(this.p_price).toFixed(2);
             html += '                        </b>';
             html += '                        &nbsp;';
             html += '                        <small class="text-primary d-none">%&nbsp;</small>';
@@ -191,7 +191,7 @@ class Product {
         html += '                </div>';
         html += '                <div class="float-right mt-2 mb-n2">';
         html += '                    <a href="http://localhost/oderje.com/product-page/" style="text-decoration:none">';
-        html += '                        <button class="btn btn-sm btn-outline-info" style="font-size:14px" disabled>';
+        html += '                        <button class="btn btn-sm btn-outline-info d-none" style="font-size:14px" disabled>';
         html += '                            More info&nbsp;<i class="fas fa-info-circle"></i>';
         html += '                        </button>';
         html += '                    </a>';

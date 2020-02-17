@@ -6,7 +6,7 @@
 	<?php include_once("controller/user.php");?>
 	<?php include_once("view/common/navbar.php");?>
 	<?php include_once("view/main_page/content.php");?>
-	<?php include_once("view/main_page/footer.php");?>
+	<?php //include_once("view/main_page/footer.php");?>
 
 </body>
 

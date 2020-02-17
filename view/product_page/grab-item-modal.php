@@ -126,14 +126,19 @@
                                     <input class="pbm_id" type="hidden" >
                                     Add to basket&nbsp;<i class="fas fa-shopping-basket"></i>
                                 </button>
-                                <button class="btn btn-sm btn-dark">
+                                <button class="btn btn-sm btn-dark d-none">
                                     <input class="pbm_id" type="hidden" >
                                     Fast Checkout&nbsp;&nbsp;<i class="fas fa-fighter-jet"></i>
                                 </button>
                             </div>
                             <script>
                                 $("#add_to_backet_btn").on('click',function(){
-                                    
+                                    if(!$_USER['cid'])
+                                    {
+                                        alert("Please Login");
+                                        window.location.href = "../login.php?d="+url_encode("backpath="+$_USER['path']);
+
+                                    }
                                     let pbm_id = $(this).find('input').val();
                                     let cust_id = $_USER['cid'];
                                     let quantity = $("#quantity").val();

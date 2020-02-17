@@ -84,10 +84,10 @@
                                         <input type="password" class="form-control" id="password"
                                             placeholder="Enter password" required="true">
                                     </div>
-                                    <div class="form-group form-check">
+                                    <!-- <div class="form-group form-check">
                                         <input type="checkbox" class="form-check-input" id="Check">
                                         <label class="form-check-label" for="Check">Remember me</label>
-                                    </div>
+                                    </div> -->
                                     <button type="button" class="btn btn-info login_btn">Submit</button>
                                
                                 <p class="text-right"><a href="forgotpassword.php" class="text-secondary">Forgot password?</a></p>

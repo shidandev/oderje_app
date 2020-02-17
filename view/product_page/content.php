@@ -184,7 +184,7 @@
 			$("#p_name").text((p.p_name)?p.p_name:"Not Available");
 			$("#store_name").text((p.store_name)?p.store_name:"Not Available");
 			$("#location").text((p.location)?p.location:"Not Available");
-			$("#exact_price").text((p.exact_price)?p.exact_price:"0.00");
+			$("#exact_price").text(((parseFloat)(p.exact_price)?p.exact_price:"0.00").toFixed(2));
 			$(".pbm_id").val((p.pbm_id)?p.pbm_id:"null");
 			$("#quantity").val("0");
 			let img_url = (p.p_img)?oderje_url+"images/product/"+p.p_img+"?"+temp:"https://www.oderje.com/img/products/generic-product.jpg?"+temp;
