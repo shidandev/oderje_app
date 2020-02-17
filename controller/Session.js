@@ -5,12 +5,12 @@ var oderje_home = "https://www.oderje.com/";
 // var typ_url = "https://dev2.toyyibpay.com/";
 
 //staging
-var oderje_url = "https://staging.oderje.com/";
-var typ_url = "https://dev2.toyyibpay.com/";
+// var oderje_url = "https://staging.oderje.com/";
+// var typ_url = "https://dev2.toyyibpay.com/";
 
 //production
-// var oderje_url = "https://app.oderje.com/";
-// var typ_url = "https://app.toyyibpay.com/";
+var oderje_url = "https://app.oderje.com/";
+var typ_url = "https://app.toyyibpay.com/";
 
 
 var typ_url_dev = "https://dev2.toyyibpay.com/";
