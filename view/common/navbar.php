@@ -167,10 +167,14 @@
         },function(data) {
             //console.log(data);
             var temp = 0;
-            data.map(function(e){
-                temp +=parseInt(e.quantity);
+            try{
+                data.map(function(e){
+                    temp +=parseInt(e.quantity);
                 
-            });
+                });
+            }catch(e){
+                
+            }
 
             console.log(temp);
             if(cur_basket_count != temp)
