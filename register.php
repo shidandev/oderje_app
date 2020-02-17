@@ -117,7 +117,7 @@
                         },
                         function(data1) {
                             if (data1.status == "ok") {
-                                $.post("https://app.oderje.com/api/email", {
+                                $.post(oderje_url+"api/email", {
                                     function: "email_register",
                                     remail: email,
                                     cid: data1.cid
