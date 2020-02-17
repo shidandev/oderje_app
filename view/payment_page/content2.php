@@ -208,7 +208,7 @@
 
                     if(Array.isArray(data.vt_id))
                     {
-                      $.post("https://app.oderje.com/api/transfer",
+                      $.post(oderje_url+"api/transfer",
                       {
                         function:"confirm_payment",
                         pin:pin,
@@ -221,7 +221,7 @@
                         {
                           console.log(data);
                           alert("Successfully paid");
-                          $.post("https://app.oderje.com/api/customer_order",
+                          $.post(oderje_url + "api/customer_order",
                           {
                             function:"customer_make_instant_order",
                             c_id:$_USER['cid'],
@@ -242,7 +242,7 @@
                     }
                     else
                     {
-                      $.post("https://app.oderje.com/api/transfer",
+                      $.post(oderje_url+"api/transfer",
                       {
                         function:"confirm_payment",
                         pin:pin,
@@ -254,7 +254,7 @@
                         if(data.status == "ok")
                         {
                           alert("Successfully paid");
-                          $.post("https://app.oderje.com/api/customer_order",
+                          $.post(oderje_url+"api/customer_order",
                           {
                             function:"customer_make_instant_order",
                             c_id:$_USER['cid'],
@@ -280,7 +280,7 @@
                 else
                 {
                   alert("Succesfully paid");
-                  $.post("https://app.oderje.com/api/customer_order",
+                  $.post(oderje_url+"api/customer_order",
                   {
                     function:"customer_make_instant_order",
                     c_id:$_USER['cid'],

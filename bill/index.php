@@ -20,15 +20,32 @@
         <div class="row text-center">
             <div class="col-12 h5">Please Wait...</div>
             <div class="col-12 h5">Thank you</div>
+
+           
+        </div>
+        <div class="row ">
+            <div class="col-12 text-center">
+                <!-- <button class="btn btn-success order_link">View Order Detail</button> -->
+                <button class="btn btn-success back_btn">Back</button>
+            </div>
         </div>
     </div>
     <script>
         $(document).ready(function() {
 
-            var temp = ($_GET['bill_code']).substring(10,16);
-            console.log(temp);
+            //var temp = ($_GET['bill_code']).substring(10,16);
+            //console.log(temp);
             $("#bill_code").text(($_GET['bill_code']).substring(11, 16));
             // $("#bill_code").text(($_GET['bill_code']));
+
+            $(".order_link").click(function(){
+                window.location.href= "../order";
+
+            });
+
+            $(".back_btn").click(function(){
+                window.location.href ="../index.php";
+            });
         });
     </script>
 </body>

@@ -40,7 +40,7 @@
 					<label>Date of birth</label>
 				</div>
 				<div class="col-12 mt-1">
-					<input type="text" class="form-control" id="dob" required="true">
+					<input type="date" class="form-control" id="dob" required="true">
 				</div>
 				<div class="col-12 mt-3 row mx-auto">
 					<button class="col-6 btn btn-outline-danger">Cancel</button>
@@ -58,7 +58,7 @@
 <script>
 		
 		
-		$( "#dob" ).datepicker({ dateFormat: 'dd/mm/yy' });
+		// $( "#dob" ).datepicker({ dateFormat: 'dd/mm/yy' });
 
 		$("#submit_btn").on('click',function(){
 			let fullname = $("#fullname").val().trim();

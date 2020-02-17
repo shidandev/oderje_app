@@ -18,6 +18,15 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav list-inline ml-auto mt-3">
+            <li class="px-1 list-inline-item">
+                <button class="btn text-white btn_homepage" style="background-color:#FF9933">
+                    <small>
+                        <i class="fas fa-search fa-lg my-1 "></i><br>
+                        <label class="font-weight-bold">Search</label><br>
+                        <span class="badge badge-pill badge-light my-1 invisible">0</span>
+                    </small>
+                </button>
+            </li>
             <li class="px-1 list-inline-item d-none">
                 <button class="btn text-white favourite_btn" style="background-color:#FF9933">
                     <small>
@@ -40,7 +49,7 @@
                 <button class="btn text-white wallet_btn" style="background-color:#FF9933">
                     <small>
                         <i class="fas fa-wallet fa-lg my-1 "></i><br>
-                        <label class="font-weight-bold">My Wallet</label><br>
+                        <label class="font-weight-bold">My Account</label><br>
                         <span class="badge badge-pill badge-light my-1 loginStat"><span id="label1">RM</span> <span class="wallet_balance">0</span></span>
                     </small>
                 </button>
@@ -76,6 +85,7 @@
 
 
 <script>
+
     //all navigation bar logic here
     $("#fullname").text(($_USER['name']) ? $_USER['name'] : "");
 

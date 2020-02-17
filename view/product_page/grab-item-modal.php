@@ -132,6 +132,7 @@
                                 </button>
                             </div>
                             <script>
+                                $("#quantity").val("1");
                                 $("#add_to_backet_btn").on('click',function(){
                                     if(!$_USER['cid'])
                                     {

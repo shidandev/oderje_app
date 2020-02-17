@@ -190,7 +190,7 @@
 			$("#quantity").val("0");
 			let img_url = (p.p_img)?oderje_url+"images/product/"+p.p_img+"?"+temp:"https://www.oderje.com/img/products/generic-product.jpg?"+temp;
 			$("#image_slider").find('img').attr('src',img_url);
-
+			$("#quantity").val("1");
 			try{
 				if(p.promotion_list[0].DISCOUNT_VALUE)
 				{
