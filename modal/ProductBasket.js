@@ -13,6 +13,9 @@ class ProductBasket {
     }
 
     ProductBasketView() {
+
+        var date = new Date();
+        var temp = date.toString();
         var html = '';
         html += '<div class="col-xl-3 col-md-6">';
         html += '  <div class="card border-light">';
@@ -21,7 +24,7 @@ class ProductBasket {
         html += '        <input class="form-check-input child-check" type="checkbox" value="' + this.pbm_id + '">';
         html += '      </div>';
         html += '    </div>';
-        html += '    <img src="' + oderje_url + 'images/product/' + this.p_img + '" class="card-img-top mx-auto" style="width:200px" alt="Product Name">';
+        html += '    <img src="' + oderje_url + 'images/product/' + this.p_img + '?' + temp + '" class="card-img-top mx-auto" style="width:200px" alt="Product Name">';
         html += '    <div class="card-body">';
         html += '      <div class="card-title overflow-hidden" style="height:20px">';
         html += '        <span>' + this.p_name + '</span>';
