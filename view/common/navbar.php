@@ -18,7 +18,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav list-inline ml-auto mt-3">
-            <li class="px-1 list-inline-item">
+            <li class="px-1 list-inline-item d-none">
                 <button class="btn text-white favourite_btn" style="background-color:#FF9933">
                     <small>
                         <i class="fas fa-heart fa-lg my-1 "></i><br>
@@ -155,6 +155,15 @@
             $("#collapseGeneralContent").slideUp("fast");
         }
     });
+
+    $.post(oderje_url + "api/customer_basket", {
+        function: "get_basket",
+            c_id: $_USER['cid']
+        },
+        function(data) {
+           $(".basketCount").text(data.length);
+
+        }, "json");
 
     $.post(oderje_url + "api/customer", {
             function: "user_typ_key",
