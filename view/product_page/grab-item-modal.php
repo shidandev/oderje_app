@@ -163,6 +163,10 @@
                                             }
                                         },"json");
                                     }
+                                    else{
+
+                                        alert("Please add quantity, minimum 1 item");
+                                    }
                                     
                                 });
                             </script>
