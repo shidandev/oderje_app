@@ -33,7 +33,7 @@
 
         $.post(oderje_url + "api/customer_order", {
             function: "get_current_order_customer",
-            c_id: $_USER['c_id']
+            c_id: $_USER['cid']
                 // c_id: 8
         }, function(data) {
             var html = "";

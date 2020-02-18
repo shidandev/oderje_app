@@ -4,7 +4,7 @@
 
 <body>
     <?php include_once("../controller/user.php");?>
-    <?php include_once("../view/common/navbar.php");?>
+    <?php //include_once("../view/common/navbar.php");?>
     <div class="container mt-3">
         <div class="row text-center">
             <div class="col-12 h4">Your Order</div>
