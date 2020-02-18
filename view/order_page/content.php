@@ -139,7 +139,7 @@
                         html +='                <table class="w-100 p-0">';
                         html +='                     <tr>';
                         html +='                         <td class="text-center "><label class="font-weight-bold order_merchant">'+data[i].merchant_name+'</label></td>';
-                        html +='                         <td class="text-center bill_group_status "><label class="font-weight-bold order_status">'+((data[i].ORDER_STATUS == "accept_order")?"Order Processing":(data[i].ORDER_STATUS == "order_ready")?"Please Collect":(data[i].ORDER_STATUS == "completed")?"Completed":"")+'</label></td>';
+                        html +='                         <td class="text-center bill_group_status "><label class="font-weight-bold order_status">'+((data[i].ORDER_STATUS == "accept_order")?"Order Processing":(data[i].ORDER_STATUS == "order_ready")?"Please Collect":(data[i].ORDER_STATUS == "completed")?"Completed":"Paid")+'</label></td>';
                         html +='                     </tr>';
                         html +='                     <tr>';
                         html +='                         <td class="text-center "><label class="font-weight-bold order_date">'+data[i].ORDER_DATE+'</label></td>';
@@ -163,7 +163,7 @@
                         html +='                     </tr>';
                         html +='                     <tr>';
                         html +='                         <td style="vertical-align:top;" class="text-left">Quantity : '+data[i].product[j].QUANTITY+'</td>';
-                        html +='                         <td style="vertical-align:top;" class="text-center">'+((data[i].product[j].ORDER_STATUS == "accept_order")?"Order Processing":(data[i].product[j].ORDER_STATUS == "order_ready")?"Please Collect":(data[i].product[j].ORDER_STATUS == "completed")?"Completed":"")+'</td>';
+                        html +='                         <td style="vertical-align:top;" class="text-center">'+((data[i].product[j].ORDER_STATUS == "accept_order")?"Order Processing":(data[i].product[j].ORDER_STATUS == "order_ready")?"Please Collect":(data[i].product[j].ORDER_STATUS == "completed")?"Completed":"Paid")+'</td>';
                         html +='                     </tr>';
                         html +='                 </table>';
                         html +='             </small>';
