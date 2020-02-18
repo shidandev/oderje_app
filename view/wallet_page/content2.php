@@ -24,6 +24,7 @@
 					<i class="fas fa-money-bill-alt text-custom1 text-white"></i>
 
 				</div>
+				
 			</div>
 			
 			<!-- for withdraw pager -->

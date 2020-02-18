@@ -212,6 +212,13 @@
                                         Reload Credit
                                     </button>
                                 </div>
+                                <div class="p-1">
+                                    <button class="btn btn-sm" id="order_btn" style="background-color:#FFF2F4;width:105px">
+                                        <i class="fas fa-plus"></i>
+                                        <br>
+                                        Order
+                                    </button>
+                                </div>
                                 <div class="p-1 d-none">
                                     <button class="btn btn-sm" id="transfer_btn" style="background-color:#FFF2F4;width:105px">
                                         <i class="fas fa-exchange-alt"></i>
@@ -347,6 +354,11 @@
                 });
             }
             
+        });
+
+        $("#order_btn").click(function(){
+            window.location.href = "../order";
+
         });
 
         $("#reload_btn").click(function(){
