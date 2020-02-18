@@ -3,33 +3,118 @@
         <label class="font-weight-bold h4"> Order List</label>
     </div>
 
-    <table class="table table-bordered order_table">
-        <tr>
-            <td class="text-center">No</td>
-            <td class="text-center">Order Number</td>
-            <td class="text-center">Status</td>
-        </tr>
+    <table class="w-100">
         <!-- <tr>
-            <td class="text-center">1</td>
-            <td class="text-center">IS043289489438</td>
-            <td class="text-center">Accept</td>
-        </tr>
-        <tr>
-            <td class="text-center">2</td>
-            <td class="text-center">IS043289489438</td>
-            <td class="text-center">Accept</td>
-        </tr>
-        <tr>
-            <td class="text-center">3</td>
-            <td class="text-center">IS043289489438</td>
-            <td class="text-center">Accept</td>
+            <td class="border p-1">
+                <small>
+                    <table class="w-100 p-0">
+                        <tr>
+                            <td class="text-center "><label class="font-weight-bold order_merchant">Merchant Name</label></td>
+
+                            <td class="text-center bill_group_status "><label class="font-weight-bold order_status">Completed</label></td>
+
+                        </tr>
+                        <tr>
+                            <td class="text-center "><label class="font-weight-bold order_date">10/14/2020</label></td>
+                            <td class="text-center bill_group_status"><button type="button" class=" btn btn-outline-info detail_btn py-0">Detail <i class="fa fa-caret-down"></i></button></td>
+                        </tr>
+                        
+                    </table>
+                </small>
+                <small>
+                    <table class="w-100 p-0 order_item d-none">
+                        <tr>
+                            <td style="vertical-align:top;" rowspan="2" width="20%"><img src="https://app.oderje.com/images/product/2.png" class="img-fluid"></td>
+                            <td style="vertical-align:top;" class="text-left">Coffee Latte</td>
+                            <td style="vertical-align:top;" class="text-center">RM 0000.00</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:top;" class="text-left">Quantity : 00</td>
+                            <td style="vertical-align:top;" class="text-center">Completed</td>
+                        </tr>
+                    </table>
+                </small>
+                <small>
+                    <table class="w-100 p-0 order_item d-none">
+                        <tr>
+                            <td style="vertical-align:top;" rowspan="2" width="20%"><img src="https://app.oderje.com/images/product/2.png" class="img-fluid"></td>
+                            <td style="vertical-align:top;" class="text-left">Coffee Latte</td>
+                            <td style="vertical-align:top;" class="text-center">RM 0000.00</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:top;" class="text-left">Quantity : 00</td>
+                            <td style="vertical-align:top;" class="text-center">Completed</td>
+                        </tr>
+                    </table>
+                </small>
+            </td>
         </tr> -->
+        <tr>
+            <td class="border p-1">
+                <small>
+                    <table class="w-100 p-0">
+                        <tr>
+                            <td class="text-center "><label class="font-weight-bold order_merchant">Merchant Name</label></td>
+
+                            <td class="text-center bill_group_status "><label class="font-weight-bold order_status">Completed</label></td>
+
+                        </tr>
+                        <tr>
+                            <td class="text-center "><label class="font-weight-bold order_date">10/14/2020</label></td>
+                            <td class="text-center bill_group_status"><button type="button" class=" btn btn-outline-info detail_btn py-0">Detail <i class="fa fa-caret-down"></i></button></td>
+                        </tr>
+                        
+                    </table>
+                </small>
+                <small>
+                    <table class="w-100 p-0 order_item">
+                        <tr>
+                            <td style="vertical-align:top;" rowspan="2" width="20%"><img src="https://app.oderje.com/images/product/2.png" class="img-fluid"></td>
+                            <td style="vertical-align:top;" class="text-left">Coffee Latte</td>
+                            <td style="vertical-align:top;" class="text-center">RM 0000.00</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:top;" class="text-left">Quantity : 00</td>
+                            <td style="vertical-align:top;" class="text-center">Completed</td>
+                        </tr>
+                    </table>
+                </small>
+                <small>
+                    <table class="w-100 p-0 order_item ">
+                        <tr>
+                            <td style="vertical-align:top;" rowspan="2" width="20%"><img src="https://app.oderje.com/images/product/2.png" class="img-fluid"></td>
+                            <td style="vertical-align:top;" class="text-left">Coffee Latte</td>
+                            <td style="vertical-align:top;" class="text-center">RM 0000.00</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:top;" class="text-left">Quantity : 00</td>
+                            <td style="vertical-align:top;" class="text-center">Completed</td>
+                        </tr>
+                    </table>
+                </small>
+            </td>
+        </tr>
     </table>
+
 
 </div>
 
 <script>
     $(document).ready(function() {
+
+        $(".detail_btn").click(function() {
+
+            var root = $(this).parent().parent().parent().parent().parent().parent();
+            console.log(root);
+            var items = root.find(".order_item");
+            if (items.hasClass("d-none")) {
+                items.removeClass("d-none");
+                $(this).find("i").removeClass("fa-caret-down").addClass("fa-caret-up");
+            } else {
+                items.addClass("d-none");
+                $(this).find("i").removeClass("fa-caret-up").addClass("fa-caret-down");
+            }
+        });
 
         $.post(oderje_url + "api/customer_order", {
             function: "get_current_order_customer",
@@ -49,13 +134,13 @@
                         html += '</tr>';
                     }
 
-                    $(".order_table").append(html);
+                    // $(".order_table").append(html);
                 } else {
                     html += '<tr><td colspan="3">No Order has been made</td></tr>';
                 }
             } catch (e) {
 
-
+                html += '<tr><td colspan="3">No Order has been made</td></tr>';
             }
         }, "json");
 
