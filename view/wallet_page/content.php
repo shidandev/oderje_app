@@ -296,13 +296,14 @@
                     key:data.typ_key
                 },function(data2){
 
-                    var amount = ((data2.vab_amount).toString()).split(".");
-                    console.log(amount);
+                    // var amount = ((data2.vab_amount).toString()).split(".");
+                    // console.log(amount);
 
+                    var amount = parseFloat(data2.vab_amount).toFixed(2).toString().split(".");
 
 
                     $("#amount-big").text(amount[0]);
-                    $("#amount-small").text((amount[1]).substr(0,2));
+                    $("#amount-small").text((amount[1]));
 
                     $("#accountNumber").text(data2.vab_no);
                     
