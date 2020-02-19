@@ -297,9 +297,12 @@
                 },function(data2){
 
                     var amount = ((data2.vab_amount).toString()).split(".");
-                    //console.log(amount[0]);
+                    console.log(amount);
+
+
+
                     $("#amount-big").text(amount[0]);
-                    $("#amount-small").text(amount[1]);
+                    $("#amount-small").text((amount[1]).substr(0,2));
 
                     $("#accountNumber").text(data2.vab_no);
                     
