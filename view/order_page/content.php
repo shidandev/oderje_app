@@ -138,6 +138,10 @@
                         html +='            <small>';
                         html +='                <table class="w-100 p-0">';
                         html +='                     <tr>';
+                        html +='                         <td class="text-center "><label class="font-weight-bold ">Order Number</label></td>';
+                        html +='                         <td class="text-center bill_group_status "><label class="font-weight-bold order_status">'+((data[i].BILL_CODE).substr(11,16))+'</label></td>';
+                        html +='                     </tr>';
+                        html +='                     <tr>';
                         html +='                         <td class="text-center "><label class="font-weight-bold order_merchant">'+data[i].merchant_name+'</label></td>';
                         html +='                         <td class="text-center bill_group_status "><label class="font-weight-bold order_status">'+((data[i].ORDER_STATUS == "accept_order")?"Order Processing":(data[i].ORDER_STATUS == "order_ready")?"Please Collect":(data[i].ORDER_STATUS == "completed")?"Completed":"Paid")+'</label></td>';
                         html +='                     </tr>';
