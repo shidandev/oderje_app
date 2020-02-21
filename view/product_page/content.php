@@ -120,10 +120,11 @@
 
 				        var temp = new Product(data.list_product[i]);
 				        product_list.push(temp);
-
+						
 				        $(".row." + setView).append(temp.productView()); 
 
-	    			}
+					}
+					
 				}
 				else
 				{
@@ -180,9 +181,10 @@
 
 		function modal_setup(p)
 		{
-			console.log(p);
+			// console.log(p);
+			// console.log(p);
 			var temp = (new Date()).toString();
-
+			$(".options_variation").empty();
 
 			$("#p_name").text((p.p_name)?p.p_name:"Not Available");
 			$("#store_name").text((p.store_name)?p.store_name:"Not Available");
@@ -223,8 +225,27 @@
 
 			}
 
-			$(".options_variation").append(createOption('Size',['S','M','L']));
-			$(".options_variation").append(createOption('Size',['S','M','L']));
+			if(p.variation_list)
+			{
+				console.log(p.variation_list);
+
+				var label = p.variation_list.type_of_variation;
+				for(var j = 0 ; j < label.length;j++)
+				{
+					try{
+						$(".options_variation").append(createOption(label[j],p.variation_list[label[j]]));
+						
+					}catch(e)
+					{
+
+					}
+					
+
+				}
+				triggerVariation(label);
+			}
+			
+		
 		}
 
 		function createOption(label,option)
@@ -239,12 +260,13 @@
 			{
 				if(i == 0)
 				{
-					html +='			<label class="btn btn-outline-primary btn-sm active">';
+					html +='			<label class="btn btn-outline-primary btn-sm active btn-var">';
+					html +='				<input type="radio" name="'+label+'" autocomplete="off" checked>';
 				}
 				else{
-					html +='			<label class="btn btn-outline-primary btn-sm">';
+					html +='			<label class="btn btn-outline-primary btn-sm btn-var">';
 				}
-				html +='				<input type="radio" name="options" autocomplete="off">';
+				html +='				<input type="radio" name="'+label+'" autocomplete="off">';
 				html +=	option[i];
 				html +='			</label>';
 
@@ -261,7 +283,27 @@
 
 			return html;
 		}
+		
+		function triggerVariation(label)
+		{
 
+			$(".btn-var").change(function(){
+				if(label)
+				{
+					var var_array = new Array(); 
+					for(var i = 0 ; i < label.length; i++)
+					{
+						var cur_val = $("input[name='"+label[i]+"']:checked").parent().text().trim();
+						var_array.push(cur_val);
+
+					}
+
+					console.log(var_array);
+				}
+				
+
+			});
+		}
 	});
 
 

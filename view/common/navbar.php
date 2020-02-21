@@ -186,7 +186,6 @@
                 
             }
 
-            console.log(temp);
             if(cur_basket_count != temp)
             {
                 cur_basket_count = temp;
