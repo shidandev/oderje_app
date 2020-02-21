@@ -99,8 +99,23 @@
                                     tag1, tag2, tag3, tag4, tag5
                                 </p>
                             </div>
-                            <div class="row mt-1 d-none">
-                                <div class="col-12 text-right">
+                            <div class="row mt-1 mx-auto options_variation">
+                                <!-- <div class="col-12 my-1 text-right">
+                                    <label class="my-auto float-left">Size</label>
+                                    <div class="float-right btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-primary btn-sm">
+                                            <input type="radio" name="options" autocomplete="off"> Small
+                                        </label>
+                                        <label class="btn btn-primary btn-sm active">
+                                            <input type="radio" name="options" autocomplete="off" checked> Medium
+                                        </label>
+                                        <label class="btn btn-primary btn-sm">
+                                            <input type="radio" name="options" autocomplete="off"> Large
+                                        </label>
+                                    </div>
+                                </div> -->
+                               
+                                <!-- <div class="col-12 text-right">
                                     <label><small>Variation 1 :</small></label>
                                     <select class="form-control-sm">
                                         <option>Default select</option>
@@ -111,7 +126,7 @@
                                     <select class="form-control-sm">
                                         <option>Default select</option>
                                     </select>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="row mt-1">
                                 <div class="col-6 text-right">

@@ -180,8 +180,10 @@
 
 		function modal_setup(p)
 		{
-			
+			console.log(p);
 			var temp = (new Date()).toString();
+
+
 			$("#p_name").text((p.p_name)?p.p_name:"Not Available");
 			$("#store_name").text((p.store_name)?p.store_name:"Not Available");
 			$("#location").text((p.location)?p.location:"Not Available");
@@ -221,6 +223,43 @@
 
 			}
 
+			$(".options_variation").append(createOption('Size',['S','M','L']));
+			$(".options_variation").append(createOption('Size',['S','M','L']));
+		}
+
+		function createOption(label,option)
+		{
+			var html = "";
+
+			html +='	<div class="col-12 my-1 text-right option_list">';
+			html +='	<label class="my-auto float-left">'+label+'</label>';
+            html +='		<div class="float-right btn-group btn-group-toggle" data-toggle="buttons">';
+
+			for(var i = 0 ; i < option.length; i++)
+			{
+				if(i == 0)
+				{
+					html +='			<label class="btn btn-outline-primary btn-sm active">';
+				}
+				else{
+					html +='			<label class="btn btn-outline-primary btn-sm">';
+				}
+				html +='				<input type="radio" name="options" autocomplete="off">';
+				html +=	option[i];
+				html +='			</label>';
+
+			}
+            
+            // html +='			<label class="btn btn-primary btn-sm active">';
+            // html +='				<input type="radio" name="options" autocomplete="off" checked> Medium';
+            // html +='			</label>';
+            // html +='			<label class="btn btn-primary btn-sm">';
+            // html +='				<input type="radio" name="options" autocomplete="off"> Large';
+            // html +='			</label>';
+            html +='		</div>';
+            html +='	</div>';
+
+			return html;
 		}
 
 	});
