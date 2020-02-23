@@ -52,7 +52,10 @@
 		let footer_height = $("footer").outerHeight(true);
 		let product_div_height = $("#product_div").outerHeight(true);
 		let package_div_height = $("#package_div").outerHeight(true);
-		
+		var data_var = {};
+		var var_array = new Array();
+		var cur_var  = {};
+		var cur_var_list;
 		if(!$(".fixed-bottom").hasClass("d-none"))
 		{	
 			//console.log("ade footer");
@@ -210,7 +213,7 @@
 
 			if(p.rating)
 			{
-				console.log(p.rating);
+				//console.log(p.rating);
 				let yellow = p.rating;
 				let black = 5 - yellow;
 
@@ -227,14 +230,17 @@
 
 			if(p.variation_list)
 			{
-				console.log(p.variation_list);
-
+				
+				// console.log(p);
 				var label = p.variation_list.type_of_variation;
 				for(var j = 0 ; j < label.length;j++)
 				{
+					
 					try{
 						$(".options_variation").append(createOption(label[j],p.variation_list[label[j]]));
+						data_var[label[j]] = p.variation_list[label[j]][0];
 						
+
 					}catch(e)
 					{
 
@@ -243,11 +249,61 @@
 
 				}
 				triggerVariation(label);
+				
+				cur_var = getVariationDetail(p.variation_opt,data_var);
+				cur_var_list = p.variation_opt;
+				console.log(cur_var);
+
+				if(cur_var)
+				{
+					$("#exact_price").text((cur_var.actual_price/100).toFixed(2));
+				}
+
 			}
+			
+			$("#quantity").val("1");
 			
 		
 		}
+		$("#add_to_backet_btn").on('click',function(){
+				if(!$_USER['cid'])
+				{
+					alert("Please Login");
+					window.location.href = "../login.php?d="+url_encode("backpath="+$_USER['path']);
 
+				}
+				let pbm_id = $(this).find('input').val();
+				let cust_id = $_USER['cid'];
+				let quantity = $("#quantity").val();
+
+				if(parseInt(quantity) > 0)
+				{
+					
+					$.post(oderje_url+"api/customer_basket",
+					{
+						function:"insert_basket",
+						pbm_id:pbm_id,
+						cid:cust_id,
+						quantity:quantity,
+						var_option:JSON.stringify(cur_var)
+					},
+					function(data){
+						if(data.status == "ok")
+						{
+							alert("Succesfully add to basket");
+							//window.location.href = "../basket/";
+						}
+						else{
+							alert("Try again, check internet connection");
+						}
+					},"json");
+				}
+				else{
+
+					alert("Please add quantity, minimum 1 item");
+				}
+				
+			});
 		function createOption(label,option)
 		{
 			var html = "";
@@ -258,6 +314,9 @@
 
 			for(var i = 0 ; i < option.length; i++)
 			{
+				
+				
+
 				if(i == 0)
 				{
 					html +='			<label class="btn btn-outline-primary btn-sm active btn-var">';
@@ -280,29 +339,91 @@
             // html +='			</label>';
             html +='		</div>';
             html +='	</div>';
+			
 
 			return html;
 		}
 		
 		function triggerVariation(label)
 		{
+			// data_var = [];
 
 			$(".btn-var").change(function(){
 				if(label)
 				{
-					var var_array = new Array(); 
+					 
+
+					
 					for(var i = 0 ; i < label.length; i++)
 					{
 						var cur_val = $("input[name='"+label[i]+"']:checked").parent().text().trim();
 						var_array.push(cur_val);
+						data_var[label[i]] = cur_val;
+					}
+					
+					cur_var = getVariationDetail(cur_var_list,data_var);
+				
+					console.log(cur_var);
 
+					if(cur_var)
+					{
+						$("#exact_price").text((cur_var.actual_price/100).toFixed(2));
 					}
 
-					console.log(var_array);
+					// console.log(data_var);
 				}
 				
 
 			});
+
+			
+		}
+
+		function getVariationDetail(var_list,data_var)
+		{
+			var value = Object.values(data_var);
+			var key = Object.keys(data_var);
+
+			var jima = new Array();
+			for(let i = 0 ; i < key.length; i++)
+			{
+				if(i == 0)
+				{
+					jima = filterVariation(var_list,key[i],value[i]);
+				}
+				else{
+					jima = filterVariation(jima,key[i],value[i]);
+				}
+			}
+			return jima[0];
+		}
+		
+		function filterVariation(variation_option,label,value)
+		{
+			// console.log(variation_option,label,value);
+
+			
+			var temp_list = variation_option.filter(function(node1) {
+				return (node1[label] == value);
+			});
+
+			// console.log(temp_list);
+			return temp_list;
+			
+		}
+
+		function objToArray(data_var)
+		{
+			var element = Object.keys(data_var);
+			var value = Object.values(data_var);
+			var temp = new Array();
+
+			for(var i = 0 ; i < element.length; i++)
+			{
+				temp[element[i]] = value[i];
+			}
+			temp['length'] = element.length;
+			return temp;
 		}
 	});
 
