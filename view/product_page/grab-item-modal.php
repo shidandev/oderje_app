@@ -147,44 +147,44 @@
                                 </button>
                             </div>
                             <script>
-                                $("#quantity").val("1");
-                                $("#add_to_backet_btn").on('click',function(){
-                                    if(!$_USER['cid'])
-                                    {
-                                        alert("Please Login");
-                                        window.location.href = "../login.php?d="+url_encode("backpath="+$_USER['path']);
+                                // $("#quantity").val("1");
+                                // $("#add_to_backet_btn").on('click',function(){
+                                //     if(!$_USER['cid'])
+                                //     {
+                                //         alert("Please Login");
+                                //         window.location.href = "../login.php?d="+url_encode("backpath="+$_USER['path']);
 
-                                    }
-                                    let pbm_id = $(this).find('input').val();
-                                    let cust_id = $_USER['cid'];
-                                    let quantity = $("#quantity").val();
+                                //     }
+                                //     let pbm_id = $(this).find('input').val();
+                                //     let cust_id = $_USER['cid'];
+                                //     let quantity = $("#quantity").val();
 
-                                    if(parseInt(quantity) > 0)
-                                    {
-                                        $.post(oderje_url+"api/customer_basket",
-                                        {
-                                            function:"insert_basket",
-                                            pbm_id:pbm_id,
-                                            cid:cust_id,
-                                            quantity:quantity
-                                        },
-                                        function(data){
-                                            if(data.status == "ok")
-                                            {
-                                                alert("Succesfully add to basket");
-                                                //window.location.href = "../basket/";
-                                            }
-                                            else{
-                                                alert("Try again, check internet connection");
-                                            }
-                                        },"json");
-                                    }
-                                    else{
+                                //     if(parseInt(quantity) > 0)
+                                //     {
+                                //         $.post(oderje_url+"api/customer_basket",
+                                //         {
+                                //             function:"insert_basket",
+                                //             pbm_id:pbm_id,
+                                //             cid:cust_id,
+                                //             quantity:quantity
+                                //         },
+                                //         function(data){
+                                //             if(data.status == "ok")
+                                //             {
+                                //                 alert("Succesfully add to basket");
+                                //                 //window.location.href = "../basket/";
+                                //             }
+                                //             else{
+                                //                 alert("Try again, check internet connection");
+                                //             }
+                                //         },"json");
+                                //     }
+                                //     else{
 
-                                        alert("Please add quantity, minimum 1 item");
-                                    }
+                                //         alert("Please add quantity, minimum 1 item");
+                                //     }
                                     
-                                });
+                                // });
                             </script>
                         </div>
                     </div>
