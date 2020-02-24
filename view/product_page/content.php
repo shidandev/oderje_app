@@ -6,13 +6,13 @@
 	<div class="accordion" id="accordian_div" style="position: sticky;" >
 		
 		<div class="card ">
-			<div class="card-header p-0 m-0 bg-warning" id="product_div">
+			<!-- <div class="card-header p-0 m-0 bg-warning" id="product_div">
 				<button class="btn btn-link col-12" type="button" data-toggle="collapse" data-target="#collapse1" >
 					<span class="text-white text-outline-success"><b>Product</b></span><i class="float-right fas fa-th" style="font-size:24px"></i>
 				</button>
-			</div>
+			</div> -->
 
-			<div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordian_div" style="max-height: 100px;overflow-y: scroll;">
+			<div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordian_div" >
 				<div class="card-body parent_product p-1">
 					<!-- <div class="row parent_product"> -->
 						<?php //include("product-card.php")?>
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div class="card">
-			<div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordian_div" style="max-height: 100px;overflow-y: scroll;">
+			<!-- <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordian_div" style="max-height: 100px;overflow-y: scroll;">
 				<div class="card-body parent_package">
 					
 				</div>
@@ -30,7 +30,7 @@
 				<button class="btn btn-link col-12" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapseOne">
 					<span class="text-white text-outline-success"><b>Package</b></span><i class="float-right fas fa-th" style="font-size:24px"></i>
 				</button>
-			</div>
+			</div> -->
 
 			
 		</div>
