@@ -166,7 +166,7 @@
         }
     });
 
-    setTimeout(check_count_basket, 1000);
+    setTimeout(check_count_basket, 5000);
 
     var cur_basket_count = 0;
     function check_count_basket()
@@ -192,7 +192,7 @@
                 $(".basketCount").text(temp);
             }
             
-            setTimeout(check_count_basket, 1000);
+            setTimeout(check_count_basket, 5000);
 
         }, "json");
     }

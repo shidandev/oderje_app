@@ -210,17 +210,18 @@
                         list = data;
                         for (let i = 0; i < data.length; i++) {
                             var temp = new BasketByMerchant(data[i]);
+                           
                             merchant_list.push(data[i]);
                             $("#accordianGeneralStore").prepend(temp.BasketByMerchantView());
                             for (let j = 0; j < data[i].basket.length; j++) {
                                 basket_list.push(data[i].basket[j]);
-
+                               
                             }
 
 
                             //console.log(basket_list);
                         }
-
+                        
                         // console.table(merchant_list);
                     } else {
 
@@ -235,9 +236,14 @@
                     e.stopPropagation();
                     // alert("click");
                     let pbm_id = $(this).parent().parent().parent().parent().find(".pbm_id").val();
-                    var temp = find(basket_list, pbm_id);
+                    let variation = $(this).parent().parent().parent().parent().find(".variation_data").val();
+                    
+                    var temp = find(basket_list, pbm_id,variation);
 
-                    // console.log(temp);
+                    console.log(JSON.stringify(JSON.parse(variation))===JSON.stringify(JSON.parse(basket_list[0].variation)));
+                   
+                    console.log(temp);
+
                     if ($(this).is(':checked')) {
                         $(this).closest(".collapse").prev().find("input:checkbox").prop("checked", ($(this).closest(".collapse").find("input:checkbox").length > ($(this).closest(".collapse").find(".child-check:checked")).length) ? false : true);
 
@@ -257,7 +263,9 @@
                 // each product card edit button => trigger modal to edit quantity
                 $(".edit_btn").on("click", function() {
                     let pbm_id = $(this).find(".pbm_id").val();
-                    modal_setup(find(basket_list, pbm_id));
+                    let variation = $(this).find(".variation_data").val();
+                    console.log(variation);
+                    modal_setup(find(basket_list, pbm_id,variation));
                 });
 
                 //each merchant card checkbox trigger
@@ -265,7 +273,7 @@
 
                     e.stopPropagation();
 
-                    console.log($(this).parent().parent().parent().attr("class"));
+                    // console.log($(this).parent().parent().parent().attr("class"));
 
                     $(this).parent().parent().parent()
                     var cb_id = new Array();
@@ -273,7 +281,7 @@
                     if ($(this).is(':checked')) {
 
                         check_btn.each(function() {
-                            console.log("lalal");
+                            // console.log("lalal");
                             if (!$(this).is(':checked')) {
                                 var temp = find(basket_list, $(this).val());
                                 price += (temp['p_price'] * temp['p_quantity']);
@@ -284,7 +292,8 @@
 
                     } else {
                         check_btn.each(function() {
-                            var temp = find(basket_list, $(this).val());
+                            var temp = find(basket_list, $(this).val(),$(this).parent().find(".variation_data").val());
+                            // var temp = find(basket_list, $(this).val());
                             price -= (temp['p_price'] * temp['p_quantity']);
                             $("#totalPrice").text(price/100);
                             $(this).prop('checked', false);
@@ -427,7 +436,7 @@
             $("#cb_id").val((p.cb_id) ? p.cb_id : "null");
             $(".cb_id").val((p.cb_id) ? p.cb_id : "null");
             $("#quantity").val(p.p_quantity);
-            let img_url = (p.p_image) ? "https://app.oderje.com/images/product/" + p.p_image + "?" + temp : "https://www.oderje.com/img/products/generic-product.jpg?" + temp;
+            let img_url = (p.p_image) ? oderje_url+"images/product/" + p.p_image + "?" + temp : "https://www.oderje.com/img/products/generic-product.jpg?" + temp;
             $("#image").attr('src', img_url);
 
             $("#add_item_btn").on("click", function() {
@@ -468,13 +477,31 @@
         }
 
         //function find data from array for product using pbm_id
-        function find(list, pbm_id) {
+        function find(list, pbm_id,variation) {
+
             function check(list) {
-                return list.pbm_id == pbm_id;
+               
+            //    if(JSON.stringify(JSON.parse(variation))===JSON.stringify(JSON.parse(list.variation)) && list.pbm_id == pbm_id)
+            //    {
+            //     return list;
+            //    }
+
+                return (JSON.stringify(JSON.parse(variation))===JSON.stringify(JSON.parse(list.variation)) && list.pbm_id == pbm_id);
+                
             }
 
+            
             return list.find(check);
         }
+
+        
+        // function find(list, pbm_id) {
+        //     function check(list) {
+        //         return list.pbm_id == pbm_id;
+        //     }
+
+        //     return list.find(check);
+        // }
 
         //function find merchant from array using m_id
         function find_merchant(list, m_id) {

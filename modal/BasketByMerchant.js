@@ -27,7 +27,7 @@ class BasketByMerchant {
         html += '  				<i class="fas fa-chevron-down fa-xs float-right text-secondary"></i>';
         html += '			</div>';
         html += '		</div>';
-        html += '		<div id="collapseStore' + this.m_id + '" class="collapse" aria-labelledby="headingStore1" data-parent="#accordianGeneralStore">';
+        html += '		<div id="collapseStore' + this.m_id + '" class="collapse show" aria-labelledby="headingStore1" data-parent="#accordianGeneralStore">';
         html += '			<div class="card-body">';
         html += '  				<div class="row">';
         // html += '    				<div class="col-xl-3 col-md-6 load list row">';
@@ -35,6 +35,7 @@ class BasketByMerchant {
         for (let i = 0; i < this.basket.length; i++) {
             if (this.basket[i].type == "product") {
                 var temp = new ProductBasket(this.basket[i]);
+                //console.log(temp);
                 html += temp.ProductBasketView();
 
             }
