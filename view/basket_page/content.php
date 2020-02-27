@@ -238,34 +238,38 @@
                     let pbm_id = $(this).parent().parent().parent().parent().find(".pbm_id").val();
                     let variation = $(this).parent().parent().parent().parent().find(".variation_data").val();
                     
-                    var temp = find(basket_list, pbm_id,variation);
+                    try{
+                        var temp = find(basket_list, pbm_id,variation);
 
-                    console.log(JSON.stringify(JSON.parse(variation))===JSON.stringify(JSON.parse(basket_list[0].variation)));
-                   
-                    console.log(temp);
+                        // console.log(JSON.stringify(JSON.parse(variation))===JSON.stringify(JSON.parse(basket_list[0].variation)));
+                    
+                        // console.log(temp);
 
-                    if ($(this).is(':checked')) {
-                        $(this).closest(".collapse").prev().find("input:checkbox").prop("checked", ($(this).closest(".collapse").find("input:checkbox").length > ($(this).closest(".collapse").find(".child-check:checked")).length) ? false : true);
+                        if ($(this).is(':checked')) {
+                            $(this).closest(".collapse").prev().find("input:checkbox").prop("checked", ($(this).closest(".collapse").find("input:checkbox").length > ($(this).closest(".collapse").find(".child-check:checked")).length) ? false : true);
 
-                        price += (temp['p_price'] * temp['p_quantity']);
-                        $(this).prop('checked', true);
-                        total_product += parseInt(temp['p_quantity'], 10);
-                    } else {
-                        $(this).closest(".collapse").prev().find("input:checkbox").prop("checked", false);
-                        price -= (temp['p_price'] * temp['p_quantity']);
-                        $(this).prop('checked', false);
-                        total_product -= parseInt(temp['p_quantity'], 10);
-                    }
-                    $("#totalPrice").text(parseFloat(price/100).toFixed(2));
-                    $("#total_product").text(total_product);
+                            price += (temp['p_price'] * temp['p_quantity']);
+                            $(this).prop('checked', true);
+                            total_product += parseInt(temp['p_quantity'], 10);
+                        } else {
+                            $(this).closest(".collapse").prev().find("input:checkbox").prop("checked", false);
+                            price -= (temp['p_price'] * temp['p_quantity']);
+                            $(this).prop('checked', false);
+                            total_product -= parseInt(temp['p_quantity'], 10);
+                        }
+                        $("#totalPrice").text(parseFloat(price/100).toFixed(2));
+                        $("#total_product").text(total_product);
+                    }catch(e){}
                 });
 
                 // each product card edit button => trigger modal to edit quantity
                 $(".edit_btn").on("click", function() {
                     let pbm_id = $(this).find(".pbm_id").val();
                     let variation = $(this).find(".variation_data").val();
-                    console.log(variation);
-                    modal_setup(find(basket_list, pbm_id,variation));
+                    
+                    try{
+                        modal_setup(find(basket_list, pbm_id,variation));
+                    }catch(e){}
                 });
 
                 //each merchant card checkbox trigger
@@ -485,8 +489,11 @@
             //    {
             //     return list;
             //    }
-
-                return (JSON.stringify(JSON.parse(variation))===JSON.stringify(JSON.parse(list.variation)) && list.pbm_id == pbm_id);
+                try{
+                    return (JSON.stringify(JSON.parse(variation))===JSON.stringify(JSON.parse(list.variation)) && list.pbm_id == pbm_id);
+                }
+                catch(e){}
+               
                 
             }
 

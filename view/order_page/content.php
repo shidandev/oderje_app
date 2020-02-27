@@ -134,52 +134,57 @@
                         // html += '<td class="text-center">' + ((data[i].ORDER_STATUS == "PAID") ? "Paid" : (data[i].ORDER_STATUS == "ORDER") ? "Order" : (data[i].ORDER_STATUS == "accept_order") ? "Accept Order" : (data[i].ORDER_STATUS == "order_ready") ? "Order Ready" : (data[i].ORDER_STATUS == "completed") ? "Completed" : "") + '</td>';
                         // html += '</tr>';
 
-                        html +='    <tr style="border-top:10px solid;border-color:orange">';
-                        html +='        <td class="border p-1">';
-                        html +='            <small>';
-                        html +='                <table class="w-100 p-0">';
-                        html +='                     <tr>';
-                        html +='                         <td class="text-center "><label class="font-weight-bold h4">Order Number</label></td>';
-                        html +='                         <td class="text-center bill_group_status "><label class="font-weight-bold order_status h4">'+((data[i].BILL_CODE).substr(11,16))+'</label></td>';
-                        html +='                     </tr>';
-                        html +='                     <tr>';
-                        html +='                         <td class="text-center "><label class="font-weight-bold order_merchant">'+data[i].merchant_name+'</label></td>';
-                        html +='                         <td class="text-center bill_group_status "><label class="font-weight-bold order_status">'+((data[i].ORDER_STATUS == "accept_order")?"Order Processing":(data[i].ORDER_STATUS == "order_ready")?"Please Collect":(data[i].ORDER_STATUS == "completed")?"Completed":"Paid")+'</label></td>';
-                        html +='                     </tr>';
-                        html +='                     <tr>';
-                        html +='                         <td class="text-center "><label class="font-weight-bold order_date">'+data[i].ORDER_DATE+'</label></td>';
-                        html +='                         <td class="text-center bill_group_status"><button type="button" class=" btn btn-outline-info detail_btn py-0">Detail <i class="fa fa-caret-down"></i></button></td>';
-                        html +='                     </tr>';
-                        html +='                 </table>';
-                        html +='             </small>';
-                        
-                        try {
-                        for(var j = 0 ; j < data[i].product.length; j++)
-                        {
-                            var date = new Date();
-                            var temp = date.toString();
+                        html += '    <tr style="border-top:10px solid;border-color:orange">';
+                        html += '        <td class="border p-1">';
+                        html += '            <small>';
+                        html += '                <table class="w-100 p-0">';
+                        html += '                     <tr>';
+                        html += '                         <td class="text-center "><label class="font-weight-bold h4">Order Number</label></td>';
+                        html += '                         <td class="text-center bill_group_status "><label class="font-weight-bold order_status h4">' + ((data[i].BILL_CODE).substr(11, 16)) + '</label></td>';
+                        html += '                     </tr>';
+                        html += '                     <tr>';
+                        html += '                         <td class="text-center "><label class="font-weight-bold order_merchant">' + data[i].merchant_name + '</label></td>';
+                        html += '                         <td class="text-center bill_group_status "><label class="font-weight-bold order_status">' + ((data[i].ORDER_STATUS == "accept_order") ? "Order Processing" : (data[i].ORDER_STATUS == "order_ready") ? "Please Collect" : (data[i].ORDER_STATUS == "completed") ? "Completed" : "Paid") + '</label></td>';
+                        html += '                     </tr>';
+                        html += '                     <tr>';
+                        html += '                         <td class="text-center "><label class="font-weight-bold order_date">' + data[i].ORDER_DATE + '</label></td>';
+                        html += '                         <td class="text-center bill_group_status"><button type="button" class=" btn btn-outline-info detail_btn py-0">Detail <i class="fa fa-caret-down"></i></button></td>';
+                        html += '                     </tr>';
+                        html += '                 </table>';
+                        html += '             </small>';
 
-                        html +='             <small>';
-                        html +='                 <table class="w-100 p-0 order_item border">';
-                        html +='                     <tr>';
-                        html +='                         <td style="vertical-align:top;" rowspan="2" width="20%"><img src="'+oderje_url+'images/product/'+data[i].product[j].P_IMAGE+'?'+temp+'" class="img-fluid"></td>';
-                        html +='                         <td style="vertical-align:top;" class="text-left">'+data[i].product[j].P_NAME+'<br>'+variationExtracter(data[i].product[j].VARIATION)+'</td>';
-                        html +='                       <td style="vertical-align:top;" class="text-center">RM '+(data[i].product[j].PRICE/100).toFixed(2)+'</td>';
-                        html +='                     </tr>';
-                        html +='                     <tr>';
-                        html +='                         <td style="vertical-align:top;" class="text-left">Quantity : '+data[i].product[j].QUANTITY+'</td>';
-                        html +='                         <td style="vertical-align:top;" class="text-center">'+((data[i].product[j].ORDER_STATUS == "accept_order")?"Order Processing":(data[i].product[j].ORDER_STATUS == "order_ready")?"Please Collect":(data[i].product[j].ORDER_STATUS == "completed")?"Completed":"Paid")+'</td>';
-                        html +='                     </tr>';
-                        html +='                 </table>';
-                        html +='             </small>';
-                        }
+                        try {
+                            for (var j = 0; j < data[i].product.length; j++) {
+                                var date = new Date();
+                                var temp = date.toString();
+
+                                html += '             <small>';
+                                html += '                 <table class="w-100 p-1 order_item border">';
+                                html += '                     <tr>';
+                                html += '                         <td style="vertical-align:top;" rowspan="2" width="20%"><img src="' + oderje_url + 'images/product/' + data[i].product[j].P_IMAGE + '?' + temp + '" class="img-fluid img-thumbnail"></td>';
+                                html += '                         <td style="vertical-align:top;" class="text-left">' + data[i].product[j].P_NAME + '<br>';
+                                try {
+                                    html += variationExtracter(data[i].product[j].VARIATION);
+                                } catch (e) {
+                                    html += 'Variation : General';
+                                }
+                                html += '</td>';
+                                html += '                       <td style="vertical-align:top;" class="text-center">RM ' + (data[i].product[j].PRICE / 100).toFixed(2) + '</td>';
+                                html += '                     </tr>';
+                                html += '                     <tr>';
+                                html += '                         <td style="vertical-align:top;" class="text-left">Quantity : ' + data[i].product[j].QUANTITY + '</td>';
+                                html += '                         <td style="vertical-align:top;" class="text-center">' + ((data[i].product[j].ORDER_STATUS == "accept_order") ? "Order Processing" : (data[i].product[j].ORDER_STATUS == "order_ready") ? "Please Collect" : (data[i].product[j].ORDER_STATUS == "completed") ? "Completed" : "Paid") + '</td>';
+                                html += '                     </tr>';
+                                html += '                 </table>';
+                                html += '             </small>';
+                            }
                         } catch (error) {
-                            console.log("error",j);
+                            console.log("error", j);
                         }
-                        
-                        
-                        html +='        </td>';
-                        html +='    </tr>';
+
+
+                        html += '        </td>';
+                        html += '    </tr>';
 
 
                     }
@@ -193,7 +198,7 @@
                 html += '<tr><td colspan="3">No Order has been made</td></tr>';
             }
         }, "json").
-        done(function(){
+        done(function() {
             $(".detail_btn").click(function() {
 
                 var root = $(this).parent().parent().parent().parent().parent().parent();
@@ -233,6 +238,6 @@
             return temp;
 
 
-            }
+        }
     });
 </script>

@@ -9,7 +9,12 @@ class ProductBasket {
         this.p_quantity = p.p_quantity;
         this.type = p.type;
         this.cb_id = p.cb_id;
-        this.variation = JSON.parse(p.variation);
+        try {
+            this.variation = JSON.parse(p.variation);
+        } catch {
+
+        }
+
 
     }
 

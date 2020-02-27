@@ -15,8 +15,11 @@ class Product {
         this.rating = p.rating;
         this.promotion_list = p.promotion_list;
         this.exact_price = 0.0;
-        this.variation_list = JSON.parse(p.variation_list);
-        this.variation_opt = JSON.parse(p.variation_opt);
+        try {
+            this.variation_list = JSON.parse(p.variation_list);
+            this.variation_opt = JSON.parse(p.variation_opt);
+        } catch (e) {}
+
     }
 
     setp_id(p_id) { this.p_id = p_id; }
