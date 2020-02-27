@@ -9,6 +9,7 @@ class ProductCheckOut {
         this.p_quantity = p.p_quantity;
         this.type = p.type;
         this.cb_id = p.cb_id;
+        this.variation = p.variation;
 
     }
 
@@ -25,11 +26,40 @@ class ProductCheckOut {
         html += '   </div>';
         html += '   <div class="p-0 w-100 border p-1">';
         html += '       <div class="col-12 text-center">' + this.p_name + '</div>';
-        html += '       <div class="col-12 text-center text-primary font-weight-bold"><small>' + this.p_quantity + ' x RM ' + (this.p_price / 100) + '</small></div>';
-        html += '       <div class="col-12 text-center font-weight-bold" style="color:#FF9933">RM ' + (this.p_quantity * (this.p_price / 100)) + '</div>';
+        html += '       <div class="col-12 text-center">' + this.variationExtracter(this.variation) + '</div>';
+        html += '       <div class="col-12 text-center text-primary font-weight-bold"><small>' + this.p_quantity + ' x RM ' + (this.p_price / 100).toFixed(2) + '</small></div>';
+        html += '       <div class="col-12 text-center font-weight-bold" style="color:#FF9933">RM ' + (this.p_quantity * (this.p_price / 100)).toFixed(2) + '</div>';
         html += '   </div>';
         html += '</div>';
 
+        this.variationExtracter(this.variation);
         return html;
+    }
+
+
+    variationExtracter(variation) {
+
+        var data = JSON.parse(variation);
+        var key = Object.keys(JSON.parse(variation));
+
+        key.pop();
+        key.pop();
+
+        var temp = "";
+        for (var i = 0; i < key.length; i++) {
+            temp += key[i];
+            temp += ' : ';
+            temp += data[key[i]];
+            if (i != key.length - 1) {
+                temp += ',  ';
+            }
+
+
+        }
+        // console.log(temp);
+
+        return temp;
+
+
     }
 }

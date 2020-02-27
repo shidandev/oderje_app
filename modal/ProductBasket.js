@@ -9,6 +9,7 @@ class ProductBasket {
         this.p_quantity = p.p_quantity;
         this.type = p.type;
         this.cb_id = p.cb_id;
+        this.variation = JSON.parse(p.variation);
 
     }
 
@@ -22,6 +23,7 @@ class ProductBasket {
         html += '    <div class="card-body">';
         html += '      <div class="form-check text-center">';
         html += '        <input class="form-check-input child-check" type="checkbox" value="' + this.pbm_id + '">';
+        html += '        <input class="form-check-input variation_data" type="hidden" value=\'' + JSON.stringify(this.variation) + '\'>';
         html += '      </div>';
         html += '    </div>';
         html += '    <img src="' + oderje_url + 'images/product/' + this.p_img + '?' + temp + '" class="card-img-top mx-auto" style="width:200px" alt="Product Name">';
@@ -43,12 +45,14 @@ class ProductBasket {
         html += '      </div>';
         html += '      <div class="row">';
         html += '        <div class="col-12 text-center btn btn-sm btn-light edit_btn" data-toggle="modal" data-target="#editQuantityModal">';
-        html += '          <input class="pbm_id" value="' + this.pbm_id + '" type="hidden"><small class="">Edit</small>';
+        html += '          <input class="pbm_id" value="' + this.pbm_id + '" type="hidden"> <input class="form-check-input variation_data" type="hidden" value=\'' + JSON.stringify(this.variation) + '\'><small class="">Edit</small>';
         html += '        </div>';
         html += '      </div>';
         html += '    </div>';
         html += '  </div>';
         html += '</div>';
+
+
 
         return html;
     }

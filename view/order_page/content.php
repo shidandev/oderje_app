@@ -121,6 +121,7 @@
             c_id: $_USER['cid']
                 // c_id: 8
         }, function(data) {
+            console.log(data);
             var html = "";
             try {
                 if (data) {
@@ -133,13 +134,13 @@
                         // html += '<td class="text-center">' + ((data[i].ORDER_STATUS == "PAID") ? "Paid" : (data[i].ORDER_STATUS == "ORDER") ? "Order" : (data[i].ORDER_STATUS == "accept_order") ? "Accept Order" : (data[i].ORDER_STATUS == "order_ready") ? "Order Ready" : (data[i].ORDER_STATUS == "completed") ? "Completed" : "") + '</td>';
                         // html += '</tr>';
 
-                        html +='    <tr>';
+                        html +='    <tr style="border-top:10px solid;border-color:orange">';
                         html +='        <td class="border p-1">';
                         html +='            <small>';
                         html +='                <table class="w-100 p-0">';
                         html +='                     <tr>';
-                        html +='                         <td class="text-center "><label class="font-weight-bold ">Order Number</label></td>';
-                        html +='                         <td class="text-center bill_group_status "><label class="font-weight-bold order_status">'+((data[i].BILL_CODE).substr(11,16))+'</label></td>';
+                        html +='                         <td class="text-center "><label class="font-weight-bold h4">Order Number</label></td>';
+                        html +='                         <td class="text-center bill_group_status "><label class="font-weight-bold order_status h4">'+((data[i].BILL_CODE).substr(11,16))+'</label></td>';
                         html +='                     </tr>';
                         html +='                     <tr>';
                         html +='                         <td class="text-center "><label class="font-weight-bold order_merchant">'+data[i].merchant_name+'</label></td>';
@@ -159,10 +160,10 @@
                             var temp = date.toString();
 
                         html +='             <small>';
-                        html +='                 <table class="w-100 p-0 order_item ">';
+                        html +='                 <table class="w-100 p-0 order_item border">';
                         html +='                     <tr>';
                         html +='                         <td style="vertical-align:top;" rowspan="2" width="20%"><img src="'+oderje_url+'images/product/'+data[i].product[j].P_IMAGE+'?'+temp+'" class="img-fluid"></td>';
-                        html +='                         <td style="vertical-align:top;" class="text-left">'+data[i].product[j].P_NAME+'</td>';
+                        html +='                         <td style="vertical-align:top;" class="text-left">'+data[i].product[j].P_NAME+'<br>'+variationExtracter(data[i].product[j].VARIATION)+'</td>';
                         html +='                       <td style="vertical-align:top;" class="text-center">RM '+(data[i].product[j].PRICE/100).toFixed(2)+'</td>';
                         html +='                     </tr>';
                         html +='                     <tr>';
@@ -208,5 +209,30 @@
             });
         });
 
+        function variationExtracter(variation) {
+
+            var data = JSON.parse(variation);
+            var key = Object.keys(JSON.parse(variation));
+
+            key.pop();
+            key.pop();
+
+            var temp = "";
+            for (var i = 0; i < key.length; i++) {
+                temp += key[i];
+                temp += ' : ';
+                temp += data[key[i]];
+                if (i != key.length - 1) {
+                    temp += ',  ';
+                }
+
+
+            }
+            // console.log(temp);
+
+            return temp;
+
+
+            }
     });
 </script>
