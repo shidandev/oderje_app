@@ -11,9 +11,7 @@ class ProductBasket {
         this.cb_id = p.cb_id;
         try {
             this.variation = JSON.parse(p.variation);
-        } catch {
-
-        }
+        } catch (e) {}
 
 
     }
@@ -23,9 +21,9 @@ class ProductBasket {
         var date = new Date();
         var temp = date.toString();
         var html = '';
-        html += '<div class="col-xl-3 col-md-6">';
+        html += '<div class="col-xl-3 col-md-6 border">';
         html += '  <div class="card border-light">';
-        html += '    <div class="card-body">';
+        html += '    <div class="card-body ">';
         html += '      <div class="form-check text-center">';
         html += '        <input class="form-check-input child-check" type="checkbox" value="' + this.pbm_id + '">';
         html += '        <input class="form-check-input variation_data" type="hidden" value=\'' + JSON.stringify(this.variation) + '\'>';
@@ -33,8 +31,16 @@ class ProductBasket {
         html += '    </div>';
         html += '    <img src="' + oderje_url + 'images/product/' + this.p_img + '?' + temp + '" class="card-img-top mx-auto" style="width:200px" alt="Product Name">';
         html += '    <div class="card-body">';
-        html += '      <div class="card-title overflow-hidden" style="height:20px">';
-        html += '        <span>' + this.p_name + '</span>';
+        html += '      <div class="card-title overflow-hidden" style="height:60px">';
+        html += '        <label>' + this.p_name + ' </label><br> <div class="border text-center">';
+
+        try {
+            html += this.variationExtracter(JSON.stringify(this.variation));
+            // console.log(this.variationExtracter(JSON.stringify(this.variation)));
+        } catch (e) {
+            // console.log(e);
+        }
+        html += '      </div>';
         html += '      </div>';
         html += '      <div class="row">';
         html += '        <div class="col-12 text-center text-secondary">';
@@ -60,5 +66,31 @@ class ProductBasket {
 
 
         return html;
+    }
+
+    variationExtracter(variation) {
+
+        var data = JSON.parse(variation);
+        var key = Object.keys(JSON.parse(variation));
+
+        key.pop();
+        key.pop();
+
+        var temp = "";
+        for (var i = 0; i < key.length; i++) {
+            temp += key[i];
+            temp += ' : ';
+            temp += data[key[i]];
+            if (i != key.length - 1) {
+                temp += ',  ';
+            }
+
+
+        }
+        // console.log(temp);
+
+        return temp;
+
+
     }
 }
