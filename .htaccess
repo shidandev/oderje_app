@@ -1,0 +1,7 @@
+
+
+RewriteEngine On
+
+
+RewriteRule ^test/?$ routing.php
+RewriteRule ^product/(.*)$ product/index.php?merchant_name=$1 [QSA,L]
