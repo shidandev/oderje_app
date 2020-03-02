@@ -140,7 +140,7 @@
                         html += '                <table class="w-100 p-0">';
                         html += '                     <tr>';
                         html += '                         <td class="text-center "><label class="font-weight-bold h4">Order Number</label></td>';
-                        html += '                         <td class="text-center bill_group_status "><label class="font-weight-bold order_status h4">' + ((data[i].BILL_CODE).substr(11, 16)) + '</label></td>';
+                        html += '                         <td class="text-center bill_group_status "><label class="font-weight-bold order_status h4">' + ((data[i].BILL_CODE).substr(14, 19)) + '</label></td>';
                         html += '                     </tr>';
                         html += '                     <tr>';
                         html += '                         <td class="text-center "><label class="font-weight-bold order_merchant">' + data[i].merchant_name + '</label></td>';
