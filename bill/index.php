@@ -35,7 +35,7 @@
 
             //var temp = ($_GET['bill_code']).substring(10,16);
             //console.log(temp);
-            $("#bill_code").text(($_GET['bill_code']).substring(11, 16));
+            $("#bill_code").text(($_GET['bill_code']).substring(14, 19));
             // $("#bill_code").text(($_GET['bill_code']));
 
             $(".order_link").click(function(){
