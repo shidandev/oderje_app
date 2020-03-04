@@ -103,7 +103,7 @@
             if ($_GET['merchant_name']) {
                 search = $_GET['merchant_name'];
                 $("#merchant_display").removeClass("d-none");
-                $("#merchant_name").text(search.replace("_", " "););
+                $("#merchant_name").text(search.replace("_", " "));
             } else {
                 search = $_GET['search'];
             }
