@@ -55,13 +55,13 @@ class Product {
         var temp = date.toString();
 
         var html = '    <div class="col-xl-3 col-md-6 my-2">';
-        html += '        <div class="card border-light">';
+        html += '        <div class="card border-light ">';
         html += '            <img src="';
         html += (!this.p_img) ? 'https://www.oderje.com/img/products/generic-product.jpg"' : oderje_url + 'images/product/' + this.p_img + '?' + temp + '"';
         html += '             class="card-img-top mx-auto" style="width:200px" alt="Product Name">';
         html += '            <div class="card-body">';
-        html += '                <div class="card-title overflow-hidden" style="height:40px">';
-        html += '                    <h6>';
+        html += '                <div class="card-title overflow-hidden m-0" style="height:40px">';
+        html += '                    <h6 class="m-0">';
         html += this.p_name;
 
         html += '                    </h6>';
@@ -73,7 +73,7 @@ class Product {
         html += '                <small id="store-location" class="text-secondary">';
         html += this.location;
         html += '                </small>';
-        html += '                <div id="star-rating">';
+        html += '                <div id="star-rating" class="d-none">';
 
         let yellow = this.rating;
         let black = 5 - yellow;
@@ -94,7 +94,7 @@ class Product {
         // html    += '                        <span id="badge-delivery" class="badge badge-pill badge-white text-success"><i class="fas fa-truck"></i>&nbsp;Delivery</span>';
         html += '                    </div>';
         html += '                </div>';
-        html += '                <div class="card-header border-light" style="height:110px">';
+        html += '                <div class="card-header" >';
 
         try {
 
@@ -175,7 +175,7 @@ class Product {
 
 
 
-        html += '                    <p id="price-promo" class="text-secondary invisible" style="font-size:10px">';
+        html += '                    <p id="price-promo" class="text-secondary d-none" style="font-size:10px">';
         html += '                        <span id="price-promo-endDate">';
         html += '                            <span id="badge-promo-endDate" class="badge badge-pill badge-info">';
         html += '                                Promo&nbsp;<i class="fas fa-tag"></i>';
